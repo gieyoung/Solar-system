@@ -1,20 +1,14 @@
 @charset "utf-8";
 
-/* 1차 PJ : 공통 클래스 CSS - core.css */
+/* 팀 PJ : 공통 클래스 CSS - core.css */
 /* 공통 셋팅을 위한 클래스 + 웹폰트 */
 
 /* 웹폰트*/
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap");
 
 /* 
     0. 메뉴 등 일반체
-    font-family: "Jua", sans-serif;
-    font-family: "Noto Sans KR", sans-serif;
-    font-family: "Hahmlet", serif;
-
+    font-family: 
+  
 }
 
     1. 캐릭터 설명 제목체
@@ -40,22 +34,11 @@ body>*{
 }
 
 
-/* 드래그시 배경 색상(오뚜기 시그니처 컬러) */
-::selection{ background:#ffed00; }
-
-
 /* 전체 감싼 박스 */
 #wrap {
   position: relative;
 }
 
-/* 공통클래스 중앙속박스 */
-.inbox {
-  max-width: 1600px;
-  margin: 0 auto;
-  /* outline: 1px solid red; */
-  height: 100%;
-}
 
 /* 글자날리기 */
 .ir {
@@ -88,9 +71,4 @@ body {
   /* 폰트 */
   font-family: "Noto Sans KR", sans-serif;
 }
-
-.cont-box {
-  height: 100%;
-}
-
 

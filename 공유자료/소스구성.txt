@@ -1,0 +1,46 @@
+소스구성
+
+<images>
+sun
+earth
+saturn
+jupiter
+moon
+main(메인화면 이미지)
+common(상단/하단 공통 이미지)
+
+
+<js>
+sun.js
+earth.js
+saturn.js
+jupiter.js
+moon.js
+main.js  (메인화면 js)
+common.js (상단/하단 공통 js)
+my_function.js
+
+
+<css>
+common.css(상단/하단 css)
+core.css(공통 css)
+reset.css(기본 초기화 css)
+main.css(메인화면 css)
+sun.css
+earth.css
+saturn.css
+jupiter.css
+moon.css
+media.css(상단/하단 미디어쿼리)
+
+-> 메인화면 및 서브메뉴 미디어 쿼리는 각각의 해당 css하단에 
+
+
+index.html(메인화면 html)
+sun.html
+earth.html
+saturn.html
+jupiter.html
+moon.html
+
+
