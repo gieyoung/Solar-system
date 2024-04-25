@@ -118,8 +118,13 @@ body *{
 /* ---------------------네번째 페이지--------------------- */
 .jupiter4{
     max-width: 1400px;
-    /* min-width: 600px; */
+    min-height: auto;
     margin: 0 auto;
+}
+.jupiter4 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin: 100px 0 50px;
 }
 .moon-cont{
     display: flex;
@@ -168,6 +173,52 @@ body *{
     opacity: 1;
     transition: .5s ease-in;
 }
+/* ---------------------다섯번째 페이지--------------------- */
+.jupit5-cont{
+    box-sizing: border-box;
+    margin-top: 50px;
+    padding: 80px 48px 100px;
+}
+.jupit5-head{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+/* 전체 그리드박스 */
+.jupit5-gbox{
+    display: grid;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    grid-template-columns: repeat(3,1fr);
+}
+.jupit5-gbox h2{
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+/* 각 그리드 박스 */
+.jupit5-box{
+    border-bottom: 1px solid #dcbfbf;
+    border-right: 1px solid #dcbfbf;
+    padding: 33px 33px 33px 33px;
+}
+.circle-num{
+    background-color: #232220;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 auto;
+    line-height: 60px;
+    margin-bottom: 17px;
+    font-size: 22px;
+}
+.jupit5-text p{
+    font-size: 15px;
+    margin: 15px 0
+}
+
 /************* 하단영역 *************/
 /* common.css */
 
