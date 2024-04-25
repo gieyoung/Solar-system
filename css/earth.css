@@ -33,6 +33,19 @@ body * {
     margin: 0 auto;
     
 }
+/* 임시 desc */
+.desc{
+    font-size: 1.4rem;
+}
+/* 임시 tit */
+.tit{
+    font-size: 5rem;
+}
+/* 임시 txt */
+.txt{
+    font-size: 3rem;
+}
+
 /* ********************************************************************** */
 .backimg{
     width: 100vw;
@@ -50,8 +63,18 @@ body * {
     height: 100%;
 
 }
-
-
+.pg1 .tit,.pg1 .txt{
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    
+    color: white;
+   
+}
+.pg1 .tit{
+    white-space: nowrap;
+    bottom: 35%;
+}
 
 /****************************************************** pg2 *******************************************************************/
 
