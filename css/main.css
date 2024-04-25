@@ -5,7 +5,32 @@
 /* common.css */
 
 /*********************** 메인영역 ***********************/
+/* 섹션1-태양계 소개 */
+#solar-intro{
+  width: 100%;
+  height: 500px;
+  background: green;
+}
 
+
+#solar-2d{
+  width: 100%;
+  height:1000px;
+  padding-top: 100px;
+  background: url(../images/common/solar2d/space.jpg) no-repeat center/cover;
+
+}
+
+#solar-2d .inbox{
+  max-width: 1400px;
+  height: 100%;
+  outline: 1px solid red;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 섹션2-태양계 2d */
 
 /**************** 하단영역  ****************/
 /* common.css */

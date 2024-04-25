@@ -6,17 +6,35 @@ import mFn from './my_function.js';
 // 대상: .gbox
 const gbox = mFn.qs(".gbox");
 
+// 태양계 이름 배열선언,할당
+const solarName = new Array(
+    "Earth",
+    "Moon",
+    "Jupiter",
+    "Mars",
+    "Mercury",
+    "Neptune",
+    "Saturn",
+    "Uranus",
+    "Venus",
+  );
+
 // 코드변수
 let hcode = "<ul>";
 
+
+
 // for문으로 코드 만들기 : ul>li>img
-for(let i=1; i<=7; i++) {
+for(let i=0; i<=8; i++) {
     hcode += `
+       
         <li>
             <img 
-            src="./images/auto_scroll/m${i}.jpg" 
+            src="../images/common/auto_scroll/m${i+1}.png" 
             alt="갤러리이미지">
+            <span>${solarName[i]}</span>
         </li>
+
     `;
 } ///// for /////
 
@@ -76,7 +94,7 @@ function moveGallery(){
     // 재귀호출!(타임아웃함수로 호출함!)
     // stopSts변수값이 false일때만 실행하기
     if(!stopSts)
-    setTimeout(moveGallery,10);
+    setTimeout(moveGallery,40);
 
 } ///////// moveGallery 함수 /////////////
 
@@ -100,6 +118,6 @@ mFn.addEvt(gbox,"mouseleave",()=>{
 
 
 
-// setTimeout(moveGallery,2000);
+setTimeout(moveGallery,0);
 
 
