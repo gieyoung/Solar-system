@@ -60,15 +60,15 @@ body *{
 
 /* ---------------------두번째 페이지--------------------- */
 .jupiter2{
-    max-width: 1200px;
+    max-width: 1400px;
     min-width: 600px;
     margin: 0 auto;
-    margin-top: 20px;
 }
 .desc{
     display: flex;
     font-size: max(1vw,14px);
     gap: 2rem;
+    margin-top: 20px;
 }
 .desc strong{
     font-size: max(1.5vw,14px);
@@ -81,7 +81,38 @@ body *{
     width: 45vw;
     height: auto;
 }
-
+/* ---------------------세번째 페이지--------------------- */
+.jupiter3{
+    background-color: #000;
+}
+.jupiter3-cont{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 800px;
+    height: 400px;
+    margin: 0 auto;
+}
+.jupiter3-text{
+    position: relative;
+    /* top: 100%; */
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    color: white;
+}
+.jupiter3-text h3{
+    font-size: max(1.5vw,14px);
+    margin-bottom: 30px;
+}
+.jupiter3-text p{
+    font-size: max(1vw,14px);
+}
+.jupiter3-cont iframe{
+    width: 100%;
+    height: 100%;
+}
 
 
 
