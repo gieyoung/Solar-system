@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>solar system</title>
-     <!-- 파비콘 -->
-     <link rel="icon" type="image/png" sizes="16x16" href="./images/common/favicon-16x16.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[팀프로젝트] solar system</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/common/favicon-16x16.png" />
 
-      <!-- CSS연결 -->
-      <link rel="stylesheet" href="./css/reset.css" />
-      <link rel="stylesheet" href="./css/core.css" />
-      <link rel="stylesheet" href="./css/common.css" />
-      <link rel="stylesheet" href="./css/main.css" />
-      <!-- <link rel="stylesheet" href="./css/media.css" /> -->
+    <!-- 폰트어썸 CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 
-      <!-- JS연결 -->
-      <script src="./js/common.js" defer></script>
-      <script src="./js/main.js" defer></script>
+    <!-- CSS연결 -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/core.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link rel="stylesheet" href="./css/media.css" /> -->
 
-</head>
-<body>
- 
-  <div id="wrap">
-     <!-- 상단영역 -->
-     <div id="top-area">
-         <header class="top-area inbox">
-             <!-- 로고 -->
-            <h1 class="logo">
-              <a href="/index.html" alt="나사 로고"><span class="ir">로고</span>
-                <img src="../images/common/logo.png" alt="로고이미지">
-              </a>
-            </h1>
+    <!-- JS연결 -->
+    <script type="module" src="./js/common.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--------------------------상단영역-------------------------->
+      <div id="top-area">
+        <header class="top-area inbox">
+          <!-- 로고 -->
+          <h1 class="logo">
+            <a href="/index.html" alt="나사 로고"
+              ><span class="ir">로고</span>
+              <img src="../images/common/logo.png" alt="로고이미지" />
+            </a>
+          </h1>
 
-            <!-- 메뉴 -->
-            <nav id="gnb">
-              <ul>
-                <li><a href="/Sun.html" alt="태양 바로가기">Sun</a></li>
-                <li><a href="/Earth.html" alt="지구 바로가기">Earth</a></li>
-                <li><a href="/Moon.html" alt="달 바로가기">Moon</a></li>
-                <li><a href="/Saturn.html" alt="토성 바로가기">Saturn</a></li>
-                <li><a href="/jupiter.html" alt="목성 바로가기">jupiter</a></li>
-               </ul>
-            </nav>
+          <!-- 메뉴 -->
+          <nav id="gnb">
+            <ul>
+              <li><a href="/Sun.html" alt="태양 바로가기">Sun</a></li>
+              <li><a href="/Earth.html" alt="지구 바로가기">Earth</a></li>
+              <li><a href="/Moon.html" alt="달 바로가기">Moon</a></li>
+              <li><a href="/Saturn.html" alt="토성 바로가기">Saturn</a></li>
+              <li><a href="/jupiter.html" alt="목성 바로가기">jupiter</a></li>
+            </ul>
+          </nav>
+
+          <!-- 기타 -->
+          <div class="etc">
+            <!-- 검색버튼 -->
+            <div class="search on">
+                <input type="text" id="input-box" class="input-box" />
+                <label for="input-box" class="fa-solid fa-magnifying-glass icon"></label>
+            </div>
+
+            <!-- 모바일 버튼 -->
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <!--------------------------메인영역-------------------------->
+    <!-- 섹션1-태양계 소개 -->
+    <div id="solar-intro">
+        <div class="solar-intro inbox"></div>
+
+    </div>
 
 
-             <!-- 기타 -->
-             <div class="etc">
-              <!-- 검색버튼 -->
-              <div class="search">
-                
-              </div>
-              <!-- 움직이는 행성 이미지 -->
+    <!-- 섹션2-태양계 2d -->
+    <div id="solar-2d">
+      <div class="solar-2d inbox"></div>
 
-              <!-- 모바일 버튼 -->
-             </div>
-
-         </header>
-     </div>
-  </div>
-
-  
+   </div>
 
 
-  <!-- 메인영역 -->
-
-  <!-- 하단영역 -->
-  
-</body>
+    <!--------------------------하단영역-------------------------->
+    <footer class="bottom-area">
+      <div class="bottom-area inbox">
+        <div class="gbox"></div>
+        
+      </div>
+    </footer>
+  </body>
 </html>
