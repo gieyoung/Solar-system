@@ -24,37 +24,53 @@ body *{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(../images/saturn/inner_rings_around_saturn_fading.gif) no-repeat;
+    /* background: url(../images/saturn/inner_rings_around_saturn_fading.gif) no-repeat;
     background-size: contain;
-    background-position: right;
+    background-position: right; */
     background-color: #000;
 }
-/* .saturn1-bg{
+.saturn1-bg{
+    position: absolute;
+    width: 100%;
     height: 100vh;
-    background: url(../images/jupiter/main_bg.jpg) no-repeat right/contain;
-    margin: 0 0 0 auto;
-} */
+    background: linear-gradient(to right, rgb(0, 0, 0) 5%, #ffffff00 50%);
+    /* background-color: #fff; */
+}
+.saturn1 video{
+    position: absolute;
+    right: 0;
+    /* width: 100%; */
+    height: 100vh;
+}
 .saturn1-text{
     color: #fff;
     position: absolute;
+    width: 40%;
+
     bottom: 25vh;
     left: 10%;
 }
 .saturn1-text h1{
-    font-size: min(18vw,12rem);
-    letter-spacing: 3px;
-    font-weight: 600;
+    font-family: 'Pretendard-Regular';
+    /* font-size: max(18vw,12rem); */
+    font-size: 18rem;
+    letter-spacing: 10px;
     text-shadow: 1px 1px 2px #333;
     /* opacity: 0; */
     /* animation: fadein 1.4s ease-in-out 1.3s forwards; */
 }
 .saturn1-text p{
-    width: min(70vw,522px);
+    /* width: min(70vw,522px); */
+    width: 100%;
+
     font-size: min(3vw,1.8rem);
     line-height: 1.3;
     font-weight: 200;
+
     text-indent: 5px;
     text-align: justify;
+
+    border-top: solid #ccc;
 }
 
 /* ---------------------두번째 페이지--------------------- */
@@ -90,12 +106,19 @@ body *{
 .saturn3{
     margin-top: 30px;
 }
+.saturn3-cont{
+    margin: 50px 0;
+}
+
 /* 세번째페이지 - 고리 설명 */
 .saturn3-desc{
     max-width: 1400px;
-    text-align: center;
+    /* text-align: center; */
     margin: 0 auto;
     font-size: 2.5rem;
+}
+.saturn3-desc h3{
+    font-size: 5.5rem;
 }
 .saturn3-desc strong{
     font-size: 4.5rem;
@@ -127,9 +150,7 @@ body *{
     font-size: 6rem;
 }
 .saturn3-text span{
-    position: relative;
-    left: 100%;
-    transform: translateX(-100%);
+
     font-size: 4rem;
     margin: 0;
     cursor: pointer;
@@ -137,6 +158,64 @@ body *{
 .saturn3-text i{
     color: yellow;
 }
+
+/* 보너스 스테이지 */
+.bonus{
+    height: 50vh;
+    /* background: url(../subimg/Mercury02.jpg) no-repeat center/cover; */
+    background-image: url(../images/saturn/inner_rings_around_saturn_fading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ---------------------네번째 페이지--------------------- */
+.saturn4{
+    max-width: 1400px;
+    min-height: auto;
+    margin: 0 auto;
+}
+.saturn4 h2{
+    font-size: 4rem;
+    margin: 100px 0 50px;
+}
+/* 4번째페이지 - 리스트 */
+/* 그리드 */
+.saturn4-cont ul{
+    display: grid;
+    grid-row-gap: 15px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* 플렉스 */
+.saturn4-cont li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.saturn4-cont li img{
+    border-radius: 50%;
+    width: 7vw;
+}
+.saturn4-text{
+    font-size: 1.5rem;
+} 
+
+/* 네번째페이지 - 더 많은 설명 버튼 */
+.saturn-more{
+    display: block;
+    text-align: right;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+.saturn-more:hover i{
+    color: yellow;
+}
+
+
+
 /************* 하단영역 *************/
 /* common.css */
 
