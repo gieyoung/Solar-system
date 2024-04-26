@@ -24,9 +24,6 @@ body *{
     position: relative;
     width: 100%;
     height: 100vh;
-    /* background: url(../images/saturn/inner_rings_around_saturn_fading.gif) no-repeat;
-    background-size: contain;
-    background-position: right; */
     background-color: #000;
 }
 .saturn1-bg{
@@ -70,7 +67,7 @@ body *{
     text-indent: 5px;
     text-align: justify;
 
-    border-top: solid #ccc;
+    border-top: 1px solid #ccc;
 }
 
 /* ---------------------두번째 페이지--------------------- */
@@ -162,12 +159,12 @@ body *{
 /* 보너스 스테이지 */
 .bonus{
     height: 50vh;
-    /* background: url(../subimg/Mercury02.jpg) no-repeat center/cover; */
-    background-image: url(../images/saturn/inner_rings_around_saturn_fading.gif);
+    background: url(../images/saturn/inner_rings_around_saturn_fading.gif) no-repeat fixed center/cover;
+    /* background-image: url(../images/saturn/inner_rings_around_saturn_fading.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 /* ---------------------네번째 페이지--------------------- */
