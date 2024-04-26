@@ -6,6 +6,7 @@
 #pg1, #pg2, #pg3, #pg4, #pg5{
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 /* *****************************임시    *********************************** */
 /* 임시 폰트크기 rem 계산*/
@@ -46,17 +47,31 @@ body * {
     font-size: 3rem;
 }
 
-/* ********************************************************************** */
-.backimg{
-    width: 100vw;
-    height: 100vh;
-    background: url(../images/earth/pg1_earth.webp)no-repeat center/cover;
-    margin: 0 auto;
+
+/* ************************** 공통 ************************************ */
+/* 오버플로우 히든 클래스 */
+.ofhidden{
+    overflow: hidden;  
 }
+body{
+    background-image: url(../images/earth/earth_back.webp)no-repeat center/cover;
+}
+/* 비디오 싸는 박스 */
+.vidbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+
 
 /****************************************************** pg1 *******************************************************************/
 .pg1{
-    
 }
 .pg1 img{
     width: 100%;
@@ -65,30 +80,61 @@ body * {
 }
 .pg1 .tit,.pg1 .txt{
     position: absolute;
-    bottom: 20%;
+    top: 50%;
     left: 5%;
     
     color: white;
-   
+    text-shadow: 2px 2px 2px #222;
+    
 }
 .pg1 .tit{
     white-space: nowrap;
-    bottom: 35%;
+    top: 42%;
+}
+/* .backobj{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+} */
+/* .backobj{
+    width: 100vw;
+    height: 100vh;
+    background: url(../images/earth/pg1_earth.webp)no-repeat center/cover;
+    margin: 0 auto;
+} */
+#pg1 video{
+   
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    
+    
 }
 
 /****************************************************** pg2 *******************************************************************/
 
 .pg2{
-    
-    background-color: #fff27d;
+    color: #fff;
+    /* background-color: #fff27d; */
+    position: relative;
 }
-
-
+#pg2 video{
+   
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+    
+    
+}
 
 /****************************************************** pg3 *******************************************************************/
 
 .pg3{
     background-color: #b0ff8c;
+    
 }
 
 
