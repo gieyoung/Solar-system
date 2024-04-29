@@ -13,6 +13,9 @@ body * {
   width: 100%;
   min-height: 100vh;
 }
+.cont-tit{
+    font-weight: 900;
+}
 /************* 상단영역 *************/
 /* common.css */
 
