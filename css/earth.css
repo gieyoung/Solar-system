@@ -2,7 +2,7 @@
 /*  팀 PJ : 서브페이지 CSS - earth.css */
 
 @import url(./common.css);
-@import url(./core copy.css);
+@import url(./core.css);
 @import url(./reset.css);
 
 
@@ -13,54 +13,23 @@
     position: relative;
 }
 /* *****************************임시    *********************************** */
-/* 임시 폰트크기 rem 계산*/
-html {
-    font-size: 10px;
-  }
+
 
 /* 임시 아웃라인 */
 body * {
     outline: 2px dashed red;
 
 }
-/* 임시 타이틀 */
-.temp-tit{
-    position: absolute;
-    font-size: 2vw;
-    color: #ff0000;
-    z-index: 999;
-
-}
-/* 임시 인박스 */
-.inbox{
-    width: 1400px;
-    height: 100%;
-    margin: 0 auto;
-    
-}
-/* 임시 desc */
-.desc{
-    font-size: 1.4rem;
-}
-/* 임시 tit */
-.tit{
-    font-family: 'Ykar';
-    font-size: 15rem;
-}
-/* 임시 txt */
-.txt{
-    font-size: 3rem;
-}
 
 
-/* ************************** 공통 ************************************ */
+
+
+/* ************************** earth 공통 ************************************ */
 /* 오버플로우 히든 클래스 */
 .ofhidden{
     overflow: hidden;  
 }
-body{
-    /* background-image: url(../images/earth/earth_back.webp)no-repeat center/cover; */
-}
+
 /* 비디오 싸는 박스 */
 .vidbox{
     position: absolute;
@@ -134,12 +103,12 @@ body{
 
 /************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
 
-.pg {
+.e_pg {
     height: 100vh;
     outline: 1px solid blue;
 }
 /* 타겟박스 */
-.tpg {
+.e_tpg {
     height: calc(100vh + 5000px);
     /* 타겟 박스는 보이는 화면 맨윗줄부터
      시작해서 아래로 마지막 박스 끝라인까지
@@ -148,7 +117,7 @@ body{
     outline: 2px dashed blue;
 }
 /* 가로이동박스 */
-.slidePg {
+.e_slidePg {
     position: sticky;
     top: 0;
     left: 0;
@@ -157,7 +126,7 @@ body{
     /* background-color: orange; */
 }
 /* 실제로 가로이동할 ul박스 */
-.slidePg ul {
+.e_slidePg ul {
     position: relative;
     left: 0;
     display: flex;
@@ -172,12 +141,12 @@ body{
     list-style: none;
     transition: 0.4s ease-out;
 }
-.slidePg ul li {
+.e_slidePg ul li {
     flex: 1;
     text-align: center;
 }
 
-.slidePg ul li img {
+.e_slidePg ul li img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);

@@ -92,6 +92,7 @@ body>*{
   position: absolute;
   font-size: 2vw;
   color: #888;
+  z-index: 999;
 }
 
 /* 공통클래스: 클리어 설정 */
