@@ -1,5 +1,8 @@
 // 메인화면 JS - main.js
 
+// 공통처리함수 불러오기 : 가장먼저 처리한다!
+import setElement from "./common.js";
+setElement(); // 함수호출!!!
 import mFn from "./my_function.js";
 
 /************************************************
@@ -10,11 +13,11 @@ import mFn from "./my_function.js";
 
 // 1. 대상선정
 // 각각의 이미지 배너
-const banners = mFn.qsa(".section03 .banner");
+const banners = mFn.qsa(".section .banner");
 // 어두운 배경
-const bannerDim = mFn.qs(".section03 .banner-wrapper .banner_dim");
+const bannerDim = mFn.qs(".section .banner-wrapper .banner_dim");
 // 배너 감싼 랩
-const banWrap = mFn.qs(".section03 .banner-wrapper");
+const banWrap = mFn.qs(".section .banner-wrapper");
 
 
 // 2. 함수실행

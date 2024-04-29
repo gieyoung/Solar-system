@@ -311,3 +311,18 @@ h1.logo {
   text-align: center;
   margin-top: 30px;
 }
+
+
+
+/* 탑버튼 */
+.top-btn.on {
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 72px;
+  background: url(../images/common/btn_top_pc.svg) no-repeat center/cover;
+  z-index: 999;
+  transition: 3s ease-in-out;
+}

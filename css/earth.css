@@ -4,7 +4,7 @@
 
 /* 각 페이지 페이지 크기 설정 */
 #pg1, #pg2, #pg3, #pg4, #pg5{
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     position: relative;
 }
@@ -54,7 +54,7 @@ body * {
     overflow: hidden;  
 }
 body{
-    background-image: url(../images/earth/earth_back.webp)no-repeat center/cover;
+    /* background-image: url(../images/earth/earth_back.webp)no-repeat center/cover; */
 }
 /* 비디오 싸는 박스 */
 .vidbox{
@@ -72,12 +72,9 @@ body{
 
 /****************************************************** pg1 *******************************************************************/
 .pg1{
+    position: relative;
 }
-.pg1 img{
-    width: 100%;
-    height: 100%;
 
-}
 .pg1 .tit,.pg1 .txt{
     position: absolute;
     top: 50%;
@@ -110,6 +107,7 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
     
     
 }

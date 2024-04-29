@@ -2,6 +2,8 @@
 
 import mFn from './my_function.js';
 
+
+export default function moveSollar() {
 // 초기셋팅하기
 // 대상: .gbox
 const gbox = mFn.qs(".gbox");
@@ -120,4 +122,5 @@ mFn.addEvt(gbox,"mouseleave",()=>{
 
 setTimeout(moveGallery,0);
 
-
+} ///////////// moveSolar 함수 ///////////////
+////////////////////////////////////////////
