@@ -103,12 +103,12 @@ body * {
 
 /************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
 
-.e_pg {
+.epg {
     height: 100vh;
     outline: 1px solid blue;
 }
 /* 타겟박스 */
-.e_tpg {
+.etpg {
     height: calc(100vh + 5000px);
     /* 타겟 박스는 보이는 화면 맨윗줄부터
      시작해서 아래로 마지막 박스 끝라인까지
@@ -117,7 +117,7 @@ body * {
     outline: 2px dashed blue;
 }
 /* 가로이동박스 */
-.e_slidePg {
+.eslidePg {
     position: sticky;
     top: 0;
     left: 0;
@@ -126,7 +126,7 @@ body * {
     /* background-color: orange; */
 }
 /* 실제로 가로이동할 ul박스 */
-.e_slidePg ul {
+.eslidePg ul {
     position: relative;
     left: 0;
     display: flex;
@@ -141,12 +141,12 @@ body * {
     list-style: none;
     transition: 0.4s ease-out;
 }
-.e_slidePg ul li {
+.eslidePg ul li {
     flex: 1;
     text-align: center;
 }
 
-.e_slidePg ul li img {
+.eslidePg ul li img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);

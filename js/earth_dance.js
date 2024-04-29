@@ -13,16 +13,16 @@ export default function earthDance(){
     //1. 3번 스테이지에 ul>li구조 이미지 넣기
     
     // 대상: .slidepg (스티키박스)
-    const slidePg = mFn.qs('.slidePg');
+    const slidePg = mFn.qs('eslidePg');
     
     //[2] 3번째 영역에 도달한 경우 ul박스 가로방향 이동하기///////////////
     //1. 대상선정하기///////
     // 이벤트 대상: window
     // 이벤트 종류: scroll
     // 위치기준대상: .tpg-> 스티키를 싸고 있는 부모박스
-    const etpg = mFn.qs('.e_tpg');
+    const etpg = mFn.qs('.etpg');
     //움질일 대상: .slidePg>ul
-    const target= mFn.qs('.slidePg>ul');
+    const target= mFn.qs('eslidePg>ul');
     // console.log(tpg,target);
     
     //2. 이벤트설정하기///////////
@@ -32,7 +32,7 @@ export default function earthDance(){
     //(1) 슬라이드 이동함수////////////////////////
     function moveSlide(){
         //1. 스티키 부모박스 바운딩top값
-        let bTop=mFn.getBCR(e_tpg);
+        let bTop=mFn.getBCR(etpg);
         console.log('바운딩top',bTop);
         
         //2. 이동할 타겟박스 left값으로 
