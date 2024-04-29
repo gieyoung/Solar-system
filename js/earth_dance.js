@@ -5,8 +5,6 @@
 
 import mFn from './my_function.js';
 
-
-
 export default function earthDance(){
 
     //[1] 태그 셋팅하기/////////////////////////////////////////////
@@ -21,8 +19,9 @@ export default function earthDance(){
     // 이벤트 종류: scroll
     // 위치기준대상: .tpg-> 스티키를 싸고 있는 부모박스
     const etpg = mFn.qs('.etpg');
+    
     //움질일 대상: .slidePg>ul
-    const target= mFn.qs('eslidePg>ul');
+    const target= mFn.qs('.eslidePg>ul');
     // console.log(tpg,target);
     
     //2. 이벤트설정하기///////////
@@ -33,7 +32,7 @@ export default function earthDance(){
     function moveSlide(){
         //1. 스티키 부모박스 바운딩top값
         let bTop=mFn.getBCR(etpg);
-        console.log('바운딩top',bTop);
+        // console.log('바운딩top',bTop);
         
         //2. 이동할 타겟박스 left값으로 
         // 부모 바운딩 top 값 넣기

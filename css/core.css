@@ -79,7 +79,7 @@
 /* 메인 설명 */
 .main-txt{
   font-family: 'Pretendard-Regular';
-
+  color: #fff;
   width: 100%;
 
   font-size: min(3vw,1.8rem);
@@ -94,7 +94,7 @@
 /* 서브 내용 */
 .sub-txt{
   font-family: 'Pretendard-Regular';
-
+  color: #fff;
   font-size: max(1vw, 14px);
   text-align: justify;
   font-weight: normal;
