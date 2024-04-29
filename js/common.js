@@ -12,6 +12,11 @@ import gnbData from "../data/gnb_data.js";
 // 왼쪽으로 흘러가는 태양계 재귀함수 불러오기
 import moveSollar from "./call_myself.js";
 
+    /****************************************************
+     [ 상단/하단 공통 함수 ]
+******************************************************/
+setElement(); // 함수호출!!!
+
 export default function setElement() {
   // 1.대상선정: #header-area, #footer-area
   const headerArea = mFn.qs("#header-area");
@@ -22,6 +27,8 @@ export default function setElement() {
   footerArea.innerHTML = comData.footerArea;
 
 
+
+  
     /****************************************************
      [ GNB메뉴 ]
 ******************************************************/

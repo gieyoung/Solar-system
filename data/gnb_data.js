@@ -2,11 +2,11 @@
 
 export default {
   메뉴: [
-    "Sun",
-    "Earth",
-    "Moon",
-    "Saturn",
-    "Jupiter",
+    "sun",
+    "earth",
+    "moon",
+    "saturn",
+    "jupiter",
   ],
  
 };
