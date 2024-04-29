@@ -14,12 +14,11 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/core.css" />
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/solar2d.css" />
-     <!-- <link rel="stylesheet" href="./css/media.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/media.css" /> -->
 
     <!--  개별 CSS연결 -->
     <link rel="stylesheet" href="./css/main.css" />
-   
+
     <!-- 공통 JS연결 -->
     <script type="module" src="./js/common.js"></script>
     <script type="module" src="./js/call_myself.js"></script>
@@ -29,8 +28,8 @@
   <body>
     <div id="wrap">
       <!--------------------------상단영역-------------------------->
-      <div id="top-area">
-        <header class="top-area inbox">
+      <div id="header-area">
+        <header class="header-area inbox">
           <!-- 로고 -->
           <h1 class="logo">
             <a href="/index.html" alt="나사 로고"
@@ -53,7 +52,7 @@
           <!-- 기타 -->
           <div class="etc">
             <!-- 검색버튼 -->
-            <div class="search on">
+            <div class="search">
               <input type="text" id="input-box" class="input-box" />
               <label for="input-box" class="fa-solid fa-magnifying-glass icon"></label>
             </div>
@@ -65,101 +64,60 @@
     </div>
 
     <!--------------------------메인영역-------------------------->
-   
-    <!-- 섹션2-태양계 2d -->
-    <div id="solar-2d">
-      <div class="solar-2d inbox">
-        <div id="solar">
-          <!-- 태양 -->
-          <div class="sun">
-              <img src="../images/common/solar2d/sun.png" alt="태양">
+
+    <!-- 섹션1-태양계 소개 -->
+    <div id="main-area">
+      <div class="main-area inbox">
+        <section class="section03 panel">
+          <div class="banner-wrapper">
+            <div class="banner sun enable">
+              <a href="./sun.html" class="more">
+                <p class="title">SUN</p>
+                <span class="content">태양계의 중심에 존재하는 항성</span>
+                <div class="mobile_banner_dim"></div>
+              </a>
+            </div>
+            <div class="banner earth enable">
+              <a href="./earth.html" class="more">
+                <p class="title">Earth</p>
+                <span class="content">생명체가 탄생하고 서식하는 유일한 천체</span>
+                <div class="mobile_banner_dim"></div>
+              </a>
+            </div>
+            <div class="banner moon enable">
+              <a href="./moon.html" class="more">
+                <p class="title">Moon</p>
+                <span class="content">지구의 위성이자 태양계의 가장 안쪽에 있는 위성</span>
+                <div class="mobile_banner_dim"></div>
+              </a>
+            </div>
+            <div class="banner saturn enable">
+              <a href="./saturn.html" class="more">
+                <p class="title">Saturn</p>
+                <span class="content">태양계의 여섯 번째 행성으로 두번째로 큰 크기</span>
+                <div class="mobile_banner_dim"></div>
+              </a>
+            </div>
+            <div class="banner jupiter enable">
+              <a href="./jupiter.html" class="more">
+                <p class="title">Jupiter</p>
+                <span class="content"> 태양계의 다섯번째 행성으로 가장 큰 부피</span>
+                <div class="mobile_banner_dim"></div>
+              </a>
+            </div>
+
+            <div class="banner_dim" style="visibility: hidden"></div>
           </div>
-          <!-- 지구+달 랩핑박스 -->
-          <div class="earth-wrap planet">            
-              <!-- 달 -->
-              <div class="moon" class="planet">
-                  <span class="ir">달</span>
-                  <!-- 달정보 -->
-                  <div class="info">
-                      <h2>달 (Moon)</h2>
-                      <p>
-                          달은 지구의 유일한 영구적 자연위성이고, 태양계의 위성 중 5번째로 크다. 행성의 크기와 비교하여, 자연위성 중 가장 크다. 지구 중심으로부터 달 중심까지의 거리는 평균 38만 4400 km로, 지구가 30개가 들어가는 거리이며, 지구에서 태양까지 거리의 1/389 보다 작다.
-  
-                      </p>
-                  </div>
-              </div>
-              <!-- 지구 -->
-              <div class="earth">
-                  <span class="ir">지구</span>
-                  <!-- 지구정보 -->
-                  <div class="info">
-                      <h2>지구 (Earth)</h2>
-                      <p>
-                          지구는 태양으로부터 세 번째 행성이며, 조금 두꺼운 대기층으로 둘러싸여 있고, 지금까지 발견된 지구형 행성 가운데 가장 크다.
-                      </p>
-                  </div>
-              </div>
-              
+          <div class="section_info_wrapper">
+            <a class="more-btn" href="./sun.html" target="_blank"> MORE </a>
           </div>
-          <!-- 목성 -->
-          <div class="jupiter" class="planet">
-              <span class="ir">목성</span>
-              <!-- 목성정보 -->
-              <div class="info">
-                  <h2>목성 (Jupiter)</h2>
-                  <p>
-                      목성은 태양계의 다섯번째 행성이자 가장 큰 행성이다. 태양 질량의 1,000분의 1배에 달하는 거대행성으로, 태양계에 있는 다른 모든 행성들을 합한 질량의 약 2.5배에 이른다. 
-                  </p>
-              </div>
-          </div>
-          <!-- 토성 -->
-          <div class="saturn" class="planet">
-              <span class="ir">토성</span>
-              <!-- 토성정보 -->
-              <div class="info">
-                  <h2>토성 (Saturnus)</h2>
-                  <p>
-                      토성은 태양으로부터 여섯 번째에 있는 태양계의 행성이다. 토성은 태양계 내의 행성 중 목성에 이어 두 번째로 크며, 지름은 약 12만 km로, 지구의 9.1배이며 부피는 760배에 달한다.
-                  </p>
-              </div>
-          </div>
-          <!-- 명왕성 -->
-          <div class="pluto" class="planet">
-              <span class="ir">명왕성</span>
-              <!-- 명왕성정보 -->
-              <div class="info">
-                  <h2>명왕성 (Pluto)</h2>
-                  <p>
-                      명왕성은 태양계의 왜행성 중 하나로, 최초로 발견된 카이퍼 벨트 천체이다. 현재까지 크기가 확인된 해왕성 바깥 태양계 천체 가운데에서 가장 큰 천체이다.
-                  </p>
-              </div>
-          </div>
-  
-          <!-- 행성경로 -->
-          <div class="path-way">
-              <div class="earth"></div>
-              <div class="jupiter"></div>
-              <div class="saturn"></div>
-              <div class="pluto"></div>
-          </div>
+        </section>
       </div>
-
-      
-
-
-
-      </div>
-    
     </div>
 
-       <!-- 섹션1-태양계 소개 -->
-       <div id="solar-intro">
-        <div class="solar-intro inbox"></div>
-      </div>
-
     <!--------------------------하단영역-------------------------->
-    <div id="bottom-area">
-      <footer class="bottom-area">
+    <div id="footer-area">
+      <footer class="footer-area">
         <!-- 옆으로 움직이는 태양계 -->
         <div class="move-gallery">
           <h3>Solar System</h3>
@@ -167,34 +125,36 @@
         </div>
 
         <div class="inbox">
+          <!-- 돌아가는 3d 궤도 애니메이션 -->
+          <div class="spinner-box">
+            <div class="blue-orbit leo"></div>
+            <div class="green-orbit leo"></div>
+            <div class="red-orbit leo"></div>
+            <div class="white-orbit w1 leo"></div>
+            <div class="white-orbit w2 leo"></div>
+            <div class="white-orbit w3 leo"></div>
+          </div>
 
-        <!-- 돌아가는 3d 궤도 애니메이션 -->
-        <div class="spinner-box">
-          <div class="blue-orbit leo"></div>
-          <div class="green-orbit leo"></div>
-          <div class="red-orbit leo"></div>
-          <div class="white-orbit w1 leo"></div>
-          <div class="white-orbit w2 leo"></div>
-          <div class="white-orbit w3 leo"></div>
+          <!-- sns공유하기 -->
+          <ul class="sns">
+            <li>
+              <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+          </ul>
+          <!-- 저작권 표시 -->
+          <div class="copy-right">
+            <p>
+              This site is maintained by the Planetary Science Communications team at<br />
+              NASA’s Jet Propulsion Laboratory for NASA’s Science Mission Directorate.
+            </p>
+          </div>
         </div>
-
-        <!-- sns공유하기 -->
-        <ul class="sns">
-          <li>
-            <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-square-twitter"></i></a>
-          </li>
-        </ul>
-        <!-- 저작권 표시 -->
-        <div class="copy-right">
-          <p>This site is maintained by the Planetary Science Communications team at<br> NASA’s Jet Propulsion Laboratory for NASA’s Science Mission Directorate.</p>
-        </div>
-      </div>
       </footer>
     </div>
   </body>

@@ -6,23 +6,15 @@
 
 /*********************** 메인영역 ***********************/
 /* 섹션1-태양계 소개 */
-#solar-intro{
+#main-area{
   width: 100%;
-  height: 500px;
+  /* height: 500px; */
   background: green;
 }
 
 
-#solar-2d{
-  width: 100%;
-  height:1000px;
-  padding-top: 100px;
-  background: url(../images/common/solar2d/space.jpg) no-repeat center/cover;
-
-}
-
-#solar-2d .inbox{
-  max-width: 1400px;
+#main-area .inbox{
+  max-width:100%;
   height: 100%;
   outline: 1px solid red;
   position: relative;
@@ -30,7 +22,218 @@
   overflow: hidden;
 }
 
-/* 섹션2-태양계 2d */
+.section03 {
+  display: flex;
+  flex-direction: column;
+  /* bottom: 0; */
+  /* position: absolute; */
+  /* transform: translateY(100%); */
+  background-color: black;
+}
+
+/* ìŠ¤í¬ë¡¤ ì´ë™ translateY */
+/* .section03 {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  position: absolute;
+  transform: translateY(100%);
+  background-color: black;
+  z-index: 1111111111111;
+} */
+.section03 .banner-wrapper {
+  display: flex;
+  /* flex-basis: 100vh; */
+  flex-basis: calc(100vh - 167px);
+  position: relative;
+}
+.section03 .banner-wrapper .banner_dim {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  z-index: 0;
+}
+.section03 .banner-wrapper .banner .mobile_banner_dim {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  z-index: 0;
+}
+.translate_upper {
+  transform: translateY(-180px) !important;
+  transition: 0.6s;
+}
+.translate_lower {
+  transform: translateY(180px) !important;
+  transition: 0.6s;
+}
+.section03 .banner-wrapper .banner {
+  display: flex;
+  flex: 1;
+  flex-basis: 25%;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: "Poppins"; */
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.section03 .banner-wrapper .banner .title {
+  font-size: 34px;
+  font-family: "Poppins";
+  font-weight: bold;
+  line-height: 0.8;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+.section03 .banner-wrapper .banner .title .small {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.85;
+}
+
+.section03 .banner-wrapper .banner .content {
+  font-size: 24px;
+  line-height: 1.375;
+  font-family: "Pretendard";
+  color: rgb(255, 255, 255);
+  display: none;
+}
+.section03 .banner-wrapper .more {
+  color: #ffffff;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+   
+}
+
+/* 태양배너 */
+.section03 .banner-wrapper .sun {
+  background: url("/images/main/sun.jpg") no-repeat right/cover;
+}
+
+/* 지구배너 */
+.section03 .banner-wrapper .earth {
+  background: url("/images/main/space_exploration_banner.png") no-repeat center;
+  background-size: cover;
+}
+
+/* 달배너 */
+.section03 .banner-wrapper .moon {
+  background: url("/images/main/cosmo_station.png") no-repeat center;
+  background-size: cover;
+}
+
+/* 토성배너 */
+.section03 .banner-wrapper .saturn {
+  background: url("/images/main/PIA01341~large.jpg") no-repeat center;
+  background-size: cover;
+}
+/* 목성 배너 */
+.section03 .banner-wrapper .jupiter {
+  background: url("/images/main/jupiter_bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.section03 .section_info_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 44px 55px;
+}
+.section03 .section_info_wrapper .section_description {
+  font-size: 18px;
+  font-family: "Pretendard";
+  color: rgb(204, 204, 204);
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.section03 .section_info_wrapper .more-btn {
+  cursor: pointer;
+  /* background-color: rgb(126, 76, 203); */
+  border: 1px solid white;
+  width: 260px;
+  font-size: 20px;
+  font-family: "Poppins";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.65;
+  text-align: center;
+  align-self: center;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 마우스오버시 */
+
+.section03 .banner-wrapper .banner.active.enable {
+  flex: 3;
+  flex-basis: 100%;
+}
+.section03 .banner-wrapper .banner.active.enable .content {
+  display: block;
+  z-index: 1;
+}
+.section03 .banner-wrapper .banner.active.enable .view_more {
+  display: block;
+  z-index: 1;
+}
+.section03 .banner-wrapper .banner.inactive.enable {
+  flex-basis: 0 !important;
+  flex: 0;
+}
+.section03 .banner-wrapper .banner.inactive.enable .title {
+  display: none !important;
+}
+.section03 .banner-wrapper .banner.inactive.enable .content {
+  display: none !important;
+}
+.section03 .banner-wrapper .banner.inactive.enable .view_more {
+  display: none !important;
+}
+.section03 .banner-wrapper .banner.active.enable .title {
+  font-size: 100px;
+  text-align: center;
+  transition: 0.4s;
+  z-index: 1;
+}
+.section03 .banner-wrapper .banner.active.enable .title .small {
+  font-size: 30px;
+  text-align: center;
+  transition: 0.4s;
+  font-weight: normal;
+}
+
+.section03 .section_info_wrapper .ticket_btn:hover {
+  background-color: white;
+  color: black;
+}
+.section03 .section_info_wrapper .ticket_btn:hover .ticket_hover {
+  display: block;
+}
+.section03 .section_info_wrapper .ticket_btn:hover .ticket {
+  display: none;
+}
+
+
+
 
 /**************** 하단영역  ****************/
 /* common.css */
