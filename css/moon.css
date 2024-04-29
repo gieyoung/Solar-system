@@ -30,9 +30,9 @@ video{
     top: 450px;
     left: 100px;
     color: #fff;
-    font-size: 15rem;
-    font-family: 'Ykar';
-    text-shadow: 1px 1px 2px #2d2239d7;
+    /* font-size: 15rem; */
+    /* font-family: 'Ykar'; */
+    /* text-shadow: 1px 1px 2px #2d2239d7; */
 }
 
 .main-desc{
