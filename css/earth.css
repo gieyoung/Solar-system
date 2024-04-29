@@ -76,17 +76,15 @@ body{
 }
 
 .pg1 .tit,.pg1 .txt{
-    position: absolute;
-    top: 50%;
-    left: 5%;
     
+    padding-left: 20vw;
     color: white;
     text-shadow: 2px 2px 2px #222;
     
 }
 .pg1 .tit{
     white-space: nowrap;
-    top: 42%;
+    padding-top: 50vh;
 }
 /* .backobj{
     position: relative;
@@ -127,6 +125,63 @@ body{
     
     
 }
+
+
+/************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
+
+.pg {
+    height: 100vh;
+    outline: 1px solid blue;
+}
+/* 타겟박스 */
+.tpg {
+    height: calc(100vh + 3000px);
+    /* 타겟 박스는 보이는 화면 맨윗줄부터
+     시작해서 아래로 마지막 박스 끝라인까지
+    총 이동거리는 3000px이다!!! */
+    /* background-color: lightblue; */
+    outline: 2px dashed blue;
+}
+/* 가로이동박스 */
+.slidePg {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    /* background-color: orange; */
+}
+/* 실제로 가로이동할 ul박스 */
+.slidePg ul {
+    position: relative;
+    left: 0;
+    display: flex;
+    width: calc(100vw + 3000px);
+    /* 가로크기는 타겟박스가 이동하는크기인
+    3000px에 맞도록 100vw에 더하여 잡아준다!
+    이유는 JS의 getBoundingClientRect().top
+    값의 수치와 정확히 일치 시키기 위함! */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: 0.4s ease-out;
+}
+.slidePg ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.slidePg ul li img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    border-radius: 20px;
+}
+
+
+
 
 /****************************************************** pg3 *******************************************************************/
 
