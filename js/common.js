@@ -12,6 +12,11 @@ import gnbData from "../data/gnb_data.js";
 // 왼쪽으로 흘러가는 태양계 재귀함수 불러오기
 import moveSollar from "./call_myself.js";
 
+// earth-pg2가로로 드래그 넘어가는거 earth_dance.js 불러오기
+import earthDance from "./earth_dance.js";
+earthDance();
+
+
     /****************************************************
      [ 상단/하단 공통 함수 ]
 ******************************************************/
