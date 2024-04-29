@@ -1,6 +1,10 @@
 @charset "utf-8";
 /*  팀 PJ : 서브페이지 CSS - earth.css */
 
+@import url(./common.css);
+@import url(./core copy.css);
+@import url(./reset.css);
+
 
 /* 각 페이지 페이지 크기 설정 */
 #pg1, #pg2, #pg3, #pg4, #pg5{
@@ -40,7 +44,8 @@ body * {
 }
 /* 임시 tit */
 .tit{
-    font-size: 5rem;
+    font-family: 'Ykar';
+    font-size: 15rem;
 }
 /* 임시 txt */
 .txt{
