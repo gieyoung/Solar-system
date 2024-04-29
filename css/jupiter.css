@@ -5,9 +5,21 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
 /************* 공통구역 *************/
 body * {
   /* outline: 2px dashed red; */
+}
+body > * {
+  overflow-x: hidden;
+  cursor: default;
 }
 .jupiter {
   width: 100%;
@@ -189,6 +201,9 @@ body * {
 .jupiter-more a:hover i {
   color: yellow;
 }
+.jupiter-more a:hover span {
+  font-family: 'Freesentation-9Black';
+}
 /* ---------------------다섯번째 페이지--------------------- */
 .jupiter5 {
   max-width: 1400px;
@@ -258,6 +273,9 @@ body * {
   }
   .M-text h4{
     font-size: 3.5rem;
+  }
+  .jupiter3-cont iframe {
+    border-radius: 0;
   }
 }
 @media screen and (max-width:930px) {
