@@ -20,7 +20,7 @@ export default function earthDance(){
     // 이벤트 대상: window
     // 이벤트 종류: scroll
     // 위치기준대상: .tpg-> 스티키를 싸고 있는 부모박스
-    const tpg = mFn.qs('.tpg');
+    const etpg = mFn.qs('.e_tpg');
     //움질일 대상: .slidePg>ul
     const target= mFn.qs('.slidePg>ul');
     // console.log(tpg,target);
@@ -32,7 +32,7 @@ export default function earthDance(){
     //(1) 슬라이드 이동함수////////////////////////
     function moveSlide(){
         //1. 스티키 부모박스 바운딩top값
-        let bTop=mFn.getBCR(tpg);
+        let bTop=mFn.getBCR(e_tpg);
         console.log('바운딩top',bTop);
         
         //2. 이동할 타겟박스 left값으로 
