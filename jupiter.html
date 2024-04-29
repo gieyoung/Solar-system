@@ -28,9 +28,9 @@
         ></video>
         <div class="jupiter1-bg"></div>
 
-        <div class="jupiter1-text">
-          <h1>JUPITER</h1>
-          <p>
+        <div class="jupiter1-text main-text">
+          <h1 class="main-tit">JUPITER</h1>
+          <p class="main-txt">
             Jupiter's signature stripes and swirls are actually cold, windy
             clouds of ammonia and water, floating in an atmosphere of hydrogen
             and helium. The dark orange stripes are called belts, while the
@@ -45,13 +45,13 @@
       <!-- 두번째페이지 : 설명 -->
       <section class="jupiter jupiter2">
         <!-- 2-1.설명 첫번째 -->
-        <div class="desc desc1">
+        <div class="desc desc1 sub-txt">
           <div class="desc1-img">
-            <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
+            <img src="./images/jupiter/main_bg2.jpg" alt="목성사진" />
           </div>
           <div class="desc1-text">
-            <h3>
-              <strong>Potential for Life</strong>
+            <p>
+              <strong class="cont-tit">Potential for Life</strong>
               <br /><br />
               Jupiter’s environment is probably not conducive to life as we know
               it. The temperatures, pressures, and materials that characterize
@@ -63,17 +63,17 @@
               is one of the likeliest places to find life elsewhere in our solar
               system. There is evidence of a vast ocean just beneath its icy
               crust, where life could possibly be supported.
-            </h3>
+            </p>
           </div>
         </div>
         <!-- 2-2.설명 두번째 -->
-        <div class="desc desc2">
+        <div class="desc desc2 sub-txt">
           <div class="desc2-img">
-            <img src="./images/jupiter/main_bg2.jpg" alt="목성사진" />
+            <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
           </div>
           <div class="desc2-text">
-            <h3>
-              <strong>Size and Distance</strong>
+            <p>
+              <strong class="cont-tit">Size and Distance</strong>
               <br /><br />
               With a radius of 43,440.7 miles (69,911 kilometers), Jupiter is 11
               times wider than Earth. If Earth were the size of a grape, Jupiter
@@ -84,7 +84,7 @@
               One astronomical unit (abbreviated as AU), is the distance from
               the Sun to Earth. From this distance, it takes sunlight 43 minutes
               to travel from the Sun to Jupiter.
-            </h3>
+            </p>
           </div>
         </div>
       </section>
@@ -92,8 +92,8 @@
       <!-- 세번째페이지 : 3D -->
       <section class="jupiter jupiter3">
         <div class="jupiter3-cont">
-          <div class="jupiter3-text">
-            <h3>Surface</h3>
+          <div class="jupiter3-text sub-txt">
+            <h3 class="cont-tit">Surface</h3>
             <p>
               As a gas giant, Jupiter doesn’t have a true surface. The planet is
               mostly swirling gases and liquids. While a spacecraft would have
@@ -114,76 +114,100 @@
 
       <!-- 네번째페이지 : 위성 4가지 -->
       <section class="jupiter jupiter4">
-        <h2>Moons of Jupiter</h2>
+        <div class="jupit5-head sub-tit">
+          <h2>Moons of Jupiter</h2>
+        </div>
         <div class="moon-cont">
           <!-- 4-1. 첫번째 위성 : Ganymede -->
           <div class="moon1 moon">
-            <div class="moon-txt">Ganymede</div>
-            <div class="moon-img">
-              <img
-                src="./images/jupiter/Ganymede.jpg"
-                alt="목성위성 가니메데 사진"
-              />
-            </div>
-            <div class="moon1-text M-text">
-              <h4>Ganymede</h4>
-              <p>
-                Ganymede is Jupiter's largest moon, and the largest moon in our
-                solar system. It's even bigger than Mercury, and Pluto.
-              </p>
-            </div>
+            <a
+              href="https://science.nasa.gov/jupiter/moons/ganymede/"
+              target="_blank"
+            >
+              <div class="moon-txt cont-tit">Ganymede</div>
+              <div class="moon-img">
+                <img
+                  src="./images/jupiter/Ganymede.jpg"
+                  alt="목성위성 가니메데 사진"
+                />
+              </div>
+              <div class="moon1-text M-text">
+                <h4 class="cont-tit">Ganymede</h4>
+                <p class="sub-txt">
+                  Ganymede is Jupiter's largest moon, and the largest moon in
+                  our solar system. It's even bigger than Mercury, and Pluto.
+                </p>
+              </div>
+            </a>
           </div>
           <!-- 4-2. 두번째 위성 : Callisto -->
           <div class="moon2 moon">
-            <div class="moon-txt">Callisto</div>
-            <div class="moon-img">
-              <img
-                src="./images/jupiter/Callisto.jpg"
-                alt="목성위성 칼리스토 사진"
-              />
-            </div>
-            <div class="moon2-text M-text">
-              <h4>Callisto</h4>
-              <p>
-                Callisto is Jupiter’s second largest moon and the third largest
-                moon in our solar system.
-              </p>
-            </div>
+            <a
+              href="https://science.nasa.gov/jupiter/moons/callisto/"
+              target="_blank"
+            >
+              <div class="moon-txt cont-tit">Callisto</div>
+              <div class="moon-img">
+                <img
+                  src="./images/jupiter/Callisto.jpg"
+                  alt="목성위성 칼리스토 사진"
+                />
+              </div>
+              <div class="moon2-text M-text">
+                <h4 class="cont-tit">Callisto</h4>
+                <p class="sub-txt">
+                  Callisto is Jupiter’s second largest moon and the third
+                  largest moon in our solar system.
+                </p>
+              </div>
+            </a>
           </div>
           <!-- 4-3. 세번째 위성 : Io -->
           <div class="moon3 moon">
-            <div class="moon-txt">Io</div>
-            <div class="moon-img">
-              <img src="./images/jupiter/Io.jpg" alt="목성위성 이오 사진" />
-            </div>
-            <div class="moon3-text M-text">
-              <h4>Io</h4>
-              <p>
-                Io is Jupiter's third largest moon, and the most volcanically
-                active world in our solar system.
-              </p>
-            </div>
+            <a
+              href="https://science.nasa.gov/jupiter/moons/io/"
+              target="_blank"
+            >
+              <div class="moon-txt cont-tit">Io</div>
+              <div class="moon-img">
+                <img src="./images/jupiter/Io.jpg" alt="목성위성 이오 사진" />
+              </div>
+              <div class="moon3-text M-text">
+                <h4 class="cont-tit">Io</h4>
+                <p class="sub-txt">
+                  Io is Jupiter's third largest moon, and the most volcanically
+                  active world in our solar system.
+                </p>
+              </div>
+            </a>
           </div>
           <!-- 4-2. 네번째 위성 : Europa -->
           <div class="moon4 moon">
-            <div class="moon-txt">Europa</div>
-            <div class="moon-img">
-              <img
-                src="./images/jupiter/Europa.jpg"
-                alt="목성위성 유로파 사진"
-              />
-            </div>
-            <div class="moon4-text M-text">
-              <h4>Europa</h4>
-              <p>
-                Europa is Jupiter's fourth largest moon. It's about 90% the size
-                of Earth’s Moon.
-              </p>
-            </div>
+            <a
+              href="https://science.nasa.gov/jupiter/moons/io/"
+              target="_blank"
+            >
+              <div class="moon-txt cont-tit">Europa</div>
+              <div class="moon-img">
+                <img
+                  src="./images/jupiter/Europa.jpg"
+                  alt="목성위성 유로파 사진"
+                />
+              </div>
+              <div class="moon4-text M-text">
+                <h4 class="cont-tit">Europa</h4>
+                <p class="sub-txt">
+                  Europa is Jupiter's fourth largest moon. It's about 90% the
+                  size of Earth’s Moon.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="jupiter-more">
-          <a href="#"
+        <div class="jupiter-more cont-tit">
+          <a
+            href="https://science.nasa.gov/jupiter/moons/all-jupiter-moons/"
+            target="_blank"
             >MORE
             <i class="fa-solid fa-circle-right"></i>
           </a>
@@ -192,13 +216,13 @@
       <!-- 다번째페이지 :  목성에 관한 9가지-->
       <section class="jupiter jupiter5">
         <div class="jupit5-cont">
-          <div class="jupit5-head">
+          <div class="sub-tit">
             <h2>ALL ABOUT JUPITER</h2>
           </div>
           <div class="jupit5-gbox">
             <div class="jupit5-box">
               <div class="circle-num">1</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>The Biggest</h3>
                 <p>
                   For scale, Jupiter's Great Red Spot is about the size of
@@ -208,7 +232,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">2</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Fifth From the Sun</h3>
                 <p>
                   Jupiter's distance from the Sun is 5.2 times the Earth-Sun
@@ -218,7 +242,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">3</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Short and Long</h3>
                 <p>
                   Jupiter's day lasts only 10 Earth hours; its year is 12 Earth
@@ -228,7 +252,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">4</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Nowhere to Land</h3>
                 <p>
                   As a gas giant, Jupiter has no solid surface. It may have an
@@ -238,7 +262,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">5</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>MASSIVE WORLD, LIGHT ELEMENTS</h3>
                 <p>
                   Jupiter's atmosphere is made up mostly of hydrogen (H2) and
@@ -248,28 +272,28 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">6</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Big and Light</h3>
                 <p>Jupiter's atmosphere is mostly hydrogen and helium.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">7</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Many Moons</h3>
                 <p>As of July 2023, Jupiter had 95 moons.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">8</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Exploration</h3>
                 <p>Seven robots flew past; two stayed in orbit.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">9</div>
-              <div class="jupit5-text">
+              <div class="jupit5-text sub-txt">
                 <h3>Super Storm</h3>
                 <p>
                   The Great Red Spot is a storm that has raged for more than 100
