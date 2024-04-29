@@ -1,6 +1,11 @@
 @charset "utf-8";
 /*  팀 PJ : 서브페이지 CSS - earth.css */
 
+@import url(./common.css);
+@import url(./core1.css);
+@import url(./core2.css);
+@import url(./reset.css);
+
 
 /* 각 페이지 페이지 크기 설정 */
 #pg1, #pg2, #pg3, #pg4, #pg5{
@@ -40,7 +45,8 @@ body * {
 }
 /* 임시 tit */
 .tit{
-    font-size: 5rem;
+    font-family: 'Ykar';
+    font-size: 15rem;
 }
 /* 임시 txt */
 .txt{
@@ -135,7 +141,7 @@ body{
 }
 /* 타겟박스 */
 .tpg {
-    height: calc(100vh + 3000px);
+    height: calc(100vh + 5000px);
     /* 타겟 박스는 보이는 화면 맨윗줄부터
      시작해서 아래로 마지막 박스 끝라인까지
     총 이동거리는 3000px이다!!! */
