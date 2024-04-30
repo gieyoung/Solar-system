@@ -6,12 +6,27 @@
 @import url(./reset.css);
 
 
-/* 각 페이지 페이지 크기 설정 */
+/* 각 페이지 페이지 크기 설정 #pg2는 가로로 스크롤 때문에 100vh를 안줌*/
 #pg1, #pg2, #pg3, #pg4, #pg5{
-    /* width: 100vw; */
-    height: 100vh;
+    /* height대신 min-height를 줘야댐!!!!!
+    그래야 #pg2 에서 화면이 걸림!!!!!!!!!!!!!!!! */
+    min-height: 100vh;
+    /* height: 100vh; */
+    
     position: relative;
 }
+
+/* 핸드폰모드시 가로스크롤 안나오게 */
+/* body > * {
+    overflow-x: hidden;
+    cursor: default;
+  } */
+
+  /* 이거 있어야 pg2 일때 브라우저에서 가로스크롤 안나옴 */
+  body{
+    overflow-x: hidden;
+  }
+
 /* *****************************임시    *********************************** */
 
 
@@ -20,15 +35,21 @@ body * {
     outline: 2px dashed red;
 
 }
+.main-tit {
+    /* 임시 메인타이틀 폰트 색 */
+    
+    color:#fff;
+
+}
 
 
 
 
 /* ************************** earth 공통 ************************************ */
 /* 오버플로우 히든 클래스 */
-.ofhidden{
+/* .ofhidden{
     overflow: hidden;  
-}
+} */
 
 /* 비디오 싸는 박스 */
 .vidbox{
@@ -54,7 +75,7 @@ body * {
     padding-left: 20vw;
     
 }
-.pg1 .tit{
+.pg1 .main-tit{
     white-space: nowrap;
     padding-top: 50vh;
 }

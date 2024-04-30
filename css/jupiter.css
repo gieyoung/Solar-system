@@ -6,12 +6,12 @@
 @import url(./reset.css);
 
 @font-face {
-  font-family: 'Freesentation-9Black';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-family: "Freesentation-9Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
   font-weight: 900;
   font-style: normal;
 }
-
 
 /************* 공통구역 *************/
 body * {
@@ -25,8 +25,11 @@ body > * {
   width: 100%;
   min-height: 100vh;
 }
-.cont-tit{
-    font-weight: 900;
+.cont-tit {
+  font-weight: 900;
+}
+.sub-txt {
+  color: black;
 }
 /************* 상단영역 *************/
 /* common.css */
@@ -83,7 +86,7 @@ body > * {
 .desc2 {
   flex-direction: row-reverse;
 }
-.desc2-text{
+.desc2-text {
   margin-top: 5rem;
 }
 /* 2-1 첫번째 사진 */
@@ -92,7 +95,7 @@ body > * {
   height: auto;
 }
 /* ---------------------세번째 페이지--------------------- */
-.jupiter3{
+.jupiter3 {
   min-height: 95vh;
 }
 .jupiter3-cont {
@@ -176,6 +179,7 @@ body > * {
 .M-text p {
   height: 100%;
   margin-top: 3rem;
+  color: white;
 }
 
 /* 설명 이미지 오버시 */
@@ -202,13 +206,14 @@ body > * {
   color: yellow;
 }
 .jupiter-more a:hover span {
-  font-family: 'Freesentation-9Black';
+  font-family: "Freesentation-9Black";
 }
 /* ---------------------다섯번째 페이지--------------------- */
 .jupiter5 {
   max-width: 1400px;
   margin: 0 auto;
   margin-top: 18rem;
+  min-height: 80vh;
 }
 .jupit5-cont {
   box-sizing: border-box;
@@ -247,12 +252,11 @@ body > * {
   margin-bottom: 17px;
   font-size: 22px;
 }
-.jupit5-text{
+.jupit5-text {
   text-align: center;
   font-size: max(0.9vw, 14px);
   margin: 15px 0;
 }
-
 
 /************* 하단영역 *************/
 /* common.css */
@@ -265,81 +269,79 @@ body > * {
   }
 }
 
-@media screen and (max-width:1310px) {
-
+@media screen and (max-width: 1310px) {
   /* 네번째페이지 */
-  .moon-txt{
+  .moon-txt {
     font-size: 3vw;
   }
-  .M-text h4{
+  .M-text h4 {
     font-size: 3.5rem;
   }
   .jupiter3-cont iframe {
     border-radius: 0;
   }
 }
-@media screen and (max-width:930px) {
-    /* ---------------------두번째 페이지--------------------- */
-    .desc {
-      flex-direction: column-reverse;
-    }
-    
-    .desc2 {
-      flex-direction:none;
-    }
-    
-    .desc strong{
-      display: block;
-      text-align: center;
-    } 
-    .desc1-img{
-      width: auto;
-    }
-    .desc img{
-      width: 100%;
-    }
+@media screen and (max-width: 930px) {
+  /* ---------------------두번째 페이지--------------------- */
+  .desc {
+    flex-direction: column-reverse;
+  }
 
-    /* 네번째페이지 */
-    .jupiter-more{
-      font-size: 3rem;
-    }
+  .desc2 {
+    flex-direction: none;
+  }
+
+  .desc strong {
+    display: block;
+    text-align: center;
+  }
+  .desc1-img {
+    width: auto;
+  }
+  .desc img {
+    width: 100%;
+  }
+
+  /* 네번째페이지 */
+  .jupiter-more {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 850px) {
   /* ---------------------첫페이지--------------------- */
-.jupiter1-text {
-  top: 50%;
-  bottom: auto;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-}
-.jupiter1-text h1 {
-  font-size: 9.5rem;
-  text-align: center;
-  /* opacity: 0; */
-}
-.jupiter1-text p {
-  /* font-size: 30px; */
-  font-size: 1.5rem;
-}
+  .jupiter1-text {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+  }
+  .jupiter1-text h1 {
+    font-size: 9.5rem;
+    text-align: center;
+    /* opacity: 0; */
+  }
+  .jupiter1-text p {
+    /* font-size: 30px; */
+    font-size: 1.5rem;
+  }
 
-/* ---------------------세번째 페이지--------------------- */
-.M-text h4{
-  font-size: 3rem;
-}
+  /* ---------------------세번째 페이지--------------------- */
+  .M-text h4 {
+    font-size: 3rem;
+  }
 
-/* ---------------------네,다섯번째 페이지--------------------- */
-.jupiter4 h2, .jupiter5 h2{
-  font-size: 6vw;
-}
-.jupiter4 h4{
-  font-size: 2.5vw;
-}
-.jupiter4 p{
-  font-size: 12px;
-  line-height: 15px;
-}
-
-
+  /* ---------------------네,다섯번째 페이지--------------------- */
+  .jupiter4 h2,
+  .jupiter5 h2 {
+    font-size: 6vw;
+  }
+  .jupiter4 h4 {
+    font-size: 2.5vw;
+  }
+  .jupiter4 p {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
