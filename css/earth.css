@@ -7,9 +7,12 @@
 
 
 /* 각 페이지 페이지 크기 설정 #pg2는 가로로 스크롤 때문에 100vh를 안줌*/
-#pg1, #pg3, #pg4, #pg5{
-    /* width: 100vw; */
-    height: 100vh;
+#pg1, #pg2, #pg3, #pg4, #pg5{
+    /* height대신 min-height를 줘야댐!!!!!
+    그래야 #pg2 에서 화면이 걸림!!!!!!!!!!!!!!!! */
+    min-height: 100vh;
+    /* height: 100vh; */
+    
     position: relative;
 }
 
