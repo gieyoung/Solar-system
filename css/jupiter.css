@@ -76,6 +76,7 @@ body > * {
   min-width: 600px;
   margin: 0 auto;
   margin-top: 8rem;
+  min-height: 80vh;
 }
 .desc {
   display: flex;
@@ -96,7 +97,7 @@ body > * {
 }
 /* ---------------------세번째 페이지--------------------- */
 .jupiter3 {
-  min-height: 95vh;
+  min-height: 80vh;
 }
 .jupiter3-cont {
   position: relative;
@@ -238,7 +239,7 @@ body > * {
 }
 /* 각 그리드 박스 */
 .jupit5-box {
-  padding: 33px 33px 33px 33px;
+  padding: 30px;
 }
 .circle-num {
   background-color: #232220;
@@ -285,6 +286,7 @@ body > * {
   /* ---------------------두번째 페이지--------------------- */
   .desc {
     flex-direction: column-reverse;
+    font-size: 2rem;
   }
 
   .desc2 {
@@ -343,5 +345,92 @@ body > * {
   .jupiter4 p {
     font-size: 12px;
     line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* 첫페이지 */
+  .jupiter1-text {
+    width: 80%;
+  }
+  .jupiter1-text h1 {
+    font-size: 6rem;
+    text-align: center;
+  }
+  .jupiter1-text p {
+    font-size: 1.2rem;
+  }
+  /* 두번째 페이지 */
+  .desc {
+    width: 100vw;
+  }
+  .desc2 iframe {
+    height: 400px;
+  }
+
+  /* 서번째 페이지 */
+  .jupiter3-cont {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 100vw;
+  }
+  .jupiter3-text {
+    position: relative;
+    top: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+  }
+  .jupiter3-cont iframe {
+    height: 100vw;
+}
+
+  /* 네번째 */
+  .jupiter4 {
+    margin-top: 5rem;
+  }
+
+  .moon-cont {
+    flex-wrap: wrap;
+  }
+  .jupiter4 h2 {
+    font-size: 8vw;
+    margin-bottom: -25px;
+  }
+  .jupiter-more {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 2.5rem;
+  }
+  .jupiter-more i {
+    display: none;
+  }
+
+  /* 다섯번째 */
+  .jupiter5 {
+    margin-top: 0;
+  }
+  .jupit5-gbox {
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .jupit5-box {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px dashed #ccc;
+  }
+  .jupit5-box:last-child {
+    border: none;
+  }
+  .jupit5-box h3 {
+    font-weight: 900;
+  }
+  .circle-num {
+    display: none;
+  }
+  .jupit5-text {
+    width: 80vw;
+    font-size: 1.2rem;
+    margin: 0;
   }
 }

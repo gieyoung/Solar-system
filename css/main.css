@@ -34,7 +34,8 @@ body > * {
   /* bottom: 0; */
   /* position: absolute; */
   /* transform: translateY(100%); */
-  background-color: black;
+  /* background-color: black; */
+  background-color: #fff;
 }
 
 /* ìŠ¤í¬ë¡¤ ì´ë™ translateY */
@@ -94,24 +95,34 @@ body > * {
   /* font-family: "Poppins"; */
   color: rgb(255, 255, 255);
   text-align: center;
+  position: relative;
 }
 
+
+/* 배너 내부 글자 */
+.section .banner-wrapper .banner .txt{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0);
+}
 .section .banner-wrapper .banner .title {
-  font-size: 34px;
+  font-size: 3rem;
   font-family: "Poppins";
   font-weight: bold;
   line-height: 0.8;
   color: rgb(255, 255, 255);
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .section .banner-wrapper .banner .title .small {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: normal;
   line-height: 1.85;
 }
 
 .section .banner-wrapper .banner .content {
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.375;
   font-family: "Pretendard";
   color: rgb(255, 255, 255);
@@ -122,6 +133,7 @@ body > * {
     z-index: 1;
     display: inline-block;
     width: 100%;
+    height: 100%;
    
 }
 
@@ -156,7 +168,7 @@ body > * {
 
 
 .section .section_info_wrapper {
-  background: url(../images/common/space.jpg) no-repeat top/cover;
+  /* background: url(../images/common/space.jpg) no-repeat top/cover; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,13 +204,13 @@ body > * {
   display: none !important;
 }
 .section .banner-wrapper .banner.active.enable .title {
-  font-size: 100px;
+  font-size: 10rem;
   text-align: center;
   transition: 0.4s;
   z-index: 1;
 }
 .section .banner-wrapper .banner.active.enable .title .small {
-  font-size: 30px;
+  font-size: 3rem;
   text-align: center;
   transition: 0.4s;
   font-weight: normal;
@@ -221,7 +233,7 @@ body > * {
 /* 더보기 버튼 */
 .more-btn{
   cursor: pointer;
-  border: 1px solid white;
+  outline: 1px solid #000;
   width: 26rem;
   font-size: 2rem;
   font-family: "Poppins";
@@ -233,7 +245,7 @@ body > * {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  color: white;
+  color: #fff;
   background: none;
   text-transform: uppercase;
   border: 1px solid currentColor;
@@ -249,7 +261,7 @@ body > * {
     position: absolute;
     top: -200%;
     left: 50%;
-    background: white;
+    background: #000;
     border-radius: 50%;
     transition: height 0.3s;
   }
@@ -292,3 +304,13 @@ body > * {
 
 /**************** 하단영역  ****************/
 /* common.css */
+
+
+
+/*****************************상단/하단 미디어쿼리************************************/
+
+/* 760이하 */
+@media screen and (max-width:800px) {
+  .section .banner-wrapper {flex-direction: column; flex-basis: calc(100vh - 238px)}
+  }
+  

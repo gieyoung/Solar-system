@@ -6,14 +6,11 @@ import mFn from "./my_function.js";
 // 공통 처리 데이터 불러오기
 import comData from "../data/common_data.js";
 
-// GNB 메뉴 데이터 불러오기 /////
+// GNB 메뉴 데이터 불러오기
 import gnbData from "../data/gnb_data.js";
 
 // 왼쪽으로 흘러가는 태양계 재귀함수 불러오기
 import moveSollar from "./call_myself.js";
-
-
-
 
 /****************************************************
      [ 상단/하단 공통 함수 ]
@@ -29,15 +26,12 @@ export default function setElement() {
   headerArea.innerHTML = comData.headerArea;
   footerArea.innerHTML = comData.footerArea;
 
-
-
-  
-/****************************************************
+  /****************************************************
      [ GNB메뉴 ]
 ******************************************************/
- 
-  makeMenu();
- 
+
+  makeMenu(); // 함수호출!!!
+
   // [ GNB메뉴코드 만들기 함수 ]
   function makeMenu() {
     mFn.qs("#gnb").innerHTML = `
@@ -66,7 +60,24 @@ export default function setElement() {
   `;
   } ////////// makeMenu 함수 //////////
 
-/****************************************************
+  /****************************************************
+     [ 스크롤 시 헤더 색변경 ]
+  ******************************************************/
+
+  // 1. 대상선정
+  // 헤더
+  const hdArea = mFn.qs("#header-area");
+
+  // 세로 스크롤이 80px 넘어가면 헤더 색 변경
+  mFn.addEvt(window, "scroll", function () {
+    if (window.scrollY > 80) {
+      hdArea.classList.add("on");
+    } else {
+      hdArea.classList.remove("on");
+    }
+  });
+
+  /****************************************************
      [ 검색버튼 클릭시 검색창 열고 닫기 ]
 ******************************************************/
 
@@ -81,11 +92,40 @@ export default function setElement() {
     search.classList.toggle("on");
   };
 
+
+  /****************************************************
+     [ 모바일 햄버거 버튼 클릭시 사이트맵 열고 닫기 ]
+******************************************************/
+
+  // 1. 대상선정
+  // 햄버거버튼
+  const icon2 = mFn.qs(".icon2");
+  // 닫기버튼
+  const icon3 = mFn.qs(".icon3");
+  // 사이트맵
+  const siteMap = mFn.qs(".m-sitemap");
+
+
+
+  // 2. 함수실행
+  icon2.onclick = () => {
+    icon2.classList.add("on");
+    icon3.classList.add("on");
+    
+    siteMap.classList.add("on");
+  };
+  icon3.onclick = () => {
+    icon2.classList.remove("on");
+    icon3.classList.remove("on");
+    
+    siteMap.classList.remove("on");
+  };
+
   /****************************************************
      [ 왼쪽으로 흘러가는 태양계 재귀함수 ]
 ******************************************************/
 
-  moveSollar();
+  moveSollar(); // 함수호출!!!
 
   /****************************************************
      [ top버튼-클릭시 상단으로 이동하는 버튼]
