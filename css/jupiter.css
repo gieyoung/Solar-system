@@ -28,8 +28,13 @@ body > * {
 .cont-tit {
   font-weight: 900;
 }
-.sub-txt {
+.cont-txt {
   color: black;
+}
+.main-text {
+  color: #fff;
+  position: absolute;
+  width: 700px;
 }
 /************* 상단영역 *************/
 /* common.css */
