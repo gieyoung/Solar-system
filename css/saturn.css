@@ -17,11 +17,9 @@ body > * {
   width: 100%;
   min-height: 100vh;
 }
-.cont-tit {
-  font-weight: 900;
-}
 .cont-txt {
   color: black;
+  line-height: normal;
 }
 .main-text {
     color: #fff;
@@ -130,6 +128,7 @@ body > * {
     top: -6px;
   font-size: max(1.5vw, 14px);
 }
+
 
 /* 세번째페이지 - 링크이동 */
 

@@ -86,7 +86,7 @@ const comData = {
           </div>
         </div>
         <!-- 탑버튼 -->
-        <a href="javascript:;" class="top-btn on"><span class="ir">상단으로 이동</span></a>
+        <a href="javascript:;" class="top-btn"><span class="ir">상단으로 이동</span></a>
       </footer>
   
 
