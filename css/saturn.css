@@ -9,13 +9,21 @@
 body * {
   /* outline: 2px dashed red; */
 }
+body > * {
+    overflow-x: hidden;
+    cursor: default;
+  }
 .saturn {
   width: 100%;
   min-height: 100vh;
 }
+.cont-tit{
+    font-weight: 900;
+}
 .sub-txt{
     color: black;
   }
+
 /************* 상단영역 *************/
 /* common.css */
 
@@ -197,7 +205,7 @@ body * {
 }
 .saturn4-cont li img {
     width: 7vw;
-    height: 7vh;
+    height: 7vw;
     border-radius: 50%;
 }
 .saturn4-text {
@@ -220,3 +228,73 @@ body * {
 /* common.css */
 
 /************* 미디어쿼리 *************/
+
+@media screen and (max-width: 1200px) {
+    /* 두번째페이지 */
+    .desc {
+        flex-direction: column-reverse;
+      }
+    
+      .desc2 {
+        margin-top: 0;
+        height: 100%;
+      }
+    
+      .desc strong {
+        display: block;
+        text-align: center;
+      }
+      .desc1-img {
+        width: auto;
+      }
+      .desc img {
+        width: 100%;
+      }
+      .desc2-3D {
+        top: 0;
+        width: 100%;
+    }
+    .desc2 iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 0;
+    }
+  }
+
+@media screen and (max-width: 850px) {
+  /* ---------------------첫페이지--------------------- */
+  .saturn1-text {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+  }
+  .saturn1-text h1 {
+    font-size: 9.5rem;
+    text-align: center;
+    /* opacity: 0; */
+  }
+  .saturn1-text p {
+    /* font-size: 30px; */
+    font-size: 1.5rem;
+  }
+
+  /* ---------------------세번째 페이지--------------------- */
+  .M-text h4 {
+    font-size: 3rem;
+  }
+
+  /* ---------------------네,다섯번째 페이지--------------------- */
+  .saturn4 h2,
+  .saturn5 h2 {
+    font-size: 6vw;
+  }
+  .saturn4 h4 {
+    font-size: 2.5vw;
+  }
+  .saturn4 p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
