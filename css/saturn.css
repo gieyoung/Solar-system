@@ -285,6 +285,10 @@ body > * {
     font-size: 12px;
     line-height: 15px;
   }
+    .saturn-more {
+        text-align: center;
+        margin-top: 2rem;
+    }
 }
 @media screen and (max-width: 850px) {
   /* ---------------------첫페이지--------------------- */
@@ -305,6 +309,7 @@ body > * {
     font-size: 1.5rem;
   }
 
+
 }
 @media screen and (max-width: 700px) {
     /* 첫페이지 */
@@ -316,7 +321,6 @@ body > * {
         text-align: center;
       }
       .saturn1-text p {
-        /* font-size: 30px; */
         font-size: 1.2rem;
       }
       /* 두번째 페이지 */
@@ -354,9 +358,5 @@ body > * {
       }
       .saturn4 h2 {
         margin-bottom: 30px;
-    }
-    .saturn-more {
-        margin-top: 14px;
-        font-size: 2rem;
     }
 }
