@@ -8,12 +8,12 @@
 
 /* 임시 */
 #gnb ul li:first-child{display: none;}
+
+
+
 /************* 상단영역 *************/
 #header-area {
-  /* 폰트 */
-  /* font-family:; */
-
-  height: 10rem;
+  height: 90px;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -23,9 +23,12 @@
   transition: 0.3s;
 }
 
+
+/* 헤더 색상 변경 */
 #header-area.on {
-  background-color: #052a46;
+  background: url(../images/common/space.jpg) no-repeat top / cover;
 }
+
 
 /* 상단 내부박스 */
 #header-area .inbox {
@@ -79,6 +82,17 @@ h1.logo {
   height: 40px;
 }
 
+
+/* 기타 */
+.etc{
+  display: flex;
+  align-items: center;
+
+}
+
+
+
+
 /* 검색*/
 
 /* 검색버튼 */
@@ -96,7 +110,7 @@ h1.logo {
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  background-color: #052a46;
+  background-color: #193f93;
   text-indent: 20px;
   transition: 0.3s;
   color: #fff;
@@ -119,12 +133,12 @@ h1.logo {
   color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
-  background-color: #052a46;
+  background-color: #193f93;
 }
 /* 클릭시 on */
 .search.on {
-  width: 200px;
-  background-color: #052a46;
+  width: 20rem;
+  background-color: #193f93;
 }
 
 /* 아이콘 */
@@ -133,35 +147,107 @@ h1.logo {
   content: "\f002";
 }
 
-/* 모바일 햄버거 버튼 */
-.ham {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: none;
-  font-size: 40px;
-  transform: scaleX(1.5);
 
-  /* 처음에 숨기기 */
+/* 모바일 햄버거 버튼 */
+.mobile-btn{
+  width: 40px;
+  height: 40px;
+  transition: 0.3s linear;
+  border-radius: 50px;
+  margin-left: 10px;
   display: none;
 }
-/* 햄버거모양 가상요소넣기 */
-.ham::before {
-  content: "≡";
+
+/* 햄버거 아이콘 */
+.icon2 {
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #193f93;
+
+
 }
+
+.icon2.on{
+  display: none;
+}
+
+.icon3 {
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #193f93;
+  display: none;
+
+}
+
+.icon3.on{
+  display: block;
+}
+
+
+/* 모바일 사이트맵 */
+
+.m-sitemap{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 90px;
+  background: #fff;
+  left:100%;
+  transition: all 0.3s ease-in-out;
+
+  
+
+}
+
+.m-sitemap.on{
+  left:0;
+}
+
+.m-sitemap li{
+  position: relative;
+
+}
+
+.m-sitemap li a{
+  display: block;
+  width: 100%;
+  line-height:11rem;
+  font-size: 4rem;
+  text-align: center;
+  color:#333;
+  font-weight: bold;
+  border-bottom:1px solid #c8c8c8;
+  
+
+}
+
+
+
+
 
 /************* 하단영역 *************/
 
 #footer-area {
-  background: #000;
+  /* background: url(../images/common/space.jpg) no-repeat top / cover; */
+  background-color: #000;
   height: 100%;
 }
-#footer-area .inbox {
-  max-width:1400px;
-  height: 100%;
-  /* outline: 1px solid red; */
-  margin:0 auto;
+
+
+#footer-area .inbox{
+  width:90%;
 }
 
 .footer-area h3 {
@@ -181,7 +267,7 @@ h1.logo {
 }
 /* 옆으로 움직이는 태양계 */
 .footer-area .gbox {
-  overflow: hidden;
+  overflow: m-sitemap;
   /* background-color: red; */
 }
 .footer-area .gbox ul {
@@ -345,6 +431,8 @@ h1.logo {
 }
 /* 1024이하 */
 @media screen and (max-width:1024px) {
+  html{font-size: 8px;}
+
   #gnb {
     min-width: 45rem;
 }
@@ -353,21 +441,28 @@ h1.logo {
 }
 /* 760이하 */
 @media screen and (max-width:800px) {
-  
-
+  html{font-size: 7px;}
+  #gnb{display: none;}
+  .mobile-btn{display: block;}
+  #header-area{ background:#000;}
+  #main-area{margin-top: 90px;}
+ 
+ 
 
   }
   
   
 /* 480이하 */
 @media screen and (max-width:480px) {
- 
+  .footer-area .gbox li {
+    width: 35vw;}
+    .search{display: none;}
   
  
 }
 /* 360이하 */
 @media screen and (max-width:360px) {
 
-
+ 
  
 }

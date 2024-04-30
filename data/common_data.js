@@ -23,7 +23,25 @@ const comData = {
       <label for="input-box" class="fa-solid fa-magnifying-glass icon"></label>
     </div>
 
-    <!-- 모바일 버튼 -->
+    <!-- 모바일 햄버거 버튼 -->
+    <div class="mobile-btn">
+      <span class="ir">모바일버튼</span>
+      <i class="fa-solid fa-bars icon2"> <span class="ir">햄버거 아이콘</span></i>
+      <i class="fa-solid fa-xmark icon3"> <span class="ir">닫기 아이콘</span></i>
+    </div>
+
+    <!-- 모바일 사이트맵 -->
+    <div class="m-sitemap">
+		<ul>
+			<li><a href="./sun.html">sun</a></li>
+			<li><a href="./earth.html">earth</a></li>
+			<li><a href="./moon.html">moon</a></li>
+			<li><a href="./saturn.html">saturn</a></li>
+			<li><a href="./jupiter.html">jupiter</a></li>
+		</ul>
+	  </div>
+  </div>
+
   </div>
 </header>
   `,
