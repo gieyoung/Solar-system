@@ -259,8 +259,33 @@ body > * {
     height: 600px;
     border-radius: 0;
   }
+  /* 서번째 페이지 */
+  .saturn3-desc h2{
+    margin-top: 5rem;
+  }
+  .saturn3-desc strong {
+    font-size: 3rem;
+  }
 }
 
+@media screen and (max-width: 960px) {
+    
+  /* ---------------------네번째 페이지--------------------- */
+  .saturn4 h2 {
+    font-size: 6vw;
+    margin-top: 5rem;
+  }
+  .saturn4-cont li {
+    flex-direction: column;
+  }
+  .saturn4-text{
+    text-align: center;
+  }
+  .saturn4 p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
 @media screen and (max-width: 850px) {
   /* ---------------------첫페이지--------------------- */
   .saturn1-text {
@@ -280,23 +305,58 @@ body > * {
     font-size: 1.5rem;
   }
 
-  /* ---------------------세번째 페이지--------------------- */
-  .M-text h4 {
-    font-size: 3rem;
-  }
+}
+@media screen and (max-width: 700px) {
+    /* 첫페이지 */
+    .saturn1-text {
+        width: 80%;
+      }
+      .saturn1-text h1 {
+        font-size: 6.5rem;
+        text-align: center;
+      }
+      .saturn1-text p {
+        /* font-size: 30px; */
+        font-size: 1.2rem;
+      }
+      /* 두번째 페이지 */
+      .desc {
+        width: 100vw;
+      }
+      .desc2 iframe {
+        height: 400px;
+      }
+      /* 서번째 페이지 */
+      .saturn3-desc h2{
+        font-size: 4rem;
+      }
+      .saturn3-text{
+        left: 10px;
+        font-size: 4rem;
+      }
+      .saturn3-text span {
+        font-size: 2.5rem;
+    }
+    .saturn3-text a {
+        text-align: left;
+    }
+    .saturn3-text i {
+        display: block;
+        font-size: 4rem;
+    }
+      .saturn3-desc strong {
+        font-size: 2.5rem;
+      }
 
-  /* ---------------------네번째 페이지--------------------- */
-  .saturn4 h2 {
-    font-size: 6vw;
-  }
-  .saturn4-cont li {
-    flex-direction: column;
-  }
-  .saturn4-text{
-    text-align: center;
-  }
-  .saturn4 p {
-    font-size: 12px;
-    line-height: 15px;
-  }
+      /* 네번째 */
+      .saturn4-cont ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .saturn4 h2 {
+        margin-bottom: 30px;
+    }
+    .saturn-more {
+        margin-top: 14px;
+        font-size: 2rem;
+    }
 }
