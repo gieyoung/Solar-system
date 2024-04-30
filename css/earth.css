@@ -5,6 +5,11 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+/* a요소 위치 이동시 부드러운 스크롤 애니 설정*/
+html{
+    scroll-behavior: smooth;
+}
+
 
 /* 각 페이지 페이지 크기 설정 #pg2는 가로로 스크롤 때문에 100vh를 안줌*/
 #pg1, #pg2, #pg3, #pg4, #pg5{
