@@ -28,6 +28,9 @@ body > * {
 .cont-tit{
     font-weight: 900;
 }
+.sub-txt{
+  color: black;
+}
 /************* 상단영역 *************/
 /* common.css */
 
@@ -176,6 +179,7 @@ body > * {
 .M-text p {
   height: 100%;
   margin-top: 3rem;
+  color: white;
 }
 
 /* 설명 이미지 오버시 */
