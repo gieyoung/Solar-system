@@ -76,6 +76,7 @@ body > * {
   min-width: 600px;
   margin: 0 auto;
   margin-top: 8rem;
+  min-height: 80vh;
 }
 .desc {
   display: flex;
@@ -96,7 +97,7 @@ body > * {
 }
 /* ---------------------세번째 페이지--------------------- */
 .jupiter3 {
-  min-height: 95vh;
+  min-height: 80vh;
 }
 .jupiter3-cont {
   position: relative;
@@ -278,7 +279,6 @@ body > * {
     font-size: 3.5rem;
   }
   .jupiter3-cont iframe {
-    height: 300px;
     border-radius: 0;
   }
 }
@@ -286,6 +286,7 @@ body > * {
   /* ---------------------두번째 페이지--------------------- */
   .desc {
     flex-direction: column-reverse;
+    font-size: 2rem;
   }
 
   .desc2 {
@@ -374,9 +375,13 @@ body > * {
   }
   .jupiter3-text {
     position: relative;
-    top: 10%;
+    top: 50%;
+    transform: translateX(-50%);
     width: 85%;
   }
+  .jupiter3-cont iframe {
+    height: 100vw;
+}
 
   /* 네번째 */
   .jupiter4 {
