@@ -109,11 +109,13 @@ body * {
     color: #fff;
     /* background-color: #fff27d; */
     position: relative;
+    width: 100%;
+    height: 100%;
 }
-#pg2 video{
-   
-  width: 100%;
-  height: 100%;
+
+#pg2 >.vidbox{
+  position: fixed;
+  z-index: -999;
   object-fit: cover;
     
     
