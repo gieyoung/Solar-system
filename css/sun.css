@@ -8,18 +8,28 @@
 /* common.css */
 
 /************* 메인영역 *************/
+
+
+
+/* 스크롤 등장*/
+.scroll-el {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+.scroll-el.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 가로스크롤 방지 */
 body > * {
   overflow-x: hidden;
   cursor: default;
 }
 
 
-/* 태양설명영역 */
-.sun {
-  font-family: "Kanit", sans-serif;
-  color: #333;
-  position: relative;
-}
 /************* 섹션1 *************/
 
 .sun01 {
@@ -30,6 +40,7 @@ body > * {
   background-position: center;
 }
 
+/* 배경비디오 */
 .sun01 video {
   width: 100%;
   height: 100%;
@@ -38,6 +49,8 @@ body > * {
   left: 0;
   top: 0;
 }
+
+/* 글자영역 */
 .sun01-text {
   color: #fff;
   position: absolute;
@@ -45,24 +58,16 @@ body > * {
   left: 10%;
 }
 .sun01-text h2 {
-  font-size: min(18vw, 12rem);
-  letter-spacing: 3px;
-  font-weight: 600;
-  text-shadow: 1px 1px 2px #333;
   opacity: 0;
   animation: fadein 1.4s ease-in-out 1.3s forwards;
 }
 .sun01-text p {
   width: min(70vw, 500px);
-  font-size: min(3vw, 1.8rem);
-  line-height: 1.3;
-  font-weight: 200;
-  text-indent: 5px;
   text-shadow: 1px 1px 2px #333;
   opacity: 0;
   animation: fadein 1.4s ease-in-out 2s forwards;
 }
-/* 글자애니메이션 */
+/* 글자 나타나는 효과 */
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -102,6 +107,10 @@ body > * {
 
 
 /* 섹션2 */
+.sun02{
+  padding:150px 0;
+}
+
 /* 3. 사업소개 */
 #about-area {
   height: auto;
@@ -118,8 +127,9 @@ body > * {
 }
 
 
-.about-box {
-  margin: 0 auto;
+
+.about-box li:first-child{
+  margin-bottom:100px;
 }
 
 .about-area h2 {
@@ -131,7 +141,6 @@ body > * {
 }
 
 .about-area .con {
-  margin: 0 auto;
   height: auto;
   display: flex;
   align-items: center;
@@ -151,6 +160,7 @@ body > * {
 .about-area .con .img-fade1 img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .about-area .con .fade1 {
@@ -171,13 +181,14 @@ body > * {
 /* 클리핑 마스크로 두번째 영역 사진 넣기 */
 .about-area .con .img-fade2 {
   position: relative;
-  width: 449px;
-  height: 431px;
+  width: 375px;
+  height: 417px;
   clip-path: url(#my-clip-path);
 }
 .about-area .con .img-fade2 img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /* 클리핑 마스크로 세번째 영역 사진 넣기 */
@@ -210,10 +221,10 @@ body > * {
 }
 
 /* 글자영역 */
+
 .about-area .con .text h3 {
-  font-size: 4.6rem;
-  line-height: 5.6rem;
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .about-area .con .text h3 span {

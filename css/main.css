@@ -309,39 +309,8 @@ body > * {
 
 /*****************************상단/하단 미디어쿼리************************************/
 
-
-/* 1200이하 */
-@media screen and (max-width:1200px) {
- 
- 
-}
-/* 1024이하 */
-@media screen and (max-width:1024px) {
-  
-}
-  
-
-
 /* 760이하 */
 @media screen and (max-width:800px) {
-  
   .section .banner-wrapper {flex-direction: column; flex-basis: calc(100vh - 238px)}
-
-
- 
-
   }
   
-  
-/* 480이하 */
-@media screen and (max-width:480px) {
-
-  
- 
-}
-/* 360이하 */
-@media screen and (max-width:360px) {
-
- 
- 
-}

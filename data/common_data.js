@@ -50,7 +50,7 @@ const comData = {
   <footer class="footer-area">
         <!-- 옆으로 움직이는 태양계 -->
         <div class="move-gallery">
-          <h3>Solar System</h3>
+          <h3 class="main-tit">Solar System</h3>
           <div class="gbox"></div>
         </div>
 
