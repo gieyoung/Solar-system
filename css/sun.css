@@ -1,10 +1,17 @@
 @charset "utf-8";
 /*  팀 PJ : 서브페이지 CSS - sun.css */
 
+@import url(./common.css);
+
+
 /************* 상단영역 *************/
 /* common.css */
 
 /************* 메인영역 *************/
+body > * {
+  overflow-x: hidden;
+  cursor: default;
+}
 
 
 /* 태양설명영역 */

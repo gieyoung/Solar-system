@@ -2,6 +2,8 @@
 
 /* 팀 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
+@import url(./core.css);
+@import url(./reset.css);
 
 /************* 상단영역 *************/
 #header-area {
@@ -302,7 +304,7 @@ h1.logo {
 
 /* 저작권 표시 */
 .footer-area .copy-right{
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .footer-area .copy-right p{
@@ -325,4 +327,42 @@ h1.logo {
   background: url(../images/common/btn_top_pc.svg) no-repeat center/cover;
   z-index: 999;
   transition: 3s ease-in-out;
+}
+
+
+
+
+/*****************************상단/하단 미디어쿼리************************************/
+
+
+/* 1200이하 */
+@media screen and (max-width:1200px) {
+ 
+ 
+}
+/* 1024이하 */
+@media screen and (max-width:1024px) {
+  html{font-size: 9px;}
+  
+
+}
+/* 760이하 */
+@media screen and (max-width:760px) {
+  
+
+
+  }
+  
+  
+/* 480이하 */
+@media screen and (max-width:480px) {
+ 
+  
+ 
+}
+/* 360이하 */
+@media screen and (max-width:360px) {
+
+
+ 
 }
