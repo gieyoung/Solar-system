@@ -35,13 +35,38 @@ video{
     /* text-shadow: 1px 1px 2px #2d2239d7; */
 }
 
-.main-desc{
+.main-txt{
     position: absolute;
     top: 600px;
     left: 100px;
-    color: #fff;
+    /* color: #fff;
     font-size: 1.5rem;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular'; */
+}
+
+.moon2{
+    max-width: 1400px;
+    min-width: 600px;
+    margin: 50px 500px;
+
+}
+.moon-pic{
+    position: absolute;
+    top: 1700px;
+    left: 1000px;
+}
+.moon-txt{
+    position: relative;
+}
+.cont-txt{
+    z-index: 999;
+    color: black;
+    /* 줄간격 */
+    line-height: 1.7;
+    /* 자간 */
+    letter-spacing: 1px;
+    /* 단어간격 */
+    word-spacing: 2px;
 }
 
 
