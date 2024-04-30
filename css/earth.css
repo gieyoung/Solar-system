@@ -69,30 +69,14 @@ body * {
 .pg1{
     position: relative;
 }
-
-.pg1 .tit,.pg1 .txt{
-    
-    padding-left: 20vw;
-    
+.top-tbox{
+    padding-left: 150px;
 }
 .pg1 .main-tit{
     white-space: nowrap;
     padding-top: 50vh;
 }
-/* .backobj{
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-} */
-/* .backobj{
-    width: 100vw;
-    height: 100vh;
-    background: url(../images/earth/pg1_earth.webp)no-repeat center/cover;
-    margin: 0 auto;
-} */
+
 #pg1 video{
    
   width: 100%;
@@ -111,6 +95,7 @@ body * {
     position: relative;
     width: 100%;
     height: 100%;
+        
 }
 
 #pg2 >.vidbox{
@@ -120,6 +105,11 @@ body * {
     
     
 }
+
+.cont-txt{
+    padding: 20px;
+}
+
 
 
 /************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
@@ -139,6 +129,7 @@ body * {
 }
 /* 가로이동박스 */
 .eslidePg {
+    padding-top:2vw;
     position: sticky;
     top: 10rem;
     left: 0;
