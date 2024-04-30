@@ -20,10 +20,14 @@ body > * {
 .cont-tit {
   font-weight: 900;
 }
-.sub-txt {
+.cont-txt {
   color: black;
 }
-
+.main-text {
+    color: #fff;
+    position: absolute;
+    width: 700px;
+  }
 /************* 상단영역 *************/
 /* common.css */
 
@@ -122,6 +126,8 @@ body > * {
   margin-bottom: 20px;
 }
 .saturn3-desc strong {
+    position: relative;
+    top: -6px;
   font-size: max(1.5vw, 14px);
 }
 
@@ -233,6 +239,7 @@ body > * {
   /* 두번째페이지 */
   .desc {
     flex-direction: column-reverse;
+    font-size: 2rem;
   }
 
   .desc2 {
