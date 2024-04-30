@@ -316,7 +316,6 @@ body > * {
         text-align: center;
       }
       .saturn1-text p {
-        /* font-size: 30px; */
         font-size: 1.2rem;
       }
       /* 두번째 페이지 */
@@ -356,6 +355,7 @@ body > * {
         margin-bottom: 30px;
     }
     .saturn-more {
+        text-align: center;
         margin-top: 14px;
         font-size: 2rem;
     }
