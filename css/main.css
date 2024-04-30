@@ -222,13 +222,13 @@ body > * {
 .more-btn{
   cursor: pointer;
   border: 1px solid white;
-  width: 260px;
-  font-size: 20px;
+  width: 26rem;
+  font-size: 2rem;
   font-family: "Poppins";
   font-weight: bold;
   text-align: center;
   align-self: center;
-  line-height: 60px;
+  line-height: 6rem;
   display: block;
   box-sizing: border-box;
   position: relative;

@@ -5,6 +5,9 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+
+/* 임시 */
+#gnb ul li:first-child{display: none;}
 /************* 상단영역 *************/
 #header-area {
   /* 폰트 */
@@ -337,17 +340,19 @@ h1.logo {
 
 /* 1200이하 */
 @media screen and (max-width:1200px) {
- 
+  html{font-size: 9px;}
  
 }
 /* 1024이하 */
 @media screen and (max-width:1024px) {
-  html{font-size: 9px;}
+  #gnb {
+    min-width: 45rem;
+}
   
 
 }
 /* 760이하 */
-@media screen and (max-width:760px) {
+@media screen and (max-width:800px) {
   
 
 
