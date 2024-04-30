@@ -137,8 +137,8 @@ export default function setElement() {
 
   function scrollTopBtn(){
     let scTop = window.scrollY;
-    console.log("스크롤 위치 : ", scTop);
-    
+    // console.log("스크롤 위치 : ", scTop);
+
     if(scTop>=300){
       topBtn.classList.add("on");
     }

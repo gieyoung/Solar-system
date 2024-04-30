@@ -25,11 +25,9 @@ body > * {
   width: 100%;
   min-height: 100vh;
 }
-.cont-tit {
-  font-weight: 900;
-}
 .cont-txt {
   color: black;
+  line-height: normal;
 }
 .main-text {
   color: #fff;
