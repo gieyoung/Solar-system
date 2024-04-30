@@ -20,6 +20,12 @@ body * {
     outline: 2px dashed red;
 
 }
+.main-tit {
+    /* 임시 메인타이틀 폰트 색 */
+    
+    color:#fff;
+
+}
 
 
 
