@@ -85,6 +85,8 @@ body > * {
   display: flex;
   gap: 2rem;
   margin-top: 20px;
+  opacity: 0;
+  transition: .3s ease-in-out;
 }
 
 .desc2 {
@@ -97,6 +99,11 @@ body > * {
 .desc1-img {
   width: 45vw;
   height: auto;
+}
+
+.desc.on{
+opacity: 1;
+transition: .3s ease-in-out;
 }
 /* ---------------------세번째 페이지--------------------- */
 .jupiter3 {
@@ -135,6 +142,7 @@ body > * {
   max-width: 1400px;
   min-height: auto;
   margin: 0 auto;
+  margin-top: 18rem;
 }
 .moon-cont {
   display: flex;
@@ -221,7 +229,6 @@ body > * {
 }
 .jupit5-cont {
   box-sizing: border-box;
-  margin-top: 50px;
 }
 .jupit5-head {
   margin-bottom: 50px;
