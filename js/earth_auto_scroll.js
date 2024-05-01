@@ -1,5 +1,5 @@
 // 자동스크롤 JS - auto_scroll.js
-import mFn from'my_function.js';
+import mFn from "./my_function.js";
 /********************************************** 
     [ 자동스크롤 기능정의 ]
     1. 스크롤바가 없는 상태에서 또는 스크롤기능을 
@@ -25,7 +25,7 @@ let pgNum = 0;
 // 1-2. 휠상태변수(true는 막기/false는 통과)
 let stsWheel = false;
 // 1-3. .page클래스 요소
-const elePage = mFn.qsa(".page");
+const elePage = mFn.qsa(".e_page");
 // 1-4. 전체페이지수
 const totalCnt = elePage.length;
 // console.log("대상:", elePage, totalCnt, "개");
@@ -109,7 +109,7 @@ function wheelFn(e) {
 
   // 5. 페이지 이동하기 //////
   // 5-1.이동할 위치알아내기
-  // -> .page 요소중 해당 순번페이지위치
+  // -> .e_page 요소중 해당 순번페이지위치
   let pos = elePage[pgNum].offsetTop;
   // offsetTop은 최상단에서 부터 거리
   console.log("이동할위치:", pos);
@@ -118,7 +118,7 @@ function wheelFn(e) {
   window.scrollTo(0, pos);
 
   // 6. 해당메뉴 순번 on넣기 / 나머지 on빼기
-  chgMenu(pgNum);
+  // chgMenu(pgNum);
 } /////////// wheelFn 함수 ////////////////
 ///////////////////////////////////////////
 
