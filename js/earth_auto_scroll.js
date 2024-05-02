@@ -19,6 +19,7 @@ import mFn from "./my_function.js";
         마우스의 바퀴를 돌릴때 발생함!)
 **********************************************/
 export default function auto_scroll(){
+  document.querySelector("body").style.overflow = "hidden";
 // 1.  전역변수 설정하기 /////////////
 // 1-1. 페이지변수
 let pgNum = 0;
@@ -73,54 +74,139 @@ function wheelFn(e) {
   // -> passive:false설정해야함!왜?window니까!
 
   // 2.광휠금지장치 //////
-  if (stsWheel) return; // 돌아가!
-  stsWheel = true; // 잠금!
-  setTimeout(() => {
-    stsWheel = false; // 잠금해제!
-  }, 500);
+  // if (stsWheel) return; // 돌아가!
+  // stsWheel = true; // 잠금!
+  // setTimeout(() => {
+  //   stsWheel = false; // 잠금해제!
+  // }, 500);
 
-  // 3. 휠방향 알아내기 /////
-  let delta = e.wheelDelta;
-  // 휠델타는 이벤트 객체에서 리턴해주는
-  // 방향, 이동거리 등의 정보값이다!
-  console.log("델타값:", delta);
-  // -> 마이너스가 아랫방향임!
+  // // 3. 휠방향 알아내기 /////
+  // let delta = e.wheelDelta;
+  // // 휠델타는 이벤트 객체에서 리턴해주는
+  // // 방향, 이동거리 등의 정보값이다!
+  // console.log("델타값:", delta);
+  // // -> 마이너스가 아랫방향임!
 
-  // 4. 방향별 분기하기 ///////
-  if (delta < 0) {
-    // 아랫페이지로 가야하니까 페이지번호증가
-    pgNum++;
-    // 한계수체크(끝번호고정)
-    if (pgNum === totalCnt) {
-      pgNum = totalCnt - 1;
-      // 마지막페이지순번은
-      // 전체개수 - 1
-    } /// if ///
-  } /// if ///
-  else {
-    // 반대는 윗방향이니까 페이지번호감소
-    pgNum--;
-    // 한계수 체크(0보다 작으면 0고정)
-    if (pgNum < 0) {
-      pgNum = 0;
-    } /// if ///
-  } /// else ///
-  console.log("pgNum:", pgNum);
 
-  // 5. 페이지 이동하기 //////
-  // 5-1.이동할 위치알아내기
-  // -> .e_page 요소중 해당 순번페이지위치
-  let pos = elePage[pgNum].offsetTop;
-  // offsetTop은 최상단에서 부터 거리
-  console.log("이동할위치:", pos);
-  // 5-2.페이지 스크롤 위치 이동하기
-  // scrollTo(0, y축이동값)
-  window.scrollTo(0, pos);
-
-  // 6. 해당메뉴 순번 on넣기 / 나머지 on빼기
-  // chgMenu(pgNum);
+  // /* 밑에서 만든함수 호출 */
+  // movePage(delta);
 } /////////// wheelFn 함수 ////////////////
 ///////////////////////////////////////////
 
 
-}
+
+    
+    /************************************************** 
+      함수명: movePage
+      기능: DT나 Mobile 모두 페이지 이동시 호출하여
+          실제 페이지를 이동시키고 메뉴변경함수 호출함
+    **************************************************/
+          function movePage(delta) {
+            //delta -방향을 나타내느 양수/음수
+              
+            // 1. 방향별 분기하기 ///////
+              if (delta < 0) {
+                  // 아랫페이지로 가야하니까 페이지번호증가
+                  pgNum++;
+                  // 한계수체크(끝번호고정)
+                  if (pgNum === totalCnt) {
+                      pgNum = totalCnt - 1;
+                      // 마지막페이지순번은
+                      // 전체개수 - 1
+                  } /// if ///
+              } /// if ///
+              else {
+                  // 반대는 윗방향이니까 페이지번호감소
+                  pgNum--;
+                  // 한계수 체크(0보다 작으면 0고정)
+                  if (pgNum < 0) {
+                      pgNum = 0;
+                  } /// if ///
+              } /// else ///
+              console.log("pgNum:", pgNum);
+      
+              // 2. 페이지 이동하기 //////
+              // 2-1.이동할 위치알아내기
+              // -> .page 요소중 해당 순번페이지위치
+              let pos = elePage[pgNum].offsetTop;
+              // offsetTop은 최상단에서 부터 거리
+              console.log("이동할위치:", pos);
+              // 2-2.페이지 스크롤 위치 이동하기
+              // scrollTo(0, y축이동값)
+              window.scrollTo(0, pos);
+      
+              // 3. 해당메뉴 순번 on넣기 / 나머지 on빼기
+              // chgMenu(pgNum);
+          } ////////////////////movePage///////////////////////////////////////
+      
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************* 
+    [ 모바일 이벤트처리 ]
+    
+    [ 모바일 터치 스크린에서 사용하는 이벤트 종류 ]
+    1. touchstart - 손가락이 화면에 닿을때 발생
+    2. touchend - 손가락이 화면에서 떨어질때 발생
+    3. touchmove - 손가락이 화면에 닿은채로 움직일때 발생
+    
+    [ 화면터치 이벤트관련 위치값 종류 ]
+    1. screenX, screenY : 
+        디바이스 화면을 기준한 x,y 좌표
+    2. clientX, clientY : 
+        브라우저 화면을 기준한 x,y 좌표(스크롤미포함)
+    3. pageX, pageY : 
+        스크롤을 포함한 브라우저 화면을 기준한 x,y 좌표
+*********************************************************/
+
+    //1. 모바일 이벤트 등록하기////////////
+    //대상: window
+    window.addEventListener("touchstart", touchStartFn);
+    window.addEventListener("touchend", touchEndFn);
+
+    //2. 모바일 이벤트 함수 만들기/////////
+
+    //터치시 위치값 변수 (mPosStart 시작위치/ mPosEnd 끝위치)
+    let mPosStart = 0,
+        mPosEnd = 0;
+
+    //2-1.터치 시작 이벤트 호출 함수//////////
+    function touchStartFn(e) {
+        //Y축 터치위치 알아오기
+        mPosStart = e.touches[0].screenY;
+        //모바일 이벤트값 객체는 touches[0]임!
+        console.log(mPosStart);
+    } //////////touchStartFn함수/////////////
+
+    //2-2.터치끝 이벤트 호출 함수//////////
+    function touchEndFn(e) {
+        //(1).Y축 터치위치 알아오기
+        mPosEnd = e.changedTouches[0].screenY;
+        //모바일 이벤트값 객체는 touches[0]임!
+        //그러나 같은 이벤트가 연속될 경우 변경된 값을
+        //읽어와야 하므로 changedTouches[0]을 사용해야함!
+        console.log(mPosEnd);
+
+        //(2). 마지막 터치위치와 처음터치위치의 차이 구하기
+        let diffValue = mPosEnd - mPosStart;
+        
+        // 분석결과: 
+        //양수는 위에서 아래로 쓸어내림(윗페이지로 이동)
+        //음수는  아래에서 위로 쓸어올림(아랫페이지 이동)
+        console.log("차이 값", diffValue);
+
+        //3.페이지 이동함수 호출하기////
+
+        movePage(diffValue);
+
+    } //////////touchEnd함수/////////////
+
+}///////////////auto_scroll함수 /////////////////
