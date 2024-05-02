@@ -5,5 +5,5 @@ import earthDance from "./earth_dance.js";
 earthDance();
 
 
-// import auto_scroll from "./auto_scroll.js";
-// auto_scroll();
+import auto_scroll from "./earth_auto_scroll.js";
+auto_scroll();

@@ -17,7 +17,7 @@
 body * {
   /* outline: 2px dashed red; */
 }
-body > * {
+body> * {
   overflow-x: hidden;
   cursor: default;
 }
@@ -107,7 +107,19 @@ transition: .3s ease-in-out;
 }
 /* ---------------------세번째 페이지--------------------- */
 .jupiter3 {
+  width: 100%;
   min-height: 80vh;
+}
+.white-box{
+  position: absolute;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* outline: 2px solid red; */
+  background: linear-gradient(to right,transparent -100%,white 10%);
+  /* background-color: white; */
+  overflow: hidden;
 }
 .jupiter3-cont {
   position: relative;
@@ -117,7 +129,8 @@ transition: .3s ease-in-out;
   background: url(../images/main/space.jpg);
   /* background-color: #000; */
   margin: 0 auto;
-}
+ }
+
 .jupiter3-text {
   position: relative;
   /* top: 100%; */
@@ -164,9 +177,9 @@ transition: .3s ease-in-out;
 .moon-img img {
   height: 100%;
 }
-.moon1 img {
+/* .moon1 img {
   transform: scaleX(-1) translateX(14%);
-}
+} */
 /* moon 가상요소로 위성이름 작성 */
 .moon-txt {
   position: absolute;
@@ -197,15 +210,16 @@ transition: .3s ease-in-out;
 /* 설명 이미지 오버시 */
 .moon:hover .M-text {
   opacity: 1;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
 }
 .moon:hover img {
+  transform: scale(1.1);
   opacity: 0.6;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
 }
 .moon:hover .moon-txt {
   opacity: 0;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-out;
 }
 /* 더 많은 달 */
 .jupiter-more {

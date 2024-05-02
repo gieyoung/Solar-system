@@ -2,8 +2,13 @@
 
 import mFn from "./my_function.js";
 
-const scAct = mFn.qsa(".desc");
-console.log('대상:',scAct);
+const scDesc = mFn.qsa(".desc");
+const scWhite = mFn.qs(".white-box");
+console.log('대상:',scDesc);
+
+// 스크롤 등장 기준설정 : 화면의 2/3
+const CRITERIA = (window.innerHeight / 3) * 2;
+// console.log("기준값:", CRITERIA);
 
 // 스크롤 등장액션 이벤트 설정하기
 mFn.addEvt(window, "scroll", showIt);
@@ -14,12 +19,19 @@ function showIt() {
   // 클래스 on넣기 함수 호출하기
 
   // forEach메서드 처리방법
-  scAct.forEach(ele=>addOn(ele));
+  scDesc.forEach(ele=>addOn(ele));
+  let bcrVal = mFn.getBCR(scWhite);
+  if(bcrVal<CRITERIA){
+    scWhite.style.left="100%";
+    scWhite.style.width="0%";
+    scWhite.style.transition="1s ease-out";
+  }else{    
+    scWhite.style.left="0%";
+    scWhite.style.width="100%";
+    scWhite.style.transition="1s ease-out";
+  }
 } /////////// showIt 함수 /////////////
 
-// 스크롤 등장 기준설정 : 화면의 2/3
-const CRITERIA = (window.innerHeight / 3) * 2;
-// console.log("기준값:", CRITERIA);
 
 //// [ 클래스 on 넣기 함수 ] ///////////
 function addOn(ele) {

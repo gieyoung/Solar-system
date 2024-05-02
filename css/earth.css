@@ -98,8 +98,8 @@ body * {
     color: #fff;
     /* background-color: #fff27d; */
     position: relative;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
         
 }
 
@@ -107,9 +107,21 @@ body * {
   position: fixed;
   z-index: -999;
   object-fit: cover;
+  /* width: 100%; */
     
     
 }
+
+
+#pg2 video{
+   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+      
+      
+  }
 
 .cont-txt{
     padding: 20px;
@@ -138,7 +150,7 @@ body * {
     position: sticky;
     top: 10rem;
     left: 0;
-    height: 100vh;
+    /* height: 100vh; */
 
     /* background-color: orange; */
 }
@@ -163,13 +175,13 @@ body * {
     text-align: center;
 }
 
-.eslidePg ul li img {
+/* .eslidePg ul li img {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     width: 50%;
     border-radius: 20px;
-}
+} */
 
 
 
