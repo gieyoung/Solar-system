@@ -3,13 +3,13 @@
 
 @import url(./common.css);
 
+/* 라이트박스-클릭시 이미지 확대 */
+@import url(./jquery.lightbox-0.5.css);
 
 /************* 상단영역 *************/
 /* common.css */
 
 /************* 메인영역 *************/
-
-
 
 /* 스크롤 등장*/
 .scroll-el {
@@ -29,8 +29,7 @@ body > * {
   cursor: default;
 }
 
-
-/************* 섹션1 *************/
+/************************ 섹션1 ************************/
 
 .sun01 {
   position: relative;
@@ -105,31 +104,27 @@ body > * {
   }
 }
 
-
-/* 섹션2 */
-.sun02{
-  padding:150px 0;
+/************************ 섹션2 ************************/
+.sun02 {
+  padding: 150px 0;
 }
 
-/* 3. 사업소개 */
+
 #about-area {
   height: auto;
   background-color: #fff;
 }
 
 #about-area .inbox {
-  max-width: 1400px;
-  width: 90%;
+  width: 95%;
 }
 
-.text{
-  width:50%;
+.text {
+  width: 50%;
 }
 
-
-
-.about-box li:first-child{
-  margin-bottom:100px;
+.about-box li:first-child {
+  margin-bottom: 100px;
 }
 
 .about-area h2 {
@@ -236,15 +231,38 @@ body > * {
   font-size: 1.8rem;
 }
 
-
-.pc-hidden{
+.pc-hidden {
   display: none;
 }
 
 
-/* 섹션3 */
+/************************ 섹션3 ************************/
+.sun03 {
+  background-color: #ebebeb;
+  padding: 100px 0;
+}
+
+.sun03 .inbox {
+  width: 95%;
+}
+
+.sun03 h2 {
+  margin-bottom: 40px;
+}
+
+/* 동영상 */
+.sun03 figure {
+  text-align: center;
+}
+.sun03 iframe {
+  width: 60rem;
+  height: 40rem;
+  border: none;
+}
+
+/************************* 섹션4 *************************/
 /* 이미지영역 */
-.img-box{
+.img-box {
   height: 50vh;
   background: url(../images/sun/GSFC_20171208_Archive_e002115~orig.jpg) no-repeat center/cover;
   background-attachment: fixed;
@@ -252,7 +270,7 @@ body > * {
 }
 
 /* 글자영역 */
-.txt-box{
+.txt-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -262,34 +280,56 @@ body > * {
 }
 
 
-
-
-
-/* 섹션4 */
-.sun04{
-  background-color: #ebebeb;
-  padding:100px 0;
-  
+/************************ 섹션5 ************************/
+.sun05 {
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 0;
 }
 
-.sun04 .inbox{
+.sun05 .inbox{
   width: 95%;
+
 }
 
-.sun04 h2{
+.sun05 h2{
   margin-bottom: 40px;
 }
 
-/* 동영상 */
-
-.sun04 figure{
-  text-align: center;
+.sun05 .box {
+  display: flex;
+  gap:2rem;
 }
-.sun04 iframe{
- width:500px;
- aspect-ratio: 1;
- border: none;
 
+.sun05 .box li {
+  width: calc(100% / 3);
+  /* height: 30rem; */
+  margin-bottom:20px;
+  border: 1px solid #c8c8c8;
+}
+
+.sun05 .box li a img {
+  width:100%;
+  aspect-ratio: 1;
+  object-fit: fill;
+}
+
+.lightbox-image{
+  width:300px;
+
+}
+
+/* 스크롤바 없애기 */
+#jquery-lightbox::-webkit-scrollbar {
+  display: none;
+}
+
+/* 왼쪽/오른쪽 버튼 */
+#lightbox-nav-btnPrev{
+  height:100% !important;
+}
+#lightbox-nav-btnNext{
+  height:100% !important;
 }
 
 
@@ -297,47 +337,62 @@ body > * {
 /************* 하단영역 *************/
 /* common.css */
 
+
+
 /************* 미디어쿼리 *************/
-/* 1200이하 */
-@media screen and (max-width:1200px) {
 
- 
-}
 /* 1024이하 */
-@media screen and (max-width:1024px) {
- .sun{font-size:5px;}
+@media screen and (max-width: 1024px) {
+  .sun {
+    font-size: 5px;
+  }
 }
-  
-
 
 /* 760이하 */
-@media screen and (max-width:760px) {
-  .about-area .con{flex-direction: column;}
-  .about-area .con .img-fade1{margin-right: 0;}
-  .about-area .con .text h3{text-align: center; margin-top: 30px;}
-  .text{width:100%}
-  .pc-hidden{display:block;}
-  .m-hidden{display:none;}
-  .sun03 .cont-tit{font-size: 3.5rem;}
-
-
-  
- 
- 
-
+@media screen and (max-width: 760px) {
+  #lightbox-container-image-box{
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #lightbox-image{
+    width:100%;
+    height:100%;
+  }
+  #lightbox-container-image-data-box{
+    width: 100% !important;
   }
   
-  
-/* 480이하 */
-@media screen and (max-width:480px) {
+  .about-area .con {
+    flex-direction: column;
+  }
+  .about-area .con .img-fade1 {
+    margin-right: 0;
+  }
+  .about-area .con .text h3 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .text {
+    width: 100%;
+  }
+  .pc-hidden {
+    display: block;
+  }
+  .m-hidden {
+    display: none;
+  }
+  .sun03 .cont-tit {
+    font-size: 3.5rem;
+  }
+  .sun05 .box li{}
+}
 
-  .sun04 iframe{  width:100%;}
-  
- 
+/* 480이하 */
+@media screen and (max-width: 480px) {
+  .sun03 iframe {
+    width: 100%;
+  }
 }
 /* 360이하 */
-@media screen and (max-width:360px) {
-
- 
- 
+@media screen and (max-width: 360px) {
 }
