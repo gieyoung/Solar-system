@@ -4,6 +4,6 @@
 import earthDance from "./earth_dance.js";
 earthDance();
 
-
+// earth 오토 스크롤
 import auto_scroll from "./earth_auto_scroll.js";
 auto_scroll();
