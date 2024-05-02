@@ -137,7 +137,7 @@ body * {
 }
 /* 타겟박스 */
 .etpg {
-    height: calc(100vh + 3500px);
+    /* height: calc(100vh + 3500px); */
     /* 타겟 박스는 보이는 화면 맨윗줄부터
      시작해서 아래로 마지막 박스 끝라인까지
     총 이동거리는 3000px이다!!! */
@@ -147,12 +147,13 @@ body * {
 /* 가로이동박스 */
 .eslidePg {
     padding-top:2vw;
-    position: sticky;
+    position: relative;
     top: 10rem;
     left: 0;
     /* height: 100vh; */
 
     /* background-color: orange; */
+    transition: left .4s ease-out;
 }
 /* 실제로 가로이동할 ul박스 */
 .eslidePg ul {

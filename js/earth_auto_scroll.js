@@ -19,17 +19,18 @@ import mFn from "./my_function.js";
         마우스의 바퀴를 돌릴때 발생함!)
 **********************************************/
 export default function auto_scroll() {
+  let bodyWidth = parseInt(document.body.offsetWidth);
+  // 모바일 여부 코드
+  let mob = false; // true이면 모바일
+  if (bodyWidth <= 700) mob = true;
+  console.log("모바일?", mob, bodyWidth);
 
-    // Root요소
-    const root = mFn.qs("html");
-    // 체크할 두번째 페이지
-    const tgPage = mFn.qs('.etpg');
+  mFn.qs("html").style.overflow = "hidden";
 
-    // 히든처리 함수
-    const chgHidden = (val) => root.style.overflow = val;
-
-  // 최초히든 처리
-  chgHidden("hidden");
+  if (mob) mFn.qs(".eslidePg").style.overflow = "auto";
+  else {
+    mFn.qs(".eslidePg").style.overflow = "hidden";
+  }
 
   // 1.  전역변수 설정하기 /////////////
   // 1-1. 페이지변수
@@ -71,6 +72,13 @@ export default function auto_scroll() {
     window.scrollTo(0, 0);
   }, 500);
 
+  // 체크할 두번째 페이지
+  const tgPage = mFn.qs(".eslidePg>ul");
+  // 움직일 박스 크기(화면가로크기만큼 빼야함)
+  const tgPageWidth = tgPage.offsetWidth - window.innerWidth;
+  // 이동값 변수
+  let tgPageLeft = 0;
+
   // 3. 함수 구현하기 ////////////////////
 
   /*************************************** 
@@ -82,24 +90,30 @@ export default function auto_scroll() {
     // 함수호출확인!
     console.log("휠~~~!", stopSts);
 
+    // 대상 페이지일때 멈춤상태값 true로 업데이트
+    if (pgNum == 1) stopSts = true;
+
     // 1.우리는 휠 기본기능을 막고
     // 자동으로 스크롤을 하나씩 되게 할 것이다!
 
     // 멈춤아님상태(stopSts=false)일때 처리
-    if(!stopSts){ 
-        e.preventDefault();
-        chgHidden("hidden");
-    }
-    // 멈춤상태(stopSts=true)일때 처리
-    else {
-        chgHidden("visible");
-        // 두번째 페이지 위치값 체크
-        let currPos = mFn.getBCR(tgPage)
-        console.log(currPos);
+    if (stopSts) {
+      if (e.wheelDelta < 0) tgPageLeft += 40;
+      else tgPageLeft -= 40;
 
-        if(currPos < -3200) stopSts = false;
-        else if(currPos <= 0) stopSts = true;
+      // 한계값 체크 및 상태 변경하기
+      if (tgPageLeft <= 0) {
+        tgPageLeft = 0;
+        stopSts = false;
+      } else if (tgPageLeft >= tgPageWidth) {
+        tgPageLeft = tgPageWidth;
+        stopSts = false;
+      }
 
+      // 두번째 페이지 위치값 체크
+      tgPage.style.left = -tgPageLeft + "px";
+
+      console.log(tgPage.style.left, tgPageWidth);
     }
     // -> passive:false설정해야함!왜?window니까!
 
@@ -129,10 +143,9 @@ export default function auto_scroll() {
     **************************************************/
   function movePage(delta) {
     //delta -방향을 나타내느 양수/음수
-    
-    // 현재 페이지를 체크하여 멈춤 상태 설정!
-    if(stopSts) return; // 여기서 함수 나감!
 
+    // 현재 페이지를 체크하여 멈춤 상태 설정!
+    if (stopSts) return; // 여기서 함수 나감!
 
     // 1. 방향별 분기하기 ///////
     if (delta < 0) {
@@ -154,9 +167,6 @@ export default function auto_scroll() {
       } /// if ///
     } /// else ///
     console.log("pgNum:", pgNum);
-
-    // 대상 페이지일때 멈춤상태값 true로 업데이트
-    if(pgNum == 1) stopSts = true;
 
     // 2. 페이지 이동하기 //////
     // 2-1.이동할 위치알아내기
@@ -197,36 +207,44 @@ export default function auto_scroll() {
   //2. 모바일 이벤트 함수 만들기/////////
 
   //터치시 위치값 변수 (mPosStart 시작위치/ mPosEnd 끝위치)
-  let mPosStart = 0,
-    mPosEnd = 0;
+  let mPosStartX = 0,
+    mPosStartY = 0,
+    mPosEndX = 0,
+    mPosEndY = 0;
 
   //2-1.터치 시작 이벤트 호출 함수//////////
   function touchStartFn(e) {
     //Y축 터치위치 알아오기
-    mPosStart = e.touches[0].screenY;
+    mPosStartY = e.touches[0].screenY;
+    mPosStartX = e.touches[0].screenX;
     //모바일 이벤트값 객체는 touches[0]임!
-    console.log(mPosStart);
+    console.log(mPosStartY);
   } //////////touchStartFn함수/////////////
 
   //2-2.터치끝 이벤트 호출 함수//////////
   function touchEndFn(e) {
     //(1).Y축 터치위치 알아오기
-    mPosEnd = e.changedTouches[0].screenY;
+    mPosEndY = e.changedTouches[0].screenY;
+    mPosEndX = e.changedTouches[0].screenX;
     //모바일 이벤트값 객체는 touches[0]임!
     //그러나 같은 이벤트가 연속될 경우 변경된 값을
     //읽어와야 하므로 changedTouches[0]을 사용해야함!
-    console.log(mPosEnd);
+    console.log(mPosEndY);
 
     //(2). 마지막 터치위치와 처음터치위치의 차이 구하기
-    let diffValue = mPosEnd - mPosStart;
+    let diffValueY = mPosEndY - mPosStartY;
+    let diffValueX = mPosEndX - mPosStartX;
 
     // 분석결과:
     //양수는 위에서 아래로 쓸어내림(윗페이지로 이동)
     //음수는  아래에서 위로 쓸어올림(아랫페이지 이동)
-    console.log("차이 값", diffValue);
+    console.log("차이Y:", diffValueY, "차이X:", diffValueX);
+
+    // X축과 Y축 값중 Y축이 크면 true값을 만들어서 페이지이동
+    let allowMove = Math.abs(diffValueY) > Math.abs(diffValueX) ? true : false;
 
     //3.페이지 이동함수 호출하기////
 
-    movePage(diffValue);
+    if(allowMove) movePage(diffValueY);
   } //////////touchEnd함수/////////////
 } ///////////////auto_scroll함수 /////////////////
