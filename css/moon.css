@@ -45,6 +45,7 @@ video{
 }
 
 .moon2{
+    position: relative;
     max-width: 1400px;
     min-width: 600px;
     margin: 50px 500px;
@@ -52,8 +53,11 @@ video{
 }
 .moon-pic{
     position: absolute;
-    top: 1700px;
-    left: 1000px;
+    top: 800px;
+    left: 500px;
+    z-index: 999;
+    mix-blend-mode: plus-lighter;
+    backdrop-filter: contrast(0.1);
 }
 .moon-txt{
     position: relative;
@@ -67,6 +71,35 @@ video{
     letter-spacing: 1px;
     /* 단어간격 */
     word-spacing: 2px;
+}
+.first-txt{
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.moon3{
+    height: 50vh;
+    background: url(../images/moon/m1.jpg) no-repeat fixed center/cover;
+}
+.moon4{
+    height: 100vh;
+}
+.cont-tit{
+    position: absolute;
+    background-color: rgb(91, 130, 201);/* rgb(151, 141, 208); */
+    padding: 10px;
+    translate: 40vw 15vh;
+    z-index: 99;
+}
+.facts-txt{
+    font-size: 10rem;
+    color: #fff;
+}
+.facts-img1>img{
+    position: absolute;
+    height: 85%;
+    translate: 50px;
+    translate: 10vw 10vh;
 }
 
 
