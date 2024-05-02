@@ -11,7 +11,7 @@
 
 /************* 메인영역 *************/
 
-/* 스크롤 등장*/
+/* 스크롤 등장(아래에서 위)*/
 .scroll-el {
   transform: translateY(20%);
   opacity: 0;
@@ -20,6 +20,17 @@
 
 .scroll-el.on {
   transform: translateY(0);
+  opacity: 1;
+}
+/* 스크롤 등장(왼쪽에서 오른쪽)*/
+.scroll-el2 {
+  transform: translateX(-20%);
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+.scroll-el2.on {
+  transform: translateX(0);
   opacity: 1;
 }
 
@@ -109,14 +120,13 @@ body > * {
   padding: 150px 0;
 }
 
-
 #about-area {
   height: auto;
   background-color: #fff;
 }
 
 #about-area .inbox {
-  width: 95%;
+  width: 90%;
 }
 
 .text {
@@ -229,94 +239,99 @@ body > * {
 
 .about-area .con .text p {
   font-size: 1.8rem;
+  line-height: 2.5rem;
 }
 
 .pc-hidden {
   display: none;
 }
 
-
-/************************ 섹션3 ************************/
+/************************* 섹션4 *************************/
+/* 이미지영역 */
 .sun03 {
+  height: 50vh;
+  background: url("../images/sun/rotate/1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* 글자영역 */
+.sun03 .txt-box {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.sun03 .cont-tit{
+  font-size:4rem;
+  color: #fff;
+  text-align: center;
+}
+/************************ 섹션3 ************************/
+.sun04 {
   background-color: #ebebeb;
   padding: 100px 0;
 }
 
-.sun03 .inbox {
-  width: 95%;
+.sun04 .inbox {
+  width: 90%;
 }
 
-.sun03 h2 {
+.sun04 h2 {
   margin-bottom: 40px;
 }
 
 /* 동영상 */
-.sun03 figure {
+.sun04 figure {
   text-align: center;
 }
-.sun03 iframe {
+.sun04 iframe {
   width: 60rem;
   height: 40rem;
   border: none;
 }
 
-/************************* 섹션4 *************************/
-/* 이미지영역 */
-.img-box {
-  height: 50vh;
-  background: url(../images/sun/GSFC_20171208_Archive_e002115~orig.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* 글자영역 */
-.txt-box {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-}
-
 
 /************************ 섹션5 ************************/
 .sun05 {
-  background-color: #fff;
+  background: url("../images/sun/fb.jpg") no-repeat top/cover;
   width: 100%;
   padding: 100px 0;
 }
 
-.sun05 .inbox{
-  width: 95%;
-
+.sun05 .inbox {
+  width: 90%;
 }
 
-.sun05 h2{
+.sun05 h2 {
   margin-bottom: 40px;
+  color: #fff;
 }
 
 .sun05 .box {
   display: flex;
-  gap:2rem;
+  gap: 2rem;
 }
 
 .sun05 .box li {
   width: calc(100% / 3);
   /* height: 30rem; */
-  margin-bottom:20px;
+  margin-bottom: 20px;
   border: 1px solid #c8c8c8;
 }
 
 .sun05 .box li a img {
-  width:100%;
+  width: 100%;
   aspect-ratio: 1;
   object-fit: fill;
 }
 
-.lightbox-image{
-  width:300px;
-
+.lightbox-image {
+  width: 300px;
 }
 
 /* 스크롤바 없애기 */
@@ -325,19 +340,43 @@ body > * {
 }
 
 /* 왼쪽/오른쪽 버튼 */
-#lightbox-nav-btnPrev{
-  height:100% !important;
+#lightbox-nav-btnPrev {
+  height: 100% !important;
 }
-#lightbox-nav-btnNext{
-  height:100% !important;
+#lightbox-nav-btnNext {
+  height: 100% !important;
 }
 
+/* 섹션6 */
+.sun06 {
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 0;
+}
 
+.sun06 .inbox {
+  width: 90%;
+}
+.vision_li {
+  margin-top: 30px;
+}
+.vision_li li {
+  padding: 50px 0;
+  border-bottom: 1px solid #dcdbdb;
+}
+.vision_li li span {
+  font-size: 3rem;
+}
+.vision_li li span em {
+  font-weight: 900;
+}
+.vision_li li p {
+  margin-top: 15px;
+  font-size: 2.2rem;
+}
 
 /************* 하단영역 *************/
 /* common.css */
-
-
 
 /************* 미디어쿼리 *************/
 
@@ -350,18 +389,18 @@ body > * {
 
 /* 760이하 */
 @media screen and (max-width: 760px) {
-  #lightbox-container-image-box{
+  #lightbox-container-image-box {
     width: 100% !important;
     height: 100% !important;
   }
-  #lightbox-image{
-    width:100%;
-    height:100%;
+  #lightbox-image {
+    width: 100%;
+    height: 100%;
   }
-  #lightbox-container-image-data-box{
+  #lightbox-container-image-data-box {
     width: 100% !important;
   }
-  
+
   .about-area .con {
     flex-direction: column;
   }
@@ -384,7 +423,8 @@ body > * {
   .sun03 .cont-tit {
     font-size: 3.5rem;
   }
-  .sun05 .box li{}
+  .sun05 .box li {
+  }
 }
 
 /* 480이하 */

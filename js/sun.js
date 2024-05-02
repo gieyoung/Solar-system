@@ -1,6 +1,9 @@
 // 태양 JS - sun.js
 
 
+// 나의 함수 불러오기
+import mFn from "./my_function.js";
+
 // 스크롤 액션 함수 불러오기
 import scrollAction from "./scroll_action.js";
 
@@ -30,3 +33,30 @@ $(function () {
     txtOf: "중에",
   });
 });
+
+
+    /****************************************
+    
+    [ 섹션4: 자동으로 이미지 바꾸기]
+
+    ******************************************/
+
+
+window.addEventListener("DOMContentLoaded", loadFn);
+
+function loadFn() {
+    let iseq = 0;
+    const i = ["1", "2", "3", "4"];
+    const imgChange = document.getElementsByClassName("sun03")[0];
+
+    
+
+    setInterval(() => {
+        iseq++;
+        if (iseq === i.length) iseq = 0;
+        imgChange.style.backgroundImage = `url(../images/sun/rotate/${i[iseq]}.jpg)`;
+    },3000);
+
+    console.log(imgChange,i.length,i[iseq]);
+} ////////// loadFn 함수 //////////
+
