@@ -64,6 +64,19 @@
                 </div>
               </li>
               <li class="con scroll-el hide-el on">
+                <!-- 모바일 이미지 영역 -->
+                <div class="img-fade img-fade2 pc-hidden">
+                  <!-- 클리핑 마스크 -->
+                  <svg class="svg">
+                    <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+                      <path
+                        d="M0.5,1 C0.469,1,0.439,0.996,0.419,0.989 L0.049,0.855 C0.025,0.846,0,0.809,0,0.781 V0.219 C0,0.191,0.025,0.154,0.049,0.145 L0.419,0.011 C0.439,0.004,0.469,0,0.5,0 C0.531,0,0.561,0.004,0.581,0.011 L0.951,0.145 C0.975,0.154,1,0.191,1,0.219 V0.781 C1,0.809,0.975,0.846,0.951,0.855 L0.581,0.989 C0.561,0.996,0.531,1,0.5,1"
+                      ></path>
+                    </clipPath>
+                  </svg>
+                  <img src="./images/sun/sun_table01.jpg" alt="" class="fade1" />
+                  <img src="./images/sun/sun_table04.jpg" alt="" class="fade2" />
+                </div>
                 <!-- 글자영역 -->
                 <div class="text">
                   <h3 class="sub-tit">Pop Culture</h3>
@@ -74,8 +87,8 @@
                     comic book fame, your powers are heightened by the yellow glow of our Sun. There are several science fiction films featuring the Sun in the storyline.
                   </p>
                 </div>
-                <!-- 이미지 영역 -->
-                <div class="img-fade img-fade2">
+                <!-- pc 이미지 영역 -->
+                <div class="img-fade img-fade2 m-hidden">
                   <!-- 클리핑 마스크 -->
                   <svg class="svg">
                     <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
@@ -105,56 +118,15 @@
 
       <section class="sun04">
         <div class="inbox">
-          <p>Click on the buttons inside the tabbed menu:</p>
-
-<div id="London" class="tabcontent">
-  <h1>London</h1>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h1>Paris</h1>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h1>Tokyo</h1>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<div id="Oslo" class="tabcontent">
-  <h1>Oslo</h1>
-  <p>Oslo is the capital of Norway.</p>
-</div>
-
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
-          
+          <h2 class="sub-tit">Sun 3d Model</h2>
+            <figure>
+              <div>
+              <iframe src="https://eyes.nasa.gov/apps/solar-system/#/sun?embed=true" title="" class="smd-iframe-iframe margin-left-auto margin-right-auto border-0" allow="fullscreen" data-gtm-yt-inspected-13="true">Unable to render the provided source</iframe>
+            </div>
+            <div class="padding-y-1"></div>
+          </figure>
+          </div>
         </div>
-        
-        
-        <script>
-          function openCity(cityName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-
-}
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-        </script>
-        
-         
       </section>
  
     </main>

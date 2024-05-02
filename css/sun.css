@@ -150,8 +150,8 @@ body > * {
 /* 이미지 두개가 번갈아가며 서서히 나타나는 효과 */
 .about-area .con .img-fade1 {
   position: relative;
-  width: 375px;
-  height: 417px;
+  width: 37.5rem;
+  height: 41.7rem;
   border-radius: 200px;
   margin-right: 40px;
   overflow: hidden;
@@ -181,8 +181,8 @@ body > * {
 /* 클리핑 마스크로 두번째 영역 사진 넣기 */
 .about-area .con .img-fade2 {
   position: relative;
-  width: 375px;
-  height: 417px;
+  width: 37.5rem;
+  height: 41.7rem;
   clip-path: url(#my-clip-path);
 }
 .about-area .con .img-fade2 img {
@@ -237,7 +237,9 @@ body > * {
 }
 
 
-
+.pc-hidden{
+  display: none;
+}
 
 
 /* 섹션3 */
@@ -265,47 +267,77 @@ body > * {
 
 /* 섹션4 */
 .sun04{
-  background-color: #edeeee;
-  width:100%;
+  background-color: #ebebeb;
+  padding:100px 0;
   
 }
 
 .sun04 .inbox{
-  border: 1px solid red;
-  height:100vh;
+  width: 95%;
 }
 
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+.sun04 h2{
+  margin-bottom: 40px;
 }
 
-.tablink:hover {
-  background-color: #777;
-}
+/* 동영상 */
 
-/* Style the tab content */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 50px;
+.sun04 figure{
   text-align: center;
 }
+.sun04 iframe{
+ width:500px;
+ aspect-ratio: 1;
+ border: none;
 
-#London {background-color:red;}
-#Paris {background-color:green;}
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
+}
+
 
 
 /************* 하단영역 *************/
 /* common.css */
 
 /************* 미디어쿼리 *************/
+/* 1200이하 */
+@media screen and (max-width:1200px) {
+
+ 
+}
+/* 1024이하 */
+@media screen and (max-width:1024px) {
+ .sun{font-size:5px;}
+}
+  
+
+
+/* 760이하 */
+@media screen and (max-width:760px) {
+  .about-area .con{flex-direction: column;}
+  .about-area .con .img-fade1{margin-right: 0;}
+  .about-area .con .text h3{text-align: center; margin-top: 30px;}
+  .text{width:100%}
+  .pc-hidden{display:block;}
+  .m-hidden{display:none;}
+  .sun03 .cont-tit{font-size: 3.5rem;}
+
+
+  
+ 
+ 
+
+  }
+  
+  
+/* 480이하 */
+@media screen and (max-width:480px) {
+
+  .sun04 iframe{  width:100%;}
+  
+ 
+}
+/* 360이하 */
+@media screen and (max-width:360px) {
+
+ 
+ 
+}
