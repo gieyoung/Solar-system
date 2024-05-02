@@ -5,6 +5,14 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
 /************* 공통구역 *************/
 body * {
   /* outline: 2px dashed red; */
@@ -22,10 +30,10 @@ body > * {
   line-height: normal;
 }
 .main-text {
-    color: #fff;
-    position: absolute;
-    width: 700px;
-  }
+  color: #fff;
+  position: absolute;
+  width: 700px;
+}
 /************* 상단영역 *************/
 /* common.css */
 
@@ -54,7 +62,7 @@ body > * {
   bottom: 25vh;
   left: 10%;
   opacity: 0;
-  animation: fadein 1.4s ease-in-out 1.3s forwards;
+  animation: fadein 0.4s ease-in-out 1.3s forwards;
 }
 .saturn1-text h1 {
   /* animation: fadein 1.4s ease-in-out 1.3s forwards; */
@@ -78,7 +86,13 @@ body > * {
 .desc {
   display: flex;
   gap: 2rem;
-  margin-top: 35px;
+  margin-top: 20px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.desc.on {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
 }
 
 .desc1 {
@@ -89,6 +103,9 @@ body > * {
 .desc1-img {
   width: 45vw;
   height: auto;
+}
+.desc1-img img {
+  border-radius: 35px;
 }
 .desc2 {
   position: relative;
@@ -115,6 +132,7 @@ body > * {
 
 /* 세번째페이지 - 고리 설명 */
 .saturn3-desc {
+  position: relative;
   max-width: 1400px;
   /* text-align: center; */
   margin: 0 auto;
@@ -124,33 +142,39 @@ body > * {
   margin-bottom: 20px;
 }
 .saturn3-desc strong {
-    position: relative;
-    top: -6px;
+  position: relative;
+  top: -6px;
   font-size: max(1.5vw, 14px);
 }
-
 
 /* 세번째페이지 - 링크이동 */
 
 .saturn3-link {
   position: relative;
-  height: 80vh;
   background-color: #000;
 
-  padding: 50px;
+  height: 0;
+  padding: 0px;
+  transition: 0.5s ease-out;
 }
+
 .saturn3-img {
   position: absolute;
+  /* display: none; */
   right: 50px;
 }
 .saturn3-img img {
   aspect-ratio: 800/600;
-  height: 80vh;
+  width: 900px;
+  height: 0vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, height .5s ease-out;
 }
 .saturn3-text {
   position: absolute;
   left: 50px;
   bottom: 50px;
+  opacity: 0;
 
   color: white;
   text-align: left;
@@ -160,9 +184,46 @@ body > * {
   text-align: right;
   color: white;
 }
+.saturn3-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1vh;
+  width: 0%;
+  z-index: 1;
+  background-color: #000;
+  transition: 0.5s 0.5s ease-out;
+}
+.saturn3-line.on {
+  position: absolute;
+  height: 1vh;
+  width: 100%;
+  z-index: 1;
+  transition: 0.5s ease-out;
+}
+/* 세번째페이지 화면 가운데올때 */
+.saturn3-link.on {
+  height: 80vh;
+  width: 100%;
+  padding: 50px;
+  transition: 0.5s 0.5s ease-out;
+}
+
+.saturn3-link.on .saturn3-img img {
+  opacity: 1;
+  height: 80vh;
+  transition: opacity 0.5s 0.8s ease-out;
+}
+.saturn3-link.on .saturn3-text {
+  opacity: 1;
+  transition: 0.5s 0.8s ease-out;
+}
 .saturn3-text span {
   font-size: 4rem;
   cursor: pointer;
+}
+.saturn3-text span:hover, .saturn-more:hover {
+  font-family: "Freesentation-9Black";
 }
 
 .saturn3-text i {
@@ -242,13 +303,18 @@ body > * {
   }
 
   .desc2 {
-    margin-top: 0;
     height: 100%;
   }
 
   .desc strong {
     display: block;
     text-align: center;
+  }
+  .desc1-text,
+  .desc2-text,
+  .saturn3-desc {
+    width: 95%;
+    margin: 0 auto;
   }
   .desc1-img {
     width: auto;
@@ -266,7 +332,7 @@ body > * {
     border-radius: 0;
   }
   /* 서번째 페이지 */
-  .saturn3-desc h2{
+  .saturn3-desc h2 {
     margin-top: 5rem;
   }
   .saturn3-desc strong {
@@ -275,7 +341,6 @@ body > * {
 }
 
 @media screen and (max-width: 960px) {
-    
   /* ---------------------네번째 페이지--------------------- */
   .saturn4 h2 {
     font-size: 6vw;
@@ -284,17 +349,20 @@ body > * {
   .saturn4-cont li {
     flex-direction: column;
   }
-  .saturn4-text{
+  .saturn4-text {
     text-align: center;
   }
   .saturn4 p {
     font-size: 12px;
     line-height: 15px;
   }
-    .saturn-more {
-        text-align: center;
-        margin-top: 2rem;
-    }
+  .saturn-more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .saturn-more i {
+    display: none;
+  }
 }
 @media screen and (max-width: 850px) {
   /* ---------------------첫페이지--------------------- */
@@ -314,55 +382,64 @@ body > * {
     /* font-size: 30px; */
     font-size: 1.5rem;
   }
-
-
 }
 @media screen and (max-width: 700px) {
-    /* 첫페이지 */
-    .saturn1-text {
-        width: 80%;
-      }
-      .saturn1-text h1 {
-        font-size: 6.5rem;
-        text-align: center;
-      }
-      .saturn1-text p {
-        font-size: 1.2rem;
-      }
-      /* 두번째 페이지 */
-      .desc {
-        width: 100vw;
-      }
-      .desc2 iframe {
-        height: 400px;
-      }
-      /* 서번째 페이지 */
-      .saturn3-desc h2{
-        font-size: 4rem;
-      }
-      .saturn3-text{
-        left: 10px;
-        font-size: 4rem;
-      }
-      .saturn3-text span {
-        font-size: 2.5rem;
-    }
-    .saturn3-text a {
-        text-align: left;
-    }
-    .saturn3-text i {
-        display: block;
-        font-size: 4rem;
-    }
-      .saturn3-desc strong {
-        font-size: 2.5rem;
-      }
+  /* 첫페이지 */
+  .saturn1-text {
+    width: 80%;
+  }
+  .saturn1-text h1 {
+    font-size: 6.5rem;
+    text-align: center;
+  }
+  .saturn1-text p {
+    font-size: 1.2rem;
+  }
+  /* 두번째 페이지 */
+  .desc {
+    width: 100vw;
+  }
+  /* 두번째페이지 */
+  .desc1-text,
+  .desc2-text {
+    font-size: 1.5rem;
+  }
+  .desc1-text strong,
+  .desc2-text strong {
+    font-size: 3rem;
+  }
+  .desc2 iframe {
+    height: 400px;
+  }
 
-      /* 네번째 */
-      .saturn4-cont ul {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .saturn4 h2 {
-        margin-bottom: 30px;
-    }
+  /* 서번째 페이지 */
+  .saturn3-desc h2 {
+    font-size: 4rem;
+  }
+  .saturn3-text {
+    left: 10px;
+    font-size: 4rem;
+    width: 80%;
+  }
+  .saturn3-text span {
+    font-size: 2.5rem;
+  }
+  .saturn3-text a {
+    text-align: left;
+  }
+  .saturn3-text i {
+    display: block;
+    font-size: 4rem;
+  }
+  .saturn3-desc strong {
+    font-size: 2.5rem;
+  }
+
+  /* 네번째 */
+  .saturn4-cont ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .saturn4 h2 {
+    margin-bottom: 30px;
+  }
 }
