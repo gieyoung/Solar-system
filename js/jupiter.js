@@ -14,6 +14,13 @@ const moon4 = mFn.qsa(".moon");
 const CRITERIA = (window.innerHeight / 3) * 2;
 // console.log("기준값:", CRITERIA);
 
+
+// 맨위로 올리기
+window.onload=()=>{
+  scrollTo(0, 0);
+}
+
+
 // 스크롤 등장액션 이벤트 설정하기
 mFn.addEvt(window, "scroll", showIt);
 
