@@ -16,11 +16,15 @@
 
     <!-- 공통 JS연결 -->
     <script type="module" src="./js/common.js"></script>
+
     <!-- 개별 JS연결 -->
     <script type="module" src="./js/sun.js"></script>
 
-    <!-- JS스크롤 액션 -->
-    <script src="./js/scroll_action.js" defer></script>
+    <!-- 제이쿼리 연결 -->
+    <script src="js/jquery-3.5.0.min.js"></script>
+
+    <!-- lightbox 라이브러리 -->
+    <script src="js/jquery.lightbox-0.5-mod.js"></script>
    
   </head>
   <body>
@@ -32,7 +36,7 @@
     <!-- 섹션1 -->
 
     <main class="sun">
-      <!-- 섹션1 -->
+      <!-- 섹션1(태양 메인) -->
       <section class="sun01">
         <!-- 동영상 삽입 -->
         <video src="../images/sun/sun.mp4" loop="" autoplay="" muted="" playsinline=""></video>
@@ -42,7 +46,7 @@
         </div>
       </section>
 
-      <!-- 섹션2 -->
+      <!-- 섹션2(태양 설명) -->
       <section class="sun02">
         <div id="about-area">
           <div class="about-area inbox">
@@ -106,17 +110,9 @@
         </div>
       </section>
 
-      <!-- 섹션3 -->
+     
+<!-- 섹션3(Sun 3d Model) -->
       <section class="sun03">
-        <div class="img-box">
-           <div class="txt-box">
-              <h2 class="cont-tit">The Sun is the star at the heart of our solar system</h2>
-           </div>
-        </div>
-      </div>
-      </section>
-
-      <section class="sun04">
         <div class="inbox">
           <h2 class="sub-tit">Sun 3d Model</h2>
             <figure>
@@ -128,7 +124,38 @@
           </div>
         </div>
       </section>
- 
+
+
+      
+<!-- 섹션4 -->
+       <section class="sun04">
+        <div class="img-box">
+           <div class="txt-box">
+              <h2 class="cont-tit  scroll-el hide-el">The Sun is the star at the heart of our solar system</h2>
+           </div>
+        </div>
+      </div>
+      </section>
+
+
+<!-- 섹션5(갤러리) -->
+       <section class="sun05">
+        <div class="inbox">
+        <h2 class="sub-tit">Gallery</h2>
+          <ul class="box scroll-el hide-el">
+            <li><a href="images/sun/gallery/1.jpg"><img src="images/sun/gallery/1.jpg"></a></li>
+            <li><a href="images/sun/gallery/2.jpg"><img src="images/sun/gallery/2.jpg"></a></li>
+            <li><a href="images/sun/gallery/3.jpg"><img src="images/sun/gallery/3.jpg"></a></li>
+            <li><a href="images/sun/gallery/4.jpg"><img src="images/sun/gallery/4.jpg"></a></li>
+            </ul>
+            <ul class="box scroll-el hide-el">
+            <li><a href="images/sun/gallery/5.jpg"><img src="images/sun/gallery/5.jpg"></a></li>
+            <li><a href="images/sun/gallery/6.jpg"><img src="images/sun/gallery/6.jpg"></a></li>
+            <li><a href="images/sun/gallery/7.jpg"><img src="images/sun/gallery/7.jpg"></a></li>
+            <li><a href="images/sun/gallery/8.jpg"><img src="images/sun/gallery/8.jpg"></a></li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <!--------------------------하단영역-------------------------->

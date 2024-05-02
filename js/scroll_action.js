@@ -3,33 +3,19 @@
 //부드러운 스크롤 작동함수 호출
 // startSS();
 
-// DOM 함수 객체 //////////////
-const myFn = {
-  // 요소선택함수 ////////
-  qs: (x) => document.querySelector(x),
-  qsEl: (el, x) => el.querySelector(x),
-  qsa: (x) => document.querySelectorAll(x),
-  qsaEl: (el, x) => el.querySelectorAll(x),
+import mFn from "./my_function.js";
 
-  // 이벤트셋팅함수
-  addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
-  // 바운딩함수
-  getBCR: (ele) => ele.getBoundingClientRect().top,
-  // 옵셋탑값 반환함수
-  getOT: (ele) => ele.offsetTop,
-}; /////// myFn 객체 /////////////
-
-
+export default function scrollAction(){
 // 1. 대상선정 ///////////////
 // 스크롤 등장대상 : .hide-el (별도의 클래스를 줌!)
-const scAct = myFn.qsa(".hide-el");
+const scAct = mFn.qsa(".hide-el");
 console.log('대상:',scAct);
 
 // 2. 이벤트 설정 및 함수 호출하기 ////////////
 // 2-1. 글자등장함수 호출하기
 
 // 2-2. 스크롤 등장액션 이벤트 설정하기
-myFn.addEvt(window, "scroll", showIt);
+mFn.addEvt(window, "scroll", showIt);
 
 // 3. 함수 만들기 ///////////////
 // 3-1. 스크롤 등장액션 함수
@@ -42,9 +28,9 @@ function showIt() {
   // forEach메서드 처리방법
   scAct.forEach(ele=>addOn(ele));
 
-  // let pos = myFn.getBCR(scAct[0]);
-  // let pos2 = myFn.getBCR(scAct[1]);
-  // let pos3 = myFn.getBCR(scAct[2]);
+  // let pos = mFn.getBCR(scAct[0]);
+  // let pos2 = mFn.getBCR(scAct[1]);
+  // let pos3 = mFn.getBCR(scAct[2]);
   // 함수호출확인
   // console.log('첫번째대상위치:',pos);
 
@@ -61,13 +47,13 @@ const CRITERIA = (window.innerHeight / 3) * 2;
 function addOn(ele) {
   // ele - 대상요소
   // 바운딩값 구하기
-  let bcrVal = myFn.getBCR(ele);
+  let bcrVal = mFn.getBCR(ele);
   // console.log(bcrVal);
 
   // 기준값보다 작을때 등장
   if (bcrVal < CRITERIA) {
     ele.classList.contains('except')?
-    myFn.qs('.bg-con').classList.add("on"):
+    mFn.qs('.bg-con').classList.add("on"):
     ele.classList.add("on");}
   // 기준값보다 크면 원상복귀(숨김-on빼기)
   else ele.classList.remove("on");
@@ -76,7 +62,7 @@ function addOn(ele) {
 // [ 글자등장 셋팅하기 ] /////////////////
 
 
-  
+}//////////////scrollAction함수/////////////
   
 
 
