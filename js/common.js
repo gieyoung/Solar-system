@@ -31,7 +31,7 @@ export default function setElement() {
 ******************************************************/
 
   makeMenu(); // 함수호출!!!
-
+  console.log(gnbData);
   // [ GNB메뉴코드 만들기 함수 ]
   function makeMenu() {
     mFn.qs("#gnb").innerHTML = `
