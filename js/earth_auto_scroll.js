@@ -98,8 +98,8 @@ export default function auto_scroll() {
 
     // 멈춤아님상태(stopSts=false)일때 처리
     if (stopSts) {
-      if (e.wheelDelta < 0) tgPageLeft += 40;
-      else tgPageLeft -= 40;
+      if (e.wheelDelta < 0) tgPageLeft += 120;
+      else tgPageLeft -= 120;
 
       // 한계값 체크 및 상태 변경하기
       if (tgPageLeft <= 0) {
