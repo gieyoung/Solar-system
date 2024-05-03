@@ -65,7 +65,13 @@ body * {
     height: 100%;
     z-index: -1;
 }
+.totopslide{
+    opacity: 0;
+}
+.totopslide .on{
+    opacity: 1;
 
+}
 
 
 
