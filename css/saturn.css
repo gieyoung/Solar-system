@@ -67,6 +67,11 @@ body > * {
   opacity: 0;
   animation: moveOp .8s ease-in-out forwards;
 }
+.saturn1-text p{
+  opacity: 1  ;
+  color: #00000000;
+  animation: moveColor .3s ease-in-out .7s forwards;
+}
 @keyframes fadein {
   to {
     left: 10%;
@@ -75,11 +80,6 @@ body > * {
 }
 @keyframes moveOp {
   to{opacity: 1;}
-}
-.saturn1-text p{
-  opacity: 1  ;
-  color: #00000000;
-  animation: moveColor .3s ease-in-out .7s forwards;
 }
 @keyframes moveColor {
   to{  color: white;}
@@ -171,7 +171,7 @@ body > * {
 .saturn3-img {
   position: absolute;
   /* display: none; */
-  right: 50px;
+  right: 20rem;
 }
 .saturn3-img img {
   aspect-ratio: 800/600;
