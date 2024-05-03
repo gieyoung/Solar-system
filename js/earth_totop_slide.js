@@ -4,11 +4,16 @@ import mFn from "./my_function.js";
 
 // 스크롤 액션 JS
 
-export default function TotopSlide(asdf){
+export default function TotopSlide(){
 
     // 대상:.totopslide
-    const totopSlide = mFn.qs(asdf);
-    console.log(totopSlide)
+    const TotopSlide = mFn.qsa(".totopslide");
+    
+
+    /********************************** 함수의 추상화 **********************************/
+    // const totopSlide = mFn.qs(asdf);
+    // console.log(totopSlide)
+    /********************************** 함수의 추상화 **********************************/
     
 
     // 기준값:
@@ -20,14 +25,14 @@ export default function TotopSlide(asdf){
     // 스크롤 이벤트 함수
     function showIt(){
         // 대상위치값
-        let tgPos = mFn.getBCR(totopSlide);
+        let tgPos = mFn.getBCR(TotopSlide);
         // console.log(tgPos);
 
         if(tgPos < CRITERIA){
-            totopSlide.classList.add('on');
+            TotopSlide.classList.add('on');
         }
         else{
-            totopSlide.classList.remove('on');
+            TotopSlide.classList.remove('on');
         }
 
     } //////// showIt 함수 ////////////
