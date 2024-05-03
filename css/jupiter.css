@@ -88,6 +88,12 @@ body > * {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
+.desc img{
+  border-radius: 35px;
+}
+.desc2-img img{
+  border-radius: 35px 35px 0 0;
+}
 .desc.on {
   opacity: 1;
   transition: 0.3s ease-in-out;
