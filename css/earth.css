@@ -68,14 +68,15 @@ body * {
 
 
 
-.totopslide{
-    opacity: 0;
-}
-.totopslide .on{
+.e-moveleft{
+    
     opacity: 1;
-
 }
-
+.e-moveleft.on{
+    
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
 
 
 

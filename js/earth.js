@@ -1,7 +1,16 @@
 
 
-import TotopSlide from "./earth_totop_slide.js";
-TotopSlide();
+import auto_scroll from "./earth_auto_scroll.js";
+auto_scroll();
+
+
+/* 드래그시 가로로 움직일떄 li에 on주기가 안됨.... */
+import moveleft from "./earth_moveleft.js";
+moveleft();
+
+
+// import moveup from "./earth_moveup.js";
+// moveup();
 
 /******************************** 함수의 추상화 ********************************/
 // const tgEle = [".cont-box","#pg4"];
@@ -9,7 +18,7 @@ TotopSlide();
     //     new TotopSlide(v);
     // })
     // earth 오토 스크롤+ pg2 스크롤시가로 움직임
-/******************************** 함수의 추상화 ********************************/
-import auto_scroll from "./earth_auto_scroll.js";
-auto_scroll();
+    /******************************** 함수의 추상화 ********************************/
+
+
 
