@@ -14,7 +14,9 @@ const CRITERIAM = (window.innerHeight / 3) * 1;
 
 // 맨위로 올리기
 window.onload=()=>{
+  setTimeout(() => {
     scrollTo(0, 0);
+  }, 100);
 }
 
 
