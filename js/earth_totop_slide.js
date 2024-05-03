@@ -1,14 +1,14 @@
 // !!!!나의 함수
-import mFn from "./my_function";
-
+import mFn from "./my_function.js";
 
 
 // 스크롤 액션 JS
 
-export default function totopSlide(){
+export default function TotopSlide(asdf){
 
     // 대상:.totopslide
-    const totopSlide = mFn.qs(".totopslide");
+    const totopSlide = mFn.qs(asdf);
+    console.log(totopSlide)
     
 
     // 기준값:
