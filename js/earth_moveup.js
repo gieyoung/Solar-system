@@ -4,7 +4,7 @@ import mFn from "./my_function.js";
 
 // 스크롤 액션 JS
 
-export default function moveup(){
+export default function eMoveup(){
 
     // 대상:.e-moveup
     const eMoveup = mFn.qs(".e-moveup");

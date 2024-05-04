@@ -5,12 +5,12 @@ auto_scroll();
 
 
 /* 드래그시 가로로 움직일떄 li에 on주기가 안됨.... */
-import moveleft from "./earth_moveleft.js";
-moveleft();
+import eMoveleft from "./earth_moveleft.js";
+eMoveleft();
 
 
-// import moveup from "./earth_moveup.js";
-// moveup();
+import eMoveup from "./earth_moveup.js";
+eMoveup();
 
 /******************************** 함수의 추상화 ********************************/
 // const tgEle = [".cont-box","#pg4"];

@@ -4,7 +4,7 @@ import mFn from "./my_function.js";
 
 // 스크롤 액션 JS
 
-export default function moveleft(){
+export default function eMoveleft(){
 
     // 대상:.e-moveleft
     const eMoveleft = mFn.qsa(".e-moveleft");

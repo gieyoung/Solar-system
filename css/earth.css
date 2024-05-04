@@ -46,7 +46,11 @@ body * {
     color:#fff;
 
 }
-
+.temp-tit{
+    top: 10rem;
+    color: red;
+    font-size: 40px;
+}
 
 
 
@@ -207,11 +211,12 @@ body * {
     /* background-color: #b0ff8c; */
     /* height: 100vh; */
     width: 100%;
+    color: #fff;
     
 }
 .earth3d{  
-    padding-top:10%;
-    width: 50%;
+    padding-top: 10rem;
+    width: 45%;
     margin: 0 auto;
 
 }
@@ -226,10 +231,32 @@ body * {
     
   }
 
-  .userInput {
+.userInput {
     /* border-radius: 50%; */
     /* overflow: visible; */
   }
+
+
+  /* pg3의 텍스트 설정 */
+  .pg3 h2{
+      position: absolute;
+      top: 8vw;
+      left: 24vw;
+
+        /* 안만져 지게 하는설정 */
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+    .pg3 p{
+        position: absolute;
+        top: 12vw;
+        width: 50vw;
+        left: 23vw;
+
+        /* 안만져 지게 하는설정 */
+    user-select: none;
+    -webkit-user-drag: none;
+}
 
 /****************************************************** pg4 *******************************************************************/
 
