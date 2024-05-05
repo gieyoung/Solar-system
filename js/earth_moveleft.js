@@ -24,7 +24,7 @@ export default function eMoveleft(){
 
     // 스크롤 이벤트 함수
     function showIt(){
-        eMoveleft.forEach(ele=>{
+        eMoveleft.forEach(ele=> {
 
             // 대상위치값
             let tgPos = mFn.getBCRleft(ele);

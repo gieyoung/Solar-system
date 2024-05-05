@@ -10,7 +10,7 @@ eMoveleft();
 
 
 import eMoveup from "./earth_moveup.js";
-eMoveup();
+// eMoveup();
 
 /******************************** 함수의 추상화 ********************************/
 // const tgEle = [".cont-box","#pg4"];
