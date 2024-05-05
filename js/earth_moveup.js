@@ -7,7 +7,7 @@ import mFn from "./my_function.js";
 export default function eMoveup(){
 
     // 대상:.e-moveup
-    const eMoveup = mFn.qs(".e-moveup");
+    const eMoveup = mFn.qsa(".e-moveup");
     
 
     /********************************** 함수의 추상화 **********************************/
@@ -25,15 +25,18 @@ export default function eMoveup(){
     // 스크롤 이벤트 함수
     function showIt(){
         // 대상위치값
-        let tgPos = mFn.getBCR(eMoveup);
-        console.log("tgPos 콘솔:",tgPos);
-
-        if(tgPos < CRITERIA){
-            eMoveup.classList.add('on');
-        }
-        else{
-            eMoveup.classList.remove('on');
-        }
+        eMoveup.forEach(ele => {
+            
+            let tgPos = mFn.getBCR(ele);
+            console.log("tgPos 콘솔:",tgPos);
+            
+            if(tgPos < CRITERIA){
+                ele.classList.add('on');
+            }
+            else{
+                ele.classList.remove('on');
+            }
+        });
 
     } //////// showIt 함수 ////////////
 
