@@ -28,7 +28,7 @@ export default function eMoveleft(){
 
             // 대상위치값
             let tgPos = mFn.getBCRleft(ele);
-            console.log("tgPos 콘솔:",tgPos);
+            // console.log("tgPos 콘솔:",tgPos);
             
             if(tgPos < CRITERIA){
                 ele.classList.add('on');

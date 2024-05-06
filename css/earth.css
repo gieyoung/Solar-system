@@ -33,7 +33,7 @@ html{
   }
 
 /* *****************************임시    *********************************** */
-
+/* 임시 */
 
 /* 임시 아웃라인 */
 body * {
@@ -189,14 +189,16 @@ body * {
 .eslidePg ul li {
     flex: 1;
     text-align: center;
+    align-items: center;
 }
 
 .eslidePg ul li img {
     /* 상하만 흐려지게 만들기 (가장자리 전체는 몰?루)*/
     mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
-  
+    padding: 0 20px 0 20px;
     border-radius:30px; 
     width: 33vw;
+    justify-content: center;
 }
 
 
@@ -214,10 +216,13 @@ body * {
     color: #fff;
     
 }
+
 .earth3d{  
-    padding-top: 10rem;
+    position: relative;
+    padding-top: 15rem;
     width: 45%;
     margin: 0 auto;
+    z-index: 1;
 
 }
 .earth3d iframe {
@@ -227,51 +232,119 @@ body * {
     border-radius: 50%;
     aspect-ratio: 1;
     
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
     
   }
 
-.userInput {
-    /* border-radius: 50%; */
-    /* overflow: visible; */
-  }
 
-
-  /* pg3의 텍스트 설정 */
-  .pg3 h2{
-      position: absolute;
-      top: 8vw;
-      left: 24vw;
-
-        /* 안만져 지게 하는설정 */
-        user-select: none;
-        -webkit-user-drag: none;
-    }
-    .pg3 p{
-        position: absolute;
-        top: 12vw;
-        width: 50vw;
-        left: 23vw;
-
-        /* 안만져 지게 하는설정 */
+/******************************************* 3DEarth Model:텍스트 설정 *******************************************/
+  .move_text_box .text{
+    display: flex;
+    padding-top: 10rem;
+    position: absolute;
+    top: 0;
+    
+    /* 안만져 지게 하는설정 */
     user-select: none;
     -webkit-user-drag: none;
+    
+  }
+  .move_text_box .text p{
+    z-index: -1;
+    position: relative;
+    left: 0;
+    width: 250vw;
+    font-size: 80vh;
+    font-weight: bold;
+    color: #efefef38;
+    white-space: nowrap;
+    text-align: center;
+    animation: text-ani 25s linear infinite;
+    font-family: "Noto Serif KR", serif;
+    
 }
 
+@keyframes text-ani {
+    to{
+        left: -50%;
+    }
+}
+
+
+
+
+/****************************************************** pg4 *******************************************************************/
+
+
+
+.pg4{
+    position: relative;
+    top: 20rem;
+    color: #fff;
+}
+
+.cont-box{
+    display: flex;
+}
+.desc-txt{
+    
+    
+    font-family: 'Pretendard-Regular';
+    color: #ffffff7d;
+    font-size: max(1vw, 10px);
+    text-align: justify;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+
+.pg4-txtbox{
+    padding-top: 10vh;
+    min-width: 5vw;
+}
+
+.pg4-txtbox a{
+    font-family: 'Pretendard-Regular';
+    color: #ffffff7d;
+    font-size: max(1vw, 14px);
+    text-align: justify;
+    font-weight: normal;
+    line-height: 25px;
+}
+.pg4-txtbox a:hover{
+    color: red;
+    font-weight: bold;
+
+}
+
+.pg4-imgbox{
+    width: 150vw;
+    /* min-width: 40vw; */
+    margin-right: -20px;
+    margin-top: -20px;
+    
+}
+.pg4-imgbox img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+/*  ********************************/ 
 .e-moveup{
     opacity: 0;
-    margin-top:5vw;
-    transition: .5s ease-in-out;
+    margin-top:8vw;
+    transition: 1s ease-in-out;
 }
 .e-moveup.on{
     opacity: 1;
     margin-top: 0;
-}
-
-/****************************************************** pg4 *******************************************************************/
-
-.pg4{
-    background-color: #9dfff7;
+    
 }
 
 
