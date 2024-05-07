@@ -37,7 +37,7 @@ html{
 
 /* 임시 아웃라인 */
 body * {
-    /* outline: 2px dashed red; */
+    outline: 2px dashed red;
 
 }
 .main-tit {
@@ -73,13 +73,13 @@ body * {
 
 
 .e-moveleft{
-    
-    opacity: 1;
+    opacity: 0;
+    margin-left: 50px;
 }
 .e-moveleft.on{
-    
-    opacity: 0;
+    opacity: 1;
     transition: 1s ease-in-out;
+    margin-left:0;
 }
 
 
@@ -188,7 +188,13 @@ body * {
 }
 .eslidePg ul li {
     flex: 1;
-    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+    justify-content: center;
     align-items: center;
 }
 
@@ -199,13 +205,13 @@ body * {
     border-radius:30px; 
     width: 33vw;
     justify-content: center;
+    max-height: 500px;
 }
 
 
-.eslidePg ul li div{
-    /* width: 10vw; */
+.eslidePg ul li div {
+    width: 1400px;
 }
-
 
 /****************************************************** pg3 *******************************************************************/
 
@@ -240,7 +246,7 @@ body * {
 /******************************************* 3DEarth Model:텍스트 설정 *******************************************/
   .move_text_box .text{
     display: flex;
-    padding-top: 10rem;
+    /* padding-top: 10rem; */
     position: absolute;
     top: 0;
     
@@ -253,8 +259,8 @@ body * {
     z-index: -1;
     position: relative;
     left: 0;
-    width: 250vw;
-    font-size: 80vh;
+    width: 350vw;
+    font-size: 45vw;
     font-weight: bold;
     color: #efefef38;
     white-space: nowrap;
@@ -290,7 +296,7 @@ body * {
     
     
     font-family: 'Pretendard-Regular';
-    color: #ffffff7d;
+    color: #ffffffd3;
     font-size: max(1vw, 10px);
     text-align: justify;
     font-weight: normal;

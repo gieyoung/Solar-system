@@ -17,18 +17,20 @@ export default function eMoveleft(){
     
 
     // 기준값:
-    const CRITERIA = window.innerWidth/2;
+    const CRITERIA = window.innerWidth/3*2;
 
     // 이벤트 설정하기
-    mFn.addEvt(window,'scroll',showIt);
+    mFn.addEvt(window,'wheel',showIt);
+    console.log("윈절반:",CRITERIA);
 
     // 스크롤 이벤트 함수
     function showIt(){
+        console.log("요기");
         eMoveleft.forEach(ele=> {
 
             // 대상위치값
             let tgPos = mFn.getBCRleft(ele);
-            // console.log("tgPos 콘솔:",tgPos);
+            console.log("tgPos 콘솔:",ele,tgPos);
             
             if(tgPos < CRITERIA){
                 ele.classList.add('on');
