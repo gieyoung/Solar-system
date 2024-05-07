@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moon</title>
     <!-- 파비콘 -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/common/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/common/favicon-16x16.png"
+    />
 
     <!-- 폰트어썸 CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <!-- 개별 css연결 -->
     <link rel="stylesheet" href="./css/moon.css" />
     <!-- 공통 JS연결 -->
     <script type="module" src="./js/common.js"></script>
+    <!-- 개별 JS연결 -->
+    <script type="module" src="./js/moon.js"></script>
+
     <!-- 개별 JS연결 -->
     <!-- <script type="module" src="./js/.js"></script> -->
   </head>
@@ -40,16 +51,16 @@
       </section>
       <section class="moon2">
         <div class="moon-pic">
-          <img src="./images/moon/moon.png" alt="moon" />
+          <img class="e-moveup" src="./images/moon/moon.png" alt="moon" />
         </div>
         <div class="moon-txt">
           <p class="cont-txt">
-            <span class="first-txt">The Moon</span> is Earth's only natural
-            satellite. It orbits at an average distance of 384,400 km (238,900
-            mi), about 30 times the diameter of Earth. Over time Earth's gravity
-            has caused tidal locking, causing the same side of the Moon to
-            always face Earth. Because of this, the lunar day and the lunar
-            month are the same length, at 29.5 Earth days. The Moon's
+            <span class="first-txt e-moveup">The Moon</span> is Earth's only
+            natural satellite. It orbits at an average distance of 384,400 km
+            (238,900 mi), about 30 times the diameter of Earth. Over time
+            Earth's gravity has caused tidal locking, causing the same side of
+            the Moon to always face Earth. Because of this, the lunar day and
+            the lunar month are the same length, at 29.5 Earth days. The Moon's
             gravitational pull – and to a lesser extent, the Sun's – are the
             main drivers of Earth's tides. In geophysical terms the Moon is a
             planetary-mass object or satellite planet. Its mass is 1.2% that of
@@ -100,10 +111,31 @@
       <section class="moon3"></section>
       <section class="moon4">
         <span class="cont-tit">
-          <h1 class="facts-txt">INTERESTING FACTS</h1>
+          <h1 class="facts-tit">INTERESTING FACTS</h1>
         </span>
         <div class="facts-img1">
-          <img src="./images/moon/m2.jpg" alt="달착륙">
+          <img class="e-moveup" src="./images/moon/m2.jpg" alt="달착륙" />
+        </div>
+        <div class="facts-txt-box">
+          <h2 class="facts-txt">
+            The Apollo Program was an American manned lunar exploration plan led
+            by NASA from 1961 to 1972. Through this, humans set foot on the moon
+            six times between 1969 and 1972. When John F. Kennedy took office in
+            1961, he launched the program to send humans to the moon in the 1960s,
+            instantly turning over the space race that had lagged behind the
+            Soviet Union. The launch site is also called Kennedy Space Center.
+            'Direct arrival', which involves landing and taking off directly from
+            the moon with a very large 4-stage rocket originally conceived by
+            NASA; 'Earth orbit rendezvous', which involves assembling various
+            hulls raised by multiple rockets in Earth orbit; and 2 rockets with
+            and without an astronaut and a lander. The 'Lunar Surface Rendezvous',
+            which is sent to the moon separately, is reversed, and the command
+            module, machine module, and lunar probe are launched with one rocket,
+            and only the lunar probe lands in the lunar orbit, and then the
+            command and the upper stage of the lunar probe return to the 'lunar
+            orbit rendezvous'. This is the mission that first sent humans to the
+            moon.
+          </h2>
         </div>
       </section>
     </main>
