@@ -37,7 +37,7 @@ html{
 
 /* 임시 아웃라인 */
 body * {
-    outline: 2px dashed red;
+    /* outline: 2px dashed red; */
 
 }
 .main-tit {
