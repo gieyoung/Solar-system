@@ -70,10 +70,15 @@ h1.logo {
 }
 
 #gnb ul li a {
-  color: #fff;
+  color: white;
   line-height: 2;
   font-size: 1.8rem;
   font-family: "Kanit", sans-serif;
+}
+
+/* 메뉴 마우스 오버시 글자 네온효과 */
+#gnb ul li a:hover{
+  text-shadow: 0 0 40px #fff,0 0 35px #fff,0 0 30px #fff,0 0 25px #fff,0 0 20px #fff,0 0 15px #fff,0 0 10px #fff,0 0 5px #fff;
 }
 
 /* 우측 상단영역에 아이콘 */

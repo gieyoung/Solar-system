@@ -423,13 +423,12 @@ body > * {
   .sun03 .cont-tit {
     font-size: 3.5rem;
   }
-  .sun05 .box li {
-  }
+ 
 }
 
 /* 480이하 */
 @media screen and (max-width: 480px) {
-  .sun03 iframe {
+  .sun04 iframe{
     width: 100%;
   }
 }
