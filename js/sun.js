@@ -49,8 +49,6 @@ function loadFn() {
     const i = ["1", "2", "3", "4"];
     const imgChange = document.getElementsByClassName("sun03")[0];
 
-    
-
     setInterval(() => {
         iseq++;
         if (iseq === i.length) iseq = 0;
