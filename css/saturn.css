@@ -405,6 +405,9 @@ body > * {
   .saturn1-text {
     width: 80%;
   }
+  .saturn1-bg {
+    background:none;
+  }
   .saturn1 video {
     right: -110%;
   }

@@ -425,6 +425,9 @@ body > * {
   .jupiter1-text p {
     font-size: 1.2rem;
   }
+  .jupiter1-bg {
+     background:none;
+  }
   /* 두번째 페이지 */
   .desc {
     width: 100vw;
