@@ -175,7 +175,7 @@ body * {
     position: relative;
     left: 0;
     display: flex;
-    width: calc(100vw + 3000px);
+    width: calc(100vw + 5000px);
     /* 가로크기는 타겟박스가 이동하는크기인
     3000px에 맞도록 100vw에 더하여 잡아준다!
     이유는 JS의 getBoundingClientRect().top
@@ -217,6 +217,7 @@ body * {
 /****************************************************** pg3 *******************************************************************/
 
 .pg3{
+    padding-top: 5rem;
     /* background-color: #b0ff8c; */
     /* height: 100vh; */
     width: 100%;
@@ -247,9 +248,12 @@ body * {
 /******************************************* 3DEarth Model:텍스트 설정 *******************************************/
   .move_text_box .text{
     display: flex;
-    /* padding-top: 10rem; */
+    padding-top: 15rem;
     position: absolute;
-    top: 0;
+    /* align-items: center; */
+    z-index: -1;
+    
+    
     
     /* 안만져 지게 하는설정 */
     user-select: none;
@@ -257,11 +261,11 @@ body * {
     
   }
   .move_text_box .text p{
-    z-index: -1;
+    display: flex;
     position: relative;
     left: 0;
-    width: 350vw;
-    font-size: 45vw;
+    width: 250vw;
+    font-size: min(40vw, 55rem);
     font-weight: bold;
     color: #efefef38;
     white-space: nowrap;
@@ -356,8 +360,33 @@ body * {
 
 
 
-/****************************************************** pg5 *******************************************************************/
-.pg5{
-    background-color: #948dff;
-    
+
+
+/**************************************************** 미디어쿼리 ****************************************************/
+
+
+/***************************** 
+pg2미디어쿼리시 설정 
+
+.eslidePg ul li:first-child, .eslidePg ul li:last-child {
+    display: none;
 }
+
+.e-moveleft {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.pg2.ofhidden {
+    width: 100vw;
+    overflow: auto;
+}
+*****************************/
+
+
+
+/* **************************
+pg4
+지구 미디어쿼리 줄때
+이미지에 100vw 줘서하기
+***************************/

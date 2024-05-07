@@ -4,7 +4,7 @@ import auto_scroll from "./earth_auto_scroll.js";
 auto_scroll();
 
 
-/* 드래그시 가로로 움직일떄 li에 on주기가 안됨.... */
+
 import eMoveleft from "./earth_moveleft.js";
 eMoveleft();
 
