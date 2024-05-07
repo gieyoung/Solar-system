@@ -29,11 +29,6 @@ body > * {
   color: black;
   line-height: normal;
 }
-.main-text {
-  color: #fff;
-  position: absolute;
-  width: 700px;
-}
 /************* 상단영역 *************/
 /* common.css */
 
@@ -59,21 +54,35 @@ body > * {
   height: 100vh;
 }
 .saturn1-text {
+  position: absolute;
   bottom: 25vh;
-  left: 10%;
-  opacity: 0;
-  animation: fadein 0.4s ease-in-out 1.3s forwards;
+  left: 25%;
+
+  width: 700px;
+
+  color: #fff;
+  animation: fadein .8s ease-in-out forwards;
 }
 .saturn1-text h1 {
-  /* animation: fadein 1.4s ease-in-out 1.3s forwards; */
+  opacity: 0;
+  animation: moveOp .8s ease-in-out forwards;
+}
+.saturn1-text p{
+  opacity: 1  ;
+  color: #00000000;
+  animation: moveColor .3s ease-in-out .7s forwards;
 }
 @keyframes fadein {
   to {
-    opacity: 1;
+    left: 10%;
+    /* width: 700px; */
   }
 }
-.saturn1-text p {
-  /* width: min(70vw,522px); */
+@keyframes moveOp {
+  to{opacity: 1;}
+}
+@keyframes moveColor {
+  to{  color: white;}
 }
 
 /* ---------------------두번째 페이지--------------------- */
@@ -117,7 +126,8 @@ body > * {
 .desc2-3D {
   position: relative;
   top: -70px;
-  width: 65vw;
+  aspect-ratio: 1;
+  /* width: 65vw; */
 }
 .desc2 iframe {
   width: 100%;
@@ -161,7 +171,7 @@ body > * {
 .saturn3-img {
   position: absolute;
   /* display: none; */
-  right: 50px;
+  right: 20rem;
 }
 .saturn3-img img {
   aspect-ratio: 800/600;
@@ -259,6 +269,8 @@ body > * {
 .saturn4-cont ul {
   display: grid;
   grid-row-gap: 15px;
+  gap: 15px;
+
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
 }
