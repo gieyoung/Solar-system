@@ -28,7 +28,7 @@ export default function eMoveup(){
         eMoveup.forEach(ele => {
             
             let tgPos = mFn.getBCR(ele);
-            console.log("tgPos 콘솔:",tgPos);
+            // console.log("tgPos 콘솔:",tgPos);
             
             if(tgPos < CRITERIA){
                 ele.classList.add('on');
