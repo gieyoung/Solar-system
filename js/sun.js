@@ -55,6 +55,5 @@ function loadFn() {
         imgChange.style.backgroundImage = `url(../images/sun/rotate/${i[iseq]}.jpg)`;
     },3000);
 
-    console.log(imgChange,i.length,i[iseq]);
 } ////////// loadFn 함수 //////////
 

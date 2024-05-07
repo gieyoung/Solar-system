@@ -220,7 +220,7 @@ body > * {
   top: 0;
   color: white;
   /* outline: 2px solid yellow; */
-  padding: 10px;
+  padding: 20px;
   padding-top: 50px;
   opacity: 0;
 }
@@ -378,7 +378,7 @@ body > * {
     top: 50%;
     bottom: auto;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 600px;
   }
   .jupiter1-text h1 {
@@ -415,12 +415,18 @@ body > * {
   .jupiter1-text {
     width: 80%;
   }
+  .jupiter1 video {
+    right: -118%;
+  }
   .jupiter1-text h1 {
     font-size: 6rem;
     text-align: center;
   }
   .jupiter1-text p {
     font-size: 1.2rem;
+  }
+  .jupiter1-bg {
+     background:none;
   }
   /* 두번째 페이지 */
   .desc {
@@ -444,7 +450,7 @@ body > * {
   }
   .jupiter3-text {
     position: relative;
-    top: 50%;
+    top: 30%;
     transform: translateX(-50%);
     width: 85%;
   }
