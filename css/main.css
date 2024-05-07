@@ -85,7 +85,7 @@ body > * {
 .section .banner-wrapper .banner {
   display: flex;
   flex: 1;
-  flex-basis: 25%;
+  flex-basis: 20%;
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -179,7 +179,6 @@ body > * {
 /* 이미지 배너 마우스 오버시 */
 
 .section .banner-wrapper .banner.active.enable {
-  flex: 3;
   flex-basis: 100%;
 }
 .section .banner-wrapper .banner.active.enable .content {
