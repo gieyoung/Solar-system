@@ -6,7 +6,7 @@
 @import url(./reset.css);
 
 body * {
-    outline: 2px dashed red;
+    /* outline: 2px dashed red; */
 }
 /************* 상단영역 *************/
 /* common.css */
@@ -42,6 +42,8 @@ video{
     /* color: #fff;
     font-size: 1.5rem;
     font-family: 'Pretendard-Regular'; */
+    width: auto;
+    display: inline-block;
 }
 
 .moon2{
@@ -53,7 +55,7 @@ video{
 }
 .moon-pic{
     position: absolute;
-    top: 800px;
+    top: 600px;
     left: 500px;
     z-index: 999;
     mix-blend-mode: plus-lighter;
@@ -91,7 +93,7 @@ video{
     translate: 40vw 15vh;
     z-index: 99;
 }
-.facts-txt{
+.facts-tit{
     font-size: 10rem;
     color: #fff;
 }
@@ -102,10 +104,52 @@ video{
     translate: 10vw 10vh;
 }
 
+.facts-txt-box{
+    position: absolute;
+    width: 500px;
+    translate: 55vw 35vh;
+}
+.facts-txt{
+    line-height: 1.7;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+
+.e-moveup{
+    opacity: 0;
+    margin-top: 5vw;
+    transition: 1s ease-in-out
+    
+    
+}
+.e-moveup.on{
+    opacity: 1;
+    margin-top: 0;
+
+}
 
 /************* 하단영역 *************/
 /* common.css */
-
+.footer-area{
+    overflow: hidden;
+}
 
 
 /************* 미디어쿼리 *************/
+
+/****************************** 최대 사이즈 1820px 이하 시작 ******************************/
+@media screen and (max-width: 1820px) {
+    .facts-txt-box{
+        translate: 60vw 35vh;
+    }
+}
+/****************************** 최대 사이즈 1820px 이하 끝 ******************************/
+
+/****************************** 최대 사이즈 1650px 이하 시작 ******************************/
+@media screen and (max-width: 1650px) {
+    .cont-tit{
+        scale: 0.9;
+    }
+}
+/****************************** 최대 사이즈 1650px 이하 끝 ******************************/

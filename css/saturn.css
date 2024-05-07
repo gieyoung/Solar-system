@@ -382,7 +382,7 @@ body > * {
     top: 50%;
     bottom: auto;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 600px;
   }
   .saturn1-text h1 {
@@ -394,11 +394,22 @@ body > * {
     /* font-size: 30px; */
     font-size: 1.5rem;
   }
+
+  /* 세번째페이지 */
+  .saturn3-img {
+    right: 10rem;
+}
 }
 @media screen and (max-width: 700px) {
   /* 첫페이지 */
   .saturn1-text {
     width: 80%;
+  }
+  .saturn1-bg {
+    background:none;
+  }
+  .saturn1 video {
+    right: -110%;
   }
   .saturn1-text h1 {
     font-size: 6.5rem;
