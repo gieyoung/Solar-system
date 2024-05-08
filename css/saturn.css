@@ -232,7 +232,7 @@ body > * {
   font-size: 4rem;
   cursor: pointer;
 }
-.saturn3-text span:hover, .saturn-more:hover {
+.saturn3-text span:hover, .saturn-more a:hover span {
   font-family: "Freesentation-9Black";
 }
 
@@ -286,6 +286,7 @@ body > * {
   height: 7vw;
   border-radius: 50%;
 }
+
 .saturn4-text {
   font-size: 1.5rem;
   font-family: "Pretendard-Regular";
@@ -301,7 +302,6 @@ body > * {
 .saturn-more a:hover i {
   color: yellow;
 }
-
 /************* 하단영역 *************/
 /* common.css */
 
