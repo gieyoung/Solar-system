@@ -192,7 +192,12 @@ body * {
             opacity: 0;
          }
     }
-   
+.pg2 li>div>p:nth-child(1){
+    display: block;
+}
+.pg2 li>div>p:nth-child(2){
+    display: none;
+}
 
 
 
@@ -214,10 +219,10 @@ body * {
 }
 /* 가로이동박스 */
 .eslidePg {
-    padding-top:2vw;
+    
     position: relative;
      /* nav에 안겹치게 만들기 */
-    top: 10rem;
+    top: 5vh;
     left: 0;
     /* height: 100vh; */
 
@@ -258,9 +263,9 @@ body * {
     mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
     padding: 0 20px 0 20px;
     border-radius:30px; 
-    width: 33vw;
+    width: 90%;
     justify-content: center;
-    max-height: 500px;
+    max-height: 40vh;
 }
 
 
@@ -271,7 +276,7 @@ body * {
 /****************************************************** pg3 *******************************************************************/
 
 .pg3{
-    padding-top: 5rem;
+    padding-top: 4vh;
     /* background-color: #b0ff8c; */
     /* height: 100vh; */
     width: 100%;
@@ -281,7 +286,7 @@ body * {
 
 .earth3d{  
     position: relative;
-    padding-top: 15rem;
+    padding-top: 10vh;
     width: 45%;
     margin: 0 auto;
     z-index: 1;
@@ -310,7 +315,7 @@ body * {
 /******************************************* 3DEarth Model:텍스트 설정 *******************************************/
   .move_text_box .text{
     display: flex;
-    padding-top: 15rem;
+    padding-top: 8vh;
     position: absolute;
     /* align-items: center; */
     z-index: -1;
@@ -357,7 +362,7 @@ body * {
 }
 
 .cont-box{
-    padding-top: 8vw;
+    /* padding-top: 8vh; */
     display: flex;
 }
 .desc-txt{
@@ -460,6 +465,12 @@ pg4
     .move_text_box .text p{
         width: 290vw;     
     }
+    .pg2 li>div>p:nth-child(1){
+        display: none;
+    }
+    .pg2 li>div>p:nth-child(2){
+        display: block;
+    }
   }
 
 /* 1425 *****************************************/
@@ -487,7 +498,7 @@ pg4
 @media screen and (max-width: 1024px) {
     .pg4-imgbox{
     
-        width: 50vw;
+        width: max(42vh, 38vw);
         
     }
     
@@ -497,6 +508,7 @@ pg4
     }
     .earth3d p{
         display: block;
+        font-size: 8vw;
     }
     
     .move_text_box .text p{
@@ -512,10 +524,10 @@ pg4
     }
 
     .pg4{
-        padding-top: 5vw;
+        
     }
     .cont-txt{
-        font-size: 3vw;
+        font-size: max(2vw,2rem);
     }
   } 
 
@@ -536,13 +548,13 @@ pg4
     }
 
     .eslidePg ul li{
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
     }
     .earth3d{
         padding-top: max(18rem, 21vw);
     }
     .earth3d p{
-        font-size: 8vw;
+        
         
     }
 
