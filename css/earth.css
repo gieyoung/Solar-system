@@ -480,7 +480,7 @@ pg4
     }
     .pg4-imgbox{
 
-        width: 40vw;
+        width: 50vh;
         margin: 0 auto;
     }
     .pg4-txtbox {
@@ -498,7 +498,7 @@ pg4
 @media screen and (max-width: 1024px) {
     .pg4-imgbox{
     
-        width: max(42vh, 38vw);
+        width: max(4vh, 38vw);
         
     }
     
@@ -520,20 +520,20 @@ pg4
     }
     .move_text_box .text{
         padding-top: 72rem;
-
+        
     }
-
+    
     .pg4{
         
     }
     .cont-txt{
         font-size: max(2vw,2rem);
     }
-  } 
+} 
 
 
-  /* 700 */
-  @media screen and (max-width: 700px) {
+/* 700 */
+@media screen and (max-width: 700px) {
     .pg1 .top-tbox{
         padding-left: 5vw;
         padding-top: 30vw;
@@ -541,12 +541,12 @@ pg4
     .pg1 .main-tit{
         font-size: 15vw;
     }
-
+    
     .cont-tit{
         white-space: nowrap;
         font-size: 3.5rem;
     }
-
+    
     .eslidePg ul li{
         /* justify-content: flex-end; */
     }
@@ -557,5 +557,25 @@ pg4
         
         
     }
+    
+}
 
+/* 450 */
+@media screen and (max-width: 450px) {
+    .eslidePg ul {
+        padding-top: 3vh;
+    }
+
+
+    .pg4-imgbox{
+        bottom: 13vh;
+        width: 100%;
+        
+        position: absolute;
+        z-index: -11;
+        
+    }
+    .pg4-imgbox img{
+        opacity: .3;
+    }
 }
