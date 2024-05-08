@@ -65,12 +65,20 @@ export default function auto_scroll() {
     요소.addEventListener(이벤트명,함수,{passive:false})
 */
 
-  // [ 새로고침시 스크롤바 위치 인덱싱이 되므로
-  // 맨위로 강제 이동하기설정 ]
+
+
+  // [ 새로고침시 스크롤바 위치 그자리에 고정이 되므로
+  // *맨위로 강제 이동하기설정 ]
   // scrollTo(x이동,y이동)
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 500);
+  // if(window.scrollY!=0){
+  //   setTimeout(() => {
+  //     window.scrollTo(0, 0);
+  //   }, 100);
+  // }
+  // 화면 우측하단에 탑 버튼 있어서 여기서는 필요 X
+  
+
+
 
   // 체크할 두번째 페이지
   const tgPage = mFn.qs(".eslidePg>ul");
@@ -88,7 +96,9 @@ export default function auto_scroll() {
   function wheelFn(e) {
     // 이벤트전달변수(자동)
     // 함수호출확인!
-    console.log("휠~~~!", stopSts);
+    
+    
+    console.log("휠~~~!", stopSts, pgNum);
 
     // 대상 페이지일때 멈춤상태값 true로 업데이트
     if (pgNum == 1) stopSts = true;
@@ -96,7 +106,7 @@ export default function auto_scroll() {
     // 1.우리는 휠 기본기능을 막고
     // 자동으로 스크롤을 하나씩 되게 할 것이다!
 
-    // 멈춤아님상태(stopSts=false)일때 처리
+    // 멈춤상태(stopSts=true)일때 처리
     if (stopSts) {
       if (e.wheelDelta < 0) tgPageLeft += 120;
       else tgPageLeft -= 120;
@@ -123,7 +133,7 @@ export default function auto_scroll() {
     setTimeout(() => {
       stsWheel = false; // 잠금해제!
     }, 500);
-
+    
     // 3. 휠방향 알아내기 /////
     let delta = e.wheelDelta;
     // 휠델타는 이벤트 객체에서 리턴해주는
