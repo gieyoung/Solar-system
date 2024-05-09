@@ -139,29 +139,29 @@ body > * {
 
 /* 태양배너 */
 .section .banner-wrapper .sun {
-  background: url("/images/main/sun.jpg") no-repeat right/cover;
+  background: url("../images/main/sun.jpg") no-repeat right/cover;
 }
 
 /* 지구배너 */
 .section .banner-wrapper .earth {
-  background: url("/images/main/space_exploration_banner.png") no-repeat center;
+  background: url("../images/main/space_exploration_banner.png") no-repeat center;
   background-size: cover;
 }
 
 /* 달배너 */
 .section .banner-wrapper .moon {
-  background: url("/images/main/cosmo_station.png") no-repeat center;
+  background: url("../images/main/cosmo_station.png") no-repeat center;
   background-size: cover;
 }
 
 /* 토성배너 */
 .section .banner-wrapper .saturn {
-  background: url("/images/main/PIA01341~large.jpg") no-repeat center;
+  background: url("../images/main/PIA01341~large.jpg") no-repeat center;
   background-size: cover;
 }
 /* 목성 배너 */
 .section .banner-wrapper .jupiter {
-  background: url("/images/main/jupiter_bg.jpg") no-repeat center;
+  background: url("../images/main/jupiter_bg.jpg") no-repeat center;
   background-size: cover;
 }
 
