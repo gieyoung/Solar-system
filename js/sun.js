@@ -52,7 +52,7 @@ function loadFn() {
     setInterval(() => {
         iseq++;
         if (iseq === i.length) iseq = 0;
-        imgChange.style.backgroundImage = `url(../images/sun/rotate/${i[iseq]}.jpg)`;
+        imgChange.style.backgroundImage = `url(./images/sun/rotate/${i[iseq]}.jpg)`;
     },3000);
 
 } ////////// loadFn 함수 //////////

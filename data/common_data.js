@@ -6,9 +6,9 @@ const comData = {
   <header class="header-area inbox">
   <!-- 로고 -->
   <h1 class="logo">
-    <a href="/index.html" alt="나사 로고"
+    <a href="./" alt="나사 로고"
       ><span class="ir">로고</span>
-      <img src="../images/common/logo.png" alt="로고이미지" />
+      <img src="./images/common/logo.png" alt="로고이미지" />
     </a>
   </h1>
 
@@ -91,6 +91,8 @@ const comData = {
   
 
   `,
+
+
 }; /////////// comData 객체 ////////////////
 
 

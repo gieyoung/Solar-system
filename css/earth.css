@@ -107,7 +107,7 @@ body * {
 }
 .pg1 .main-tit{
     opacity: 0;
-    animation: pg1txtani0 1.5s ease-in-out 1s forwards;
+    animation: pg1txtani0 2s ease-out 0.5s forwards;
 
 }
 @keyframes pg1txtani0 {
@@ -122,12 +122,13 @@ body * {
     
 }
 .pg1 .main-txt{
+    width: min(70vw, 530px);
     opacity: 0;
-    animation: pg1txtani 1s ease-in-out 1.5s forwards;
+    animation: pg1txtani 1s ease-in-out .5s forwards;
 
 }
 @keyframes pg1txtani {
-    0%{
+    0%{ 
         opacity: 0;
         transform: translateX(-7vw);
     }
@@ -170,7 +171,7 @@ body * {
   }
 
 .cont-txt{
-    padding: 20px;
+    padding: 10px;
 }
 
 .pg2 li>div>p{
@@ -187,9 +188,11 @@ body * {
     @keyframes pg2txt {
         from{
             opacity: 1;
+            text-shadow: 0 0 15px #f8ffd0;
         }
         to{
             opacity: 0;
+            text-shadow: 0 0 25px #f8ffd0;
          }
     }
 .pg2 li>div>p:nth-child(1){
@@ -471,7 +474,25 @@ pg4
     .pg2 li>div>p:nth-child(2){
         display: block;
     }
-  }
+  
+
+/* pg2미디어쿼리 중요~! */
+.eslidePg ul li:first-child, .eslidePg ul li:last-child {
+    /* display: none; */
+    width: 500px;
+}
+
+.e-moveleft {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.pg2.ofhidden {
+    width: 100vw;
+    overflow: auto;
+}
+
+}
 
 /* 1425 *****************************************/
   @media screen and (max-width: 1425px) {
@@ -498,7 +519,7 @@ pg4
 @media screen and (max-width: 1024px) {
     .pg4-imgbox{
     
-        width: max(4vh, 38vw);
+        width: max(41vh, 38vw);
         
     }
     
@@ -535,18 +556,24 @@ pg4
 /* 700 */
 @media screen and (max-width: 700px) {
     .pg1 .top-tbox{
-        padding-left: 5vw;
+        padding-left: 10vw;
         padding-top: 30vw;
     }
     .pg1 .main-tit{
         font-size: 15vw;
     }
     
+
     .cont-tit{
         white-space: nowrap;
         font-size: 3.5rem;
     }
     
+    .pg2 .cont-txt,.eslidePg ul li img{
+        width:85vw;
+
+    }
+
     .eslidePg ul li{
         /* justify-content: flex-end; */
     }
