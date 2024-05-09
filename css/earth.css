@@ -474,7 +474,25 @@ pg4
     .pg2 li>div>p:nth-child(2){
         display: block;
     }
-  }
+  
+
+/* pg2미디어쿼리 중요~! */
+.eslidePg ul li:first-child, .eslidePg ul li:last-child {
+    /* display: none; */
+    width: 500px;
+}
+
+.e-moveleft {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.pg2.ofhidden {
+    width: 100vw;
+    overflow: auto;
+}
+
+}
 
 /* 1425 *****************************************/
   @media screen and (max-width: 1425px) {
