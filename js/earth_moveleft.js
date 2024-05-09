@@ -17,7 +17,7 @@ export default function eMoveleft(){
     
 
     // 기준값:
-    const CRITERIA = window.innerWidth/3*2;
+    const CRITERIA = window.innerWidth/2;
 
     // 이벤트 설정하기
     mFn.addEvt(window,'wheel',showIt);
