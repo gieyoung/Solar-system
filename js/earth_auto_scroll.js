@@ -132,7 +132,7 @@ export default function auto_scroll() {
     stsWheel = true; // 잠금!
     setTimeout(() => {
       stsWheel = false; // 잠금해제!
-    }, 500);
+    }, 300);
     
     // 3. 휠방향 알아내기 /////
     let delta = e.wheelDelta;
