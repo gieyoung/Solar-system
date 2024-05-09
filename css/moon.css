@@ -5,9 +5,11 @@
 @import url(./core.css);
 @import url(./reset.css);
 
-body * {
-    /* outline: 2px dashed red; */
-}
+
+body > * {
+    overflow-x: hidden;
+    cursor: default;
+  }
 /************* 상단영역 *************/
 /* common.css */
 
@@ -455,6 +457,7 @@ video{
     .facts-img1>img {
         translate: 5vw 10vh;
         scale: 0.8;
+        width:100%;
     }
     .cont-tit {
         translate: 4vw 4vh;
@@ -463,6 +466,8 @@ video{
         translate: 16vw 41vh;
         width: min(61vw);
     }
+
+
 }
 /****************************** 최대 사이즈 544px 이하 끝 ******************************/
 
