@@ -89,7 +89,7 @@ body * {
     position: relative;
 }
 .top-tbox{
-    padding-left: 150px;
+    padding-left: 15vw;
 }
 .pg1 .main-tit{
     white-space: nowrap;
@@ -266,7 +266,7 @@ body * {
     mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
     padding: 0 20px 0 20px;
     border-radius:30px; 
-    width: 90%;
+    /* width: 90%; */
     justify-content: center;
     max-height: 40vh;
 }
@@ -478,10 +478,17 @@ pg4
 
 /* pg2미디어쿼리 중요~! */
 .eslidePg ul li:first-child, .eslidePg ul li:last-child {
-    /* display: none; */
-    width: 500px;
+    display: none;
+    
 }
 
+.eslidePg ul li{
+    flex: 0;
+}
+
+.pg2 ul li div{
+    width: 500px;
+}
 .e-moveleft {
     opacity: 1;
     margin-left: 0;
@@ -489,9 +496,12 @@ pg4
 
 .pg2.ofhidden {
     width: 100vw;
-    overflow: auto;
+    overflow: hidden;
 }
-
+ /* 실제로 가로이동할 ul박스 */
+ .eslidePg ul {
+    width: calc(100vw + 4200px);
+}
 }
 
 /* 1425 *****************************************/
@@ -512,6 +522,9 @@ pg4
         padding-top: 0;
         flex-direction: column;
     }
+
+    
+
 }
 
 /* 1024(아이패드크기)************************* */
@@ -550,6 +563,8 @@ pg4
     .cont-txt{
         font-size: max(2vw,2rem);
     }
+    
+
 } 
 
 
@@ -585,12 +600,13 @@ pg4
         
     }
     
-}
 
+
+}
 /* 450 */
 @media screen and (max-width: 450px) {
     .eslidePg ul {
-        padding-top: 3vh;
+        padding-top: 1vh;
     }
 
 
@@ -605,4 +621,14 @@ pg4
     .pg4-imgbox img{
         opacity: .3;
     }
+
+    .cont-txt {
+        font-size: max(2vw,1.5rem);
+        line-height: 20px;
+    }
+    
+    
 }
+
+
+/* pg2 미디어 쿼리 수정하기ㅣ */
