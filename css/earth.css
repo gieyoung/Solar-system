@@ -122,7 +122,7 @@ body * {
     
 }
 .pg1 .main-txt{
-    border-top: none;
+    width: min(70vw, 530px);
     opacity: 0;
     animation: pg1txtani 1s ease-in-out .5s forwards;
 
@@ -171,7 +171,7 @@ body * {
   }
 
 .cont-txt{
-    padding: 20px;
+    padding: 10px;
 }
 
 .pg2 li>div>p{
@@ -538,18 +538,24 @@ pg4
 /* 700 */
 @media screen and (max-width: 700px) {
     .pg1 .top-tbox{
-        padding-left: 5vw;
+        padding-left: 10vw;
         padding-top: 30vw;
     }
     .pg1 .main-tit{
         font-size: 15vw;
     }
     
+
     .cont-tit{
         white-space: nowrap;
         font-size: 3.5rem;
     }
     
+    .pg2 .cont-txt,.eslidePg ul li img{
+        width:85vw;
+
+    }
+
     .eslidePg ul li{
         /* justify-content: flex-end; */
     }
