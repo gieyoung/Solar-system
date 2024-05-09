@@ -6,11 +6,15 @@ import mFn from "./my_function.js";
 // 공통 처리 데이터 불러오기
 import comData from "../data/common_data.js";
 
+
+
 // GNB 메뉴 데이터 불러오기
 import gnbData from "../data/gnb_data.js";
 
 // 왼쪽으로 흘러가는 태양계 재귀함수 불러오기
 import moveSollar from "./call_myself.js";
+
+
 
 /****************************************************
      [ 상단/하단 공통 함수 ]
@@ -22,9 +26,12 @@ export default function setElement() {
   const headerArea = mFn.qs("#header-area");
   const footerArea = mFn.qs("#footer-area");
 
+
+
   // 2. 코드넣기 ///////
   headerArea.innerHTML = comData.headerArea;
   footerArea.innerHTML = comData.footerArea;
+
 
   /****************************************************
      [ GNB메뉴 ]
@@ -151,3 +158,7 @@ export default function setElement() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }; ///////click///////////
 } /////////// setElement 함수 ///////////////
+
+
+
+
