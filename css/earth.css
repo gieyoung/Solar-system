@@ -360,7 +360,7 @@ body * {
 
 .pg4{
     position: relative;
-    top: 10rem;
+    top: 8rem;
     color: #fff;
 }
 
@@ -516,7 +516,7 @@ pg4
     }
     .pg4-txtbox {
         min-width: 5vw;
-        padding: 0 5vw 0 5vw;
+        padding: 3vh 5vw 0 5vw;
     }
     .cont-box {
         padding-top: 0;
@@ -530,14 +530,13 @@ pg4
 /* 1024(아이패드크기)************************* */
 
 @media screen and (max-width: 1024px) {
+    /* pg4 지구이미지 */
     .pg4-imgbox{
-    
-        width: max(41vh, 38vw);
-        
+            width: max(40vh, 38vw);
     }
     
     .earth3d{
-        padding-top: 12rem;
+        padding-top: 20rem;
         width: 65%;
     }
     .earth3d p{
@@ -560,10 +559,15 @@ pg4
     .pg4{
         
     }
+
+    /* pg4 텍스트 */
     .cont-txt{
-        font-size: max(2vw,2rem);
+        font-size: max(4vw,2rem);
+        line-height: 38px;
     }
-    
+    .pg4-txtbox a {
+        font-size: max(3vw, 14px);
+    }
 
 } 
 
@@ -595,23 +599,58 @@ pg4
     .earth3d{
         padding-top: max(18rem, 21vw);
     }
-    .earth3d p{
-        
-        
-    }
-    
 
+
+    /* pg4 텍스트 */
+   .cont-txt {
+        font-size: max(3vw,2rem);
+        line-height: 22px;
+    }
+    .pg4-txtbox a {
+        font-size: max(3vw, 14px);
+    }
+    /* pg4 텍스트 박스 */
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 0 5vw 0 5vw;
+    }
+    /* pg4 이미지 */
+    .pg4-imgbox {
+        width: max(40vh, 38vw);
+    }
 
 }
+
+
 /* 450 */
 @media screen and (max-width: 450px) {
     .eslidePg ul {
         padding-top: 1vh;
     }
+ 
+
+    .cont-txt {
+        font-size: max(4.5vw,1.5rem);
+        line-height: 20px;
+    }
+    
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 0.5vh 5vw 0 5vw;
+    }
+
+    .earth3d {
+        padding-top: max(21.5rem, 21vw);
+    }
+    
+}
 
 
-    .pg4-imgbox{
-        bottom: 13vh;
+
+/* 375 */
+@media screen and (max-width: 376px){
+     .pg4-imgbox{
+        bottom: 0;
         width: 100%;
         
         position: absolute;
@@ -622,13 +661,15 @@ pg4
         opacity: .3;
     }
 
-    .cont-txt {
-        font-size: max(2vw,1.5rem);
-        line-height: 20px;
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 8vh 5vw 0 5vw;
     }
-    
-    
+
 }
+    
+
+
 
 
 /* pg2 미디어 쿼리 수정하기ㅣ */
