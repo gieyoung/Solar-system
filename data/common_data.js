@@ -8,7 +8,7 @@ const comData = {
   <h1 class="logo">
     <a href="/index.html" alt="나사 로고"
       ><span class="ir">로고</span>
-      <img src="../images/common/logo.png" alt="로고이미지" />
+      <img src="./images/common/logo.png" alt="로고이미지" />
     </a>
   </h1>
 
