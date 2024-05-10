@@ -17,7 +17,7 @@ export default function eMoveup(){
     
 
     // 기준값:
-    const CRITERIA = window.innerHeight/100*99;
+    const CRITERIA = window.innerHeight/1000*999;
 
     // 이벤트 설정하기
     mFn.addEvt(window,'scroll',showIt);
