@@ -739,6 +739,13 @@ pg4
 }
 
 
+/* 344 갤럭시 z플립5*/
+@media screen and (max-width: 344px) {
+    .eslidePg ul {
+        width: calc(100vw + 2280px);
+    }
+}
+
 
 
 /* pg2 미디어 쿼리 수정하기ㅣ */
