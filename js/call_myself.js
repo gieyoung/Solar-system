@@ -31,7 +31,7 @@ for(let i=0; i<=8; i++) {
     hcode += `
         <li>
             <img 
-            src="../images/common/auto_scroll/m${i+1}.png" 
+            src="./images/common/auto_scroll/m${i+1}.png" 
             alt="갤러리이미지">
             <span>${solarName[i]}</span>
         </li>
