@@ -31,7 +31,7 @@ for(let i=0; i<=8; i++) {
     hcode += `
         <li>
             <img 
-            src="http://nenia.kr/theme/responsive_nenia/include/img/s9_brand2.png" 
+            src="../images/common/auto_scroll/m${i}.png" 
             alt="갤러리이미지">
             <span>${solarName[i]}</span>
         </li>
