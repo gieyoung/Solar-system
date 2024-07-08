@@ -8,6 +8,7 @@ import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
 function Main(props) {
+    //// 코드 리턴구역 //////////////
   return (
     <>
       {/* <!-- 섹션1-태양계 배너 --> */}
