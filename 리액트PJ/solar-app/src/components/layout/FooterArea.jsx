@@ -1,13 +1,19 @@
 // 하단영역 컴포넌트 ///
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // 하단영역 CSS 불러오기
-import "../../css/top_area.scss";
-import "../../css/common/_core.scss";
-import "../../css/common/_reset.scss";
+import "../../css/footer_area.scss";
 
-function FooterArea(props) {
+// js불러오기
+import moveSollar from "../func/call_myself.js";
+
+
+function FooterArea() {
+  useEffect(() => {
+    moveSollar();
+  }, []);
+   //// 코드 리턴구역 //////////////
   return (
     <>
     <div id="footer-area">
