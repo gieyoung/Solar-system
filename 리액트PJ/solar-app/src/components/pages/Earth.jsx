@@ -7,7 +7,7 @@ import '../../css/earth.scss';
 
 function Earth() {
 
-ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ
+
 
     return (
         <div className="earth-section">
