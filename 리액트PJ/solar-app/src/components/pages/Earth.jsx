@@ -8,6 +8,8 @@ import '../../css/earth.scss';
 function Earth() {
 
 
+    // 가나다라마바사아자차카
+
     return (
         <div className="earth-section">
             <Esection1 />
