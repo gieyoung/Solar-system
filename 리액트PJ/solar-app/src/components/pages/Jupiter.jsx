@@ -5,7 +5,108 @@ import "../../css/jupiter.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
+import mFn from "../js/my_function.js";
+
 function Jupiter(props) {
+
+const scDesc = mFn.qsa(".desc");
+const scWhite = mFn.qs(".white-box");
+// const moon4Page = mFn.qs(".jupit5-head");
+const moon4 = mFn.qsa(".moon");
+// console.log('대상:',scDesc);
+
+// console.log(moon4[1]);
+
+// 스크롤 등장 기준설정 : 화면의 2/3
+const CRITERIA = (window.innerHeight / 3) * 2;
+// console.log("기준값:", CRITERIA);
+
+
+// 맨위로 올리기
+window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  ////////////////////////////////////////////////////////////////////////
+//   여기안에 스크롤 넣어야함
+
+  useEffect(() => {
+
+  const handleScroll = () => {
+    // 스크롤 등장 기준설정 : 화면의 2/3
+    const CRITERIA = (window.innerHeight / 3) * 2;
+
+    const bcrVal = cont2.getBoundingClientRect();
+    // console.log(CRITERIA,bcrVal);
+
+    if (bcrVal.top < CRITERIA) {
+      cont2.style.top = "0rem";
+      cont2.style.opacity = "1";
+      cont2.style.transition = ".5s ease-out";
+
+      window.removeEventListener("scroll", handleScroll);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+////////////////////////////////////////////////////////////////////////
+// 3. 함수 만들기 ///////////////
+// 3-1. 스크롤 등장액션 함수
+function showIt() {
+  // 클래스 on넣기 함수 호출하기
+
+  // forEach메서드 처리방법
+  scDesc.forEach((ele) => addOn(ele));
+
+  let bcrValWhite = mFn.getBCR(scWhite);
+  if (bcrValWhite < CRITERIA) {
+    scWhite.style.left = "100%";
+    scWhite.style.width = "0%";
+    scWhite.style.transition = "1s ease-out";
+  } else {
+    scWhite.style.left = "0%";
+    scWhite.style.width = "100%";
+    scWhite.style.transition = "1s ease-out";
+  }
+
+  } /////////// showIt 함수 /////////////
+  
+  //// [ 클래스 on 넣기 함수 ] ///////////
+function addOn(ele) {
+  // ele - 대상요소
+  // 바운딩값 구하기
+  let bcrVal = mFn.getBCR(ele);
+  // console.log(bcrVal);
+  
+  // 기준값보다 작을때 등장
+  if (bcrVal < CRITERIA) {
+    ele.classList.add("on");
+  }
+  // 기준값보다 크면 원상복귀(숨김-on빼기)
+  else ele.classList.remove("on");
+} ///////////// addOn 함수 //////////////
+
+// 1. 모바일 이벤트 등록하기 ////////////
+// 대상 : window
+window.addEventListener("touchstart", touchStartFn);
+window.addEventListener("touchend", touchEndFn);
+const more = mFn.qs(".jupiter-more");
+
+function touchStartFn(e) {
+  more.style.fontFamily = "Freesentation-9Black";
+} /////////// touchStartFn 함수 ////////////
+
+function touchEndFn(e) {
+  more.style.fontFamily = "Pretendard-Regular";
+} /////////// touchEndFn 함수 ////////////
+
   return (
     <>
         {/* <!-- 첫페이지:제목 --> */}
@@ -13,7 +114,7 @@ function Jupiter(props) {
           {/* <!-- 배경 --> */}
           <video
             src="/images/jupiter/jupiter video/j-main-bg.mp4"
-            autoplay
+            autoPlay
             loop
           ></video>
           <div className="jupiter1-bg"></div>
@@ -64,7 +165,7 @@ function Jupiter(props) {
           {/* <!-- 2-2.설명 두번째 --> */}
           <div className="desc desc2 cont-txt">
             <div className="desc2-img">
-              <img src="/images/jupiter/main_bg.jpg" alt="목성사진" />
+              <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
             </div>
             <div className="desc2-text">
               <p>
