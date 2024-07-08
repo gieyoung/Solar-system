@@ -8,12 +8,6 @@ import '../../css/earth.scss';
 function Earth() {
 
 
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
     return (
         <div className="earth-section">
             <Esection1 />
