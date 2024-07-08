@@ -50,7 +50,7 @@ function FooterArea(props) {
           </div>
         </div>
         {/* <!-- 탑버튼 --> */}
-        <a href="javascript:;" className="top-btn"><span className="ir">상단으로 이동</span></a>
+        <a href="#" className="top-btn"><span className="ir">상단으로 이동</span></a>
       </footer>
     </div>
     </>
