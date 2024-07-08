@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Earth from "./components/pages/Earth";
-import Jupiter from "./components/pages/Jupiter";
+import Jupiter from "./components/pages/Jupiter.jsx";
 
 export default function MainComponent() {
     return (
