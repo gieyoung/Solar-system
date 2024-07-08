@@ -5,7 +5,7 @@ function Esection2(props) {
         <div id="pg2" className="e_page">
             <div className="vidbox">
                 <video
-                    src="./assets/videos/earth/intro.mp4"
+                    src="/images/earth/intro.mp4"
                     autoPlay
                     muted
                     loop
@@ -34,7 +34,7 @@ function Esection2(props) {
                                     ground.”
                                 </p>
                                 <img
-                                    src="./assets/images/earth/earth_back.webp"
+                                    src="/images/earth/earth_back.webp"
                                     alt=""
                                 />
                                 <p className="fliker">Drag➡</p>
@@ -56,7 +56,7 @@ function Esection2(props) {
                                     of climate change.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/Potential_for_Life.jpg"
+                                    src="/images/earth/Potential_for_Life.jpg"
                                     alt=""
                                 />
                             </li>
@@ -78,7 +78,7 @@ function Esection2(props) {
                                     to reach our planet.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/Size_and_Distance.jpg"
+                                    src="/images/earth/Size_and_Distance.jpg"
                                     alt=""
                                 />
                             </li>
@@ -97,7 +97,7 @@ function Esection2(props) {
                                     year it's added to is called a leap year.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/Orbit_and_Rotation.jpg"
+                                    src="/images/earth/Orbit_and_Rotation.jpg"
                                     alt=""
                                 />
                             </li>
@@ -113,7 +113,7 @@ function Esection2(props) {
                                     mantle, and a solid crust.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/earth_fomation.jpg"
+                                    src="/images/earth/earth_fomation.jpg"
                                     alt=""
                                 />
                             </li>
@@ -134,7 +134,7 @@ function Esection2(props) {
                                     fluids.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/Structure.webp"
+                                    src="/images/earth/Structure.webp"
                                     alt=""
                                 />
                             </li>
@@ -155,7 +155,7 @@ function Esection2(props) {
                                     split and separate.
                                 </p>
                                 <img
-                                    src="./assets/images/earth/surface.jpg"
+                                    src="/images/earth/surface.jpg"
                                     alt=""
                                 />
                             </li>

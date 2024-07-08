@@ -29,7 +29,7 @@ function Earth() {
         return () => {
             window.removeEventListener('wheel', handleScroll);
         };
-    }, []);
+    }, [Earth]);
 
     return (
         <div className="earth-section">

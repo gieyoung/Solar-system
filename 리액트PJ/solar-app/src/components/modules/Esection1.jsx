@@ -5,7 +5,7 @@ function Esection1(props) {
         <div id="pg1" className="e_page">
             <div className="vidbox">
                 <video
-                    src="./assets/videos/earth/mainearth.mp4"
+                    src="/images/earth/mainearth.mp4"
                     autoPlay
                     muted
                     playsInline
