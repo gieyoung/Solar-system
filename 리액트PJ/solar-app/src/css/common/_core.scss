@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+/* 1차 PJ : 공통 클래스 CSS - core.css */
+/* 공통 셋팅을 위한 클래스 + 웹폰트 */
+
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+}
+
+/* 공사중 표시 */
+body * {
+  // outline:1px solid red;
+
+  // 데이터 줄바꿈을 위해 /n 부분
+  white-space: pre-line;
+}
+
+/* 모바일에서 오른쪽 여백 생기는 문제 해결 */
+// body > * {
+//   overflow-x:hidden;
+// }
+
+/* 드래그시 배경 색상(오뚜기 시그니처 컬러) */
+::selection {
+  background: #149473;
+}
+
+/* 전체 감싼 박스 */
+#wrap {
+  position: relative;
+}
+
+// 서브페이지 전체 감싸는 박스
+.sub-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+/* 공통클래스 중앙속박스 */
+.inbox {
+  max-width: 1500px;
+  width: 90%;
+  margin: 0 auto;
+  // outline: 1px solid red;
+  height: 100%;
+}
+
+/* 글자날리기 */
+.ir {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 임시타이틀 */
+.temp-tit {
+  position: absolute;
+  font-size: 2vw;
+  color: #888;
+}
+
+// 가운데정렬
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+// 포지션 가로/세로 가운데정렬
+.po-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 포지션 가로 가운데정렬
+.po-centerX {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+// 포지션 세로 가운데정렬
+.po-centerY {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 플렉스 설정
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+// 폰트사이즈
+
+// 서브인트로 슬로건
+.font-1 {
+  font-size: 8rem;
+  color: #154726;
+  padding: 350px 0 130px;
+  line-height: 1.4;
+  letter-spacing: 2px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+// 큰타이틀 - btit
+
+.font-2 {
+  font-size: 5rem;
+  line-height: 1.4;
+  padding: 15px 0 30px;
+  // color: #154726;
+  // padding: 0;
+
+  span {
+    font-weight: bold;
+  }
+}
+.font-3 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 15px 0 30px;
+}
+// 중간타이틀 - mtit
+.font-4 {
+  font-size: 3.8rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+  span {
+    font-weight: 600;
+    letter-spacing: 2.5px;
+  }
+}
+// 작은타이틀 - stit
+.font-5 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+// desc
+.font-6 {
+  font-size: 1.8rem;
+  color: #154726;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.font-7 {
+  font-size: 1.7rem;
+  color:#fff;
+  font-weight: 100;
+  line-height: 1.8;
+}
+
+.font-9 {
+  font-size: 1.4rem;
+  font-weight: 100;
+}
+.font-10 {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.desc {
+  margin-top: 100px;
+}
+
+// 버튼 스타일 애니메이션
+.btn {
+  position: relative;
+  font-size: 17px;
+  background: #fff2d8;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 50px;
+  transition: all 0.5s;
+  font-size: 17px;
+  width: 140px;
+
+  &:hover {
+    scale: 1.1;
+    a {
+      animation: btn-ani 0.5s forwards linear;
+    }
+  }
+  > a {
+    color: #154726;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+  }
+  @keyframes btn-ani {
+    from {
+      opacity: 0;
+      top: 100%;
+    }
+    to {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+}
+
+/* 공통클래스: 클리어 설정 */
+.clb::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* rem 계산 편하게 하기 위해 */
+html {
+  font-size: 10px;
+}
+
+body {
+  /* 폰트 */
+  font-family: "Pretendard-Regular";
+}
+
+.cont-box {
+  height: 100%;
+}
+
+
+
+// 탑버튼
+.top-btn {
+  background:url("../../../public/images/top_btn.png") no-repeat left top;
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	width:51px;
+	height:51px;
+	z-index:99;
+	
+}
+
