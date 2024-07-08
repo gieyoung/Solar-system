@@ -6,6 +6,9 @@ import Esection4 from '../modules/Esection4';
 import '../../css/earth.scss';
 
 function Earth() {
+
+
+    /////////////////////////////////브랜치연습
     // useEffect(() => {
     //     const handleScroll = (e) => {
     //         e.preventDefault();
