@@ -222,7 +222,7 @@ body > * {
   /* outline: 2px solid yellow; */
   padding: 20px;
   padding-top: 50px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .M-text p {
