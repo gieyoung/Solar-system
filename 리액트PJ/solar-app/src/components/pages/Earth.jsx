@@ -7,7 +7,6 @@ import '../../css/earth.scss';
 
 function Earth() {
 
-브랜치
 
 
     // useEffect(() => {
