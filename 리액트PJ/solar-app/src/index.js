@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Earth from "./components/pages/Earth";
+import Jupiter from "./components/pages/Jupiter";
 
 export default function MainComponent() {
     return (
@@ -21,6 +22,7 @@ export default function MainComponent() {
         출력된다!*/}
 
                     <Route path="earth" element={<Earth />} />
+                    <Route path="jupiter" element={<Jupiter />} />
                 </Route>
                 {/* Layout 루트 Route로 하위 Route를 감싼다! */}
             </Routes>
