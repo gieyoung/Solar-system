@@ -3,10 +3,13 @@ import React from "react";
 
 // 상단영역 CSS 불러오기
 import "../../css/top_area.scss";
+import "../../css/common/_core.scss";
+import "../../css/common/_reset.scss";
 
 function TopArea(props) {
   return (
     <>
+    <div id="header-area">
       <header className="header-area inbox">
         {/* <!-- 로고 --> */}
         <h1 className="logo">
@@ -62,6 +65,7 @@ function TopArea(props) {
           </div>
         </div>
       </header>
+      </div>
     </>
   );
 }

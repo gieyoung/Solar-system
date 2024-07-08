@@ -1,9 +1,6 @@
 @charset "utf-8";
 
 /* 팀 PJ : 공통 모듈 CSS - common.css */
-/* 공유기능 요소 셋팅 */
-// @import url(./core.css);
-// @import url(./reset.css);
 
 
 /* 임시 */
@@ -26,7 +23,7 @@
 
 /* 헤더 색상 변경 */
 #header-area.on {
-  background: url(../images/common/space.jpg) no-repeat top / cover;
+  background:url(../../public/images/common/space.jpg) no-repeat top / cover;
 }
 
 
@@ -252,45 +249,3 @@ h1.logo {
 /*****************************상단/하단 미디어쿼리************************************/
 
 
-/* 1200이하 */
-@media screen and (max-width:1200px) {
-  html{font-size: 9px;}
- 
-}
-/* 1024이하 */
-@media screen and (max-width:1024px) {
-  html{font-size: 8px;}
-
-  #gnb {
-    min-width: 45rem;
-}
-  
-
-}
-/* 760이하 */
-@media screen and (max-width:800px) {
-  html{font-size: 7px;}
-  #gnb{display: none;}
-  .mobile-btn{display: block;}
-  #header-area{ background:#000;}
-  #main-area{margin-top: 90px;}
- 
- 
-
-  }
-  
-  
-/* 480이하 */
-@media screen and (max-width:480px) {
-  .footer-area .gbox li {
-    width: 35vw;}
-    .search{display: none;}
-  
- 
-}
-/* 360이하 */
-@media screen and (max-width:360px) {
-
- 
- 
-}
