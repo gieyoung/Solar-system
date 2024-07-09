@@ -1,14 +1,32 @@
 // 상단영역 컴포넌트 ///
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
+
+//js불러오기
+import topFn from "../func/top_area.js";
 
 // 상단영역 CSS 불러오기
 import "../../css/top_area.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
-function TopArea(props) {
+// 폰트어썸 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
+
+function TopArea({ loginSts, logoutFn }) {
+
+  useEffect(() => {
+    //상단공통함수
+    topFn();
+  }, []);
+
+  //// 코드 리턴구역 //////////////
+
   return (
     <>
       <div id="header-area">
@@ -20,7 +38,6 @@ function TopArea(props) {
               <img src="./images/common/logo.png" alt="로고이미지" />
             </a>
           </h1>
-          
 
           {/* <!-- 메뉴 --> */}
           <nav id="gnb">
@@ -46,23 +63,64 @@ function TopArea(props) {
 
           {/* <!-- 기타 --> */}
           <div className="etc">
+            <ul>
+
+                  {
+                    // 로그인 상태가 null일때 나옴
+                    loginSts === null && (
+                      <>
+                        <li>
+                          <Link to="/member">JOIN US</Link>
+                        </li>
+                        <li>
+                          <Link to="/login">LOGIN</Link>
+                        </li>
+                      </>
+                    )
+                  }
+                  {
+                    // 로그인 상태가 null이 아니면
+                    loginSts !== null && (
+                      <>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              logoutFn();
+                            }}
+                          >
+                            LOGOUT
+                          </a>
+                        </li>
+                      </>
+                    )
+                  }
+            </ul>
             {/* <!-- 검색버튼 --> */}
             <div className="search">
               <input type="text" id="input-box" className="input-box" />
-              <label htmlFor="input-box" className="fa-solid fa-magnifying-glass icon"></label>
+
+              <div className="icon">
+                {/* 폰트어썸 사용 */}
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </div>
+
             </div>
 
             {/* <!-- 모바일 햄버거 버튼 --> */}
             <div className="mobile-btn">
-              <span className="ir">모바일버튼</span>
-              <i className="fa-solid fa-bars icon2">
-                {" "}
-                <span className="ir">햄버거 아이콘</span>
-              </i>
-              <i className="fa-solid fa-xmark icon3">
-                {" "}
-                <span className="ir">닫기 아이콘</span>
-              </i>
+              <div className="icon2">
+                {/* 폰트어썸 사용 */}
+                <FontAwesomeIcon icon={faBars} />
+                <span className="ir">모바일 버튼</span>
+        
+              </div>
+              <div className="icon3">
+                {/* 폰트어썸 사용 */}
+                <FontAwesomeIcon icon={faXmark} />
+                <span className="ir">닫기 버튼</span>
+              </div>
             </div>
 
             {/* <!-- 모바일 사이트맵 --> */}

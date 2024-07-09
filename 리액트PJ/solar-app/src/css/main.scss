@@ -26,23 +26,9 @@ body > * {
 .section {
   display: flex;
   flex-direction: column;
-  /* bottom: 0; */
-  /* position: absolute; */
-  /* transform: translateY(100%); */
-  /* background-color: black; */
   background-color: #fff;
 }
 
-/* ìŠ¤í¬ë¡¤ ì´ë™ translateY */
-/* .section {
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  position: absolute;
-  transform: translateY(100%);
-  background-color: black;
-  z-index: 1111111111111;
-} */
 .section .banner-wrapper {
   display: flex;
   /* flex-basis: 100vh; */
