@@ -6,6 +6,7 @@
 
 /// 슬라이드 전체 함수 //////////////
 export default function slideFn() {
+  console.log("로딩완료");
   // DOM 선택함수
   const qs = (x) => document.querySelector(x);
   const qsa = (x) => document.querySelectorAll(x);
@@ -18,82 +19,21 @@ export default function slideFn() {
   // HTML태그 로딩후 loadFn함수 호출! ///
   addEvt(window, "DOMContentLoaded", loadFn);
 
-  /***************************************************** 
-    [ 슬라이드 이동 기능정의 ]
-    1. 이벤트 종류: click
-    2. 이벤트 대상: 이동버튼(.abtn)
-    3. 변경 대상: 슬라이드 박스(#slide)
-    4. 기능 설계:
-
-        (1) 오른쪽 버튼 클릭시 다음 슬라이드가
-            나타나도록 슬라이드 박스의 left값을
-            -100%로 변경시킨다.
-            -> 슬라이드 이동후!!! 
-            바깥에 나가있는 첫번째 슬라이드
-            li를 잘라서 맨뒤로 보낸다!
-            동시에 left값을 0으로 변경한다!
-
-        (2) 왼쪽버튼 클릭시 이전 슬라이드가
-            나타나도록 하기위해 우선 맨뒤 li를
-            맨앞으로 이동하고 동시에 left값을
-            -100%로 변경한다.
-            그 후 left값을 0으로 애니메이션하여
-            슬라이드가 왼쪽에서 들어온다.
-
-        (3) 공통기능: 슬라이드 위치표시 블릿
-            - 블릿 대상: .indic li
-            - 변경 내용: 슬라이드 순번과 같은 순번의
-            li에 클래스 "on"주기(나머진 빼기->초기화!)
-
-*****************************************************/
-
-  // 전역변수구역 //////////
-  /* 
-    (참고: JS에서 이름짓는 일반규칙)
-    1. 변수/함수 : 캐믈케이스(첫단어소문자 뒷단어 대문자시작)
-    2. 생성자함수/클래스 : 파스칼케이스(모든첫글자 대문자)
-    3. 상수 : 모든글자 대문자(연결은 언더스코어-스네이크 케이스)
-*/
-
+ 
   /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
 ******************************************/
   function loadFn() {
-    // console.log("로딩완료!");
+    console.log("로딩완료2!");
 
     // 이동버튼 대상:  .abtn
     const abtn = qsa(".abtn");
     // 변경대상 : #slide
     const slide = qs(".slider");
-    // 블릿버튼 : .indic
-    let indic = document.querySelector(".indic");
-    // console.log(abtn,slide);
-
-    //////////// 초기셋팅하기 ////////
-    // 5개의 슬라이드와 블릿을 만들어준다!
-    for (let i = 0; i < 3; i++) {
-      // 슬라이드 넣기
-      slide.innerHTML += `
-    <li data-seq="${i}" class="snum-0${i+1}">
-    <div class="tbx">
-      <h2>From Deep Space,<br>With Love</h2>
-      <p>Thirty-three years ago, scientists and engineers created the famous Earth as a "Pale Blue Dot" image as a love letter to planet Earth.</p>
-      <div class="btn">
-          <a href="./jupiter.html">READ MORE</a>
-      </div>
-  </div>
-    </li>    
-    `;
-      // 블릿 넣기
-      indic.innerHTML += `
-    <li ${i === 0 ? 'class="on"' : ""}></li>
-    `;
-    } ////// for ////////
-
-    // li를 생성한 후 그 li다시 수집한다!
-    // 블릿의 li까지 수집! indic 변수
-    indic = document.querySelectorAll(".indic li");
+    // 블릿버튼 : .indic li
+    let indic = document.querySelectorAll(".indic li");
+    console.log(abtn,slide);
 
     // 슬라이드 순번 전역변수
     // let snum = 0; -> 불필요!
@@ -160,7 +100,7 @@ export default function slideFn() {
       // 해당클래스가 있으면 true, 없으면 false
 
       // 함수호출확인
-      // console.log("나 슬라이드야~!", this, isRbtn);
+      console.log("나 슬라이드야~!", this, isRbtn);
       // this는 호출한 버튼 자신
 
       // 2. 버튼별 분기하기 //////

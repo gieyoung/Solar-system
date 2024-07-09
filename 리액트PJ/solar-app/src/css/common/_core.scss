@@ -91,6 +91,7 @@
 /* 전체 감싼 박스 */
 #wrap {
   position: relative;
+
  
 }
 
@@ -131,9 +132,11 @@ html {
   font-size: 10px;
   /* 부드러운 스크롤 */
   scroll-behavior: smooth;
+
 }
 
 body {
   /* 폰트 */
   font-family: 'Pretendard-Regular';
+    
 }
