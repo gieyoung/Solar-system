@@ -161,7 +161,7 @@
 .jupiter3-text h3 {
   margin-bottom: 30px;
 }
-.jupiter3-cont iframe {
+.jupiter3-cont .ifr {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -320,7 +320,7 @@
   .M-text h4 {
     font-size: 3.5rem;
   }
-  .jupiter3-cont iframe {
+  .jupiter3-cont .ifr {
     border-radius: 0;
   }
 }
@@ -426,7 +426,7 @@
   .desc {
     width: 100vw;
   }
-  .desc2 iframe {
+  .desc2 .ifr {
     height: 400px;
   }
   /* 두번째페이지 */
@@ -448,7 +448,7 @@
     transform: translateX(-50%);
     width: 85%;
   }
-  .jupiter3-cont iframe {
+  .jupiter3-cont .ifr {
     height: 100vw;
   }
 
