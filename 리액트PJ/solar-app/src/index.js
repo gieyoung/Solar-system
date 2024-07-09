@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
+// import Sun from "./components/pages/Sun";
 import Earth from "./components/pages/Earth";
 import Jupiter from "./components/pages/Jupiter";
 import Member from "./components/pages/Member";
@@ -26,6 +27,7 @@ export default function MainComponent() {
 
           <Route index element={<Main />} />
 
+          {/* <Route path="sun" element={<Sun />} /> */}
           <Route path="earth" element={<Earth />} />
           <Route path="jupiter" element={<Jupiter />} />
           <Route path="member" element={<Member />} />

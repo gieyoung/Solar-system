@@ -5,7 +5,7 @@ import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
 
 // 나의 함수 불러오기
-import mFn from "../func/my_function.js";
+import mFn from "./my_function.js";
 
 
 /************************************************
