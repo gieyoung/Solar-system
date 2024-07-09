@@ -25,6 +25,7 @@ export default function MainComponent() {
         출력된다!*/}
 
           <Route index element={<Main />} />
+
           <Route path="earth" element={<Earth />} />
           <Route path="jupiter" element={<Jupiter />} />
           <Route path="member" element={<Member />} />
