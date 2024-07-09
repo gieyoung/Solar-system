@@ -17,12 +17,16 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function TopArea(props) {
+
+function TopArea({ loginSts, logoutFn }) {
+
   useEffect(() => {
     //상단공통함수
     topFn();
   }, []);
+
   //// 코드 리턴구역 //////////////
+
   return (
     <>
       <div id="header-area">
@@ -59,13 +63,49 @@ function TopArea(props) {
 
           {/* <!-- 기타 --> */}
           <div className="etc">
+            <ul>
+
+                  {
+                    // 로그인 상태가 null일때 나옴
+                    loginSts === null && (
+                      <>
+                        <li>
+                          <Link to="/member">JOIN US</Link>
+                        </li>
+                        <li>
+                          <Link to="/login">LOGIN</Link>
+                        </li>
+                      </>
+                    )
+                  }
+                  {
+                    // 로그인 상태가 null이 아니면
+                    loginSts !== null && (
+                      <>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              logoutFn();
+                            }}
+                          >
+                            LOGOUT
+                          </a>
+                        </li>
+                      </>
+                    )
+                  }
+            </ul>
             {/* <!-- 검색버튼 --> */}
             <div className="search">
               <input type="text" id="input-box" className="input-box" />
+
               <div className="icon">
                 {/* 폰트어썸 사용 */}
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </div>
+
             </div>
 
             {/* <!-- 모바일 햄버거 버튼 --> */}
