@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Earth from "./components/pages/Earth";
 import Jupiter from "./components/pages/Jupiter";
+import Member from "./components/pages/Member";
+import Login from "./components/pages/Login";
 
 export default function MainComponent() {
   return (
@@ -22,6 +24,8 @@ export default function MainComponent() {
         출력된다!*/}
           <Route path="earth" element={<Earth />} />
           <Route path="jupiter" element={<Jupiter />} />
+          <Route path="member" element={<Member />} />
+          <Route path="login" element={<Login />} />
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>

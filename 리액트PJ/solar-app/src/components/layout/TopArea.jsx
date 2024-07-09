@@ -8,7 +8,7 @@ import "../../css/top_area.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
-function TopArea(props) {
+function TopArea({ loginSts, logoutFn }) {
   return (
     <>
       <div id="header-area">
@@ -20,7 +20,6 @@ function TopArea(props) {
               <img src="./images/common/logo.png" alt="로고이미지" />
             </a>
           </h1>
-          
 
           {/* <!-- 메뉴 --> */}
           <nav id="gnb">
@@ -46,10 +45,47 @@ function TopArea(props) {
 
           {/* <!-- 기타 --> */}
           <div className="etc">
+            <ul>
+
+                  {
+                    // 로그인 상태가 null일때 나옴
+                    loginSts === null && (
+                      <>
+                        <li>
+                          <Link to="/member">JOIN US</Link>
+                        </li>
+                        <li>
+                          <Link to="/login">LOGIN</Link>
+                        </li>
+                      </>
+                    )
+                  }
+                  {
+                    // 로그인 상태가 null이 아니면
+                    loginSts !== null && (
+                      <>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              logoutFn();
+                            }}
+                          >
+                            LOGOUT
+                          </a>
+                        </li>
+                      </>
+                    )
+                  }
+            </ul>
             {/* <!-- 검색버튼 --> */}
             <div className="search">
               <input type="text" id="input-box" className="input-box" />
-              <label htmlFor="input-box" className="fa-solid fa-magnifying-glass icon"></label>
+              <label
+                htmlFor="input-box"
+                className="fa-solid fa-magnifying-glass icon"
+              ></label>
             </div>
 
             {/* <!-- 모바일 햄버거 버튼 --> */}
