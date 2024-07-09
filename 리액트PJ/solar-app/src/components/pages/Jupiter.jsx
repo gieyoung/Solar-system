@@ -11,14 +11,9 @@ import mFn from "../js/my_function.js";
 // 데이터
 import jupiter_moons_data from "../js/jupiter_moons_data.js";
 
-
+import $ from "jquery";
 
 function Jupiter(props) {
-  const scDesc = mFn.qsa(".desc");
-  const scWhite = mFn.qs(".white-box");
-  // const moon4Page = mFn.qs(".jupit5-head");
-  const moon4 = mFn.qsa(".moon");
-
   const selData = jupiter_moons_data;
 
   // 스크롤 등장 기준설정 : 화면의 2/3
@@ -35,13 +30,20 @@ function Jupiter(props) {
   //   여기안에 스크롤 넣어야함
 
   useEffect(() => {
-    if (!scWhite) return;
+    
+  const scDesc = mFn.qsa(".desc");
+  const scWhite = mFn.qs(".white-box");
+  // const moon4Page = mFn.qs(".jupit5-head");
+  const moon4 = mFn.qsa(".moon");
+
+
+    // if (!scWhite) return;
     const handleScroll = () => {
       // 스크롤 등장 기준설정 : 화면의 2/3
       const CRITERIA = (window.innerHeight / 3) * 2;
 
       // const bcrVal = cont2.getBoundingClientRect();
-      // // console.log(CRITERIA,bcrVal);
+      console.log(CRITERIA);
 
       // if (bcrVal.top < CRITERIA) {
       //   cont2.style.top = "0rem";
@@ -67,7 +69,7 @@ function Jupiter(props) {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -116,30 +118,30 @@ function Jupiter(props) {
   //   }
   // };
 
-  window.addEventListener('DOMContentLoaded', function(event) {
-    var iev = getIEVersion();
-    if (iev.major < 12 && iev.major > 1) {
-        document.body.classList.add("is_ie");
-    }
-    if (mobileAndTabletCheck()) {
-        document.body.classList.add("motanf");
-    }
-    var mbmv = document.getElementById("mbmv");
-    // check if is iOS, otherwise disable AR
-    if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        document.body.classList.add("ios");
-    } else {
-        mbmv.removeAttribute("ar")
-    }
-    // dispatch a "fake" resize event on parent window when model is loaded
-    // this is for dynamically loaded iframes like instruments in clipper spacecraft
-    if (window.parent) {
-        mbmv.addEventListener('load', function(event) {
-            var resize_event = new CustomEvent('resize');
-            window.parent.dispatchEvent(resize_event);
-        }, true);
-    }
-});
+  //   window.addEventListener('DOMContentLoaded', function(event) {
+  //     var iev = getIEVersion();
+  //     if (iev.major < 12 && iev.major > 1) {
+  //         document.body.classList.add("is_ie");
+  //     }
+  //     if (mobileAndTabletCheck()) {
+  //         document.body.classList.add("motanf");
+  //     }
+  //     var mbmv = document.getElementById("mbmv");
+  //     // check if is iOS, otherwise disable AR
+  //     if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+  //         document.body.classList.add("ios");
+  //     } else {
+  //         mbmv.removeAttribute("ar")
+  //     }
+  //     // dispatch a "fake" resize event on parent window when model is loaded
+  //     // this is for dynamically loaded iframes like instruments in clipper spacecraft
+  //     if (window.parent) {
+  //         mbmv.addEventListener('load', function(event) {
+  //             var resize_event = new CustomEvent('resize');
+  //             window.parent.dispatchEvent(resize_event);
+  //         }, true);
+  //     }
+  // });
 
   return (
     <>
@@ -237,11 +239,11 @@ function Jupiter(props) {
             </p>
           </div>
           <iframe
-            className="imodel ifr"
-            src="https://solarsystem.nasa.gov/gltf_embed/2375"
-            frameBorder="0"
-            loading="eager"
-          ></iframe>
+          className="imodel ifr"
+          src="https://solarsystem.nasa.gov/gltf_embed/2375"
+          frameBorder="0"
+          loading="eager"
+        ></iframe>
         </div>
       </section>
 
@@ -251,24 +253,22 @@ function Jupiter(props) {
           <h2>Moons of Jupiter</h2>
         </div>
         <div className="moon-cont">
-          {selData.map((v,i) => (
-            <div className={"moon"+(i+1)+" moon"} key={i}>
+          {selData.map((v, i) => (
+            <div className={"moon" + (i + 1) + " moon"} key={i}>
               <a
-                href={"https://science.nasa.gov/jupiter/moons/"+v.name+"/"}
+                href={"https://science.nasa.gov/jupiter/moons/" + v.name + "/"}
                 target="_blank"
               >
                 <div className="moon-txt cont-tit">{v.name}</div>
                 <div className="moon-img">
                   <img
-                    src={"./images/jupiter/"+v.name+".jpg"}
+                    src={"./images/jupiter/" + v.name + ".jpg"}
                     alt={v.name}
                   />
                 </div>
-                <div className={"moon"+(i+1)+"-text M-text"}>
+                <div className={"moon" + (i + 1) + "-text M-text"}>
                   <h4 className="cont-tit">{v.name}</h4>
-                  <p className="cont-txt">
-                    {v.txt}
-                  </p>
+                  <p className="cont-txt">{v.txt}</p>
                 </div>
               </a>
             </div>
