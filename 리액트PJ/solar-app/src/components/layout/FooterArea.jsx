@@ -8,6 +8,7 @@ import "../../css/footer_area.scss";
 
 // 폰트어썸 불러오기
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaSqureFacebook } from "@fortawesome/free-brands-svg-icons";
 
 // js불러오기
 import footerFn from "../func/footer_area.js";
@@ -45,7 +46,8 @@ function FooterArea() {
           {/* <!-- sns공유하기 --> */}
           <ul className="sns">
             <li>
-              <a href=""><i className="fa-brands fa-square-facebook"></i></a>
+              {/* 폰트어썸 사용 */}
+              {/* <FontAwesomeIcon icon={FaSqureFacebook} /> */}
             </li>
             <li>
               <a href=""><i className="fa-brands fa-square-instagram"></i></a>
