@@ -6,7 +6,7 @@ import '../../css/main.scss';
 //js불러오기
 import mainFn from "../func/main.js";
 import slideFn from "../func/slide.js";
-// import setSlide from "../func/drag_slide_multi.js";
+import setSlide from "../func/drag_slide_multi.js";
 
 
 export default function Main() {
@@ -14,7 +14,7 @@ export default function Main() {
     // 메인 함수호출
     mainFn();
     slideFn();
-    // setSlide('banbx');
+    setSlide('banbx');
 
   }, []);
 

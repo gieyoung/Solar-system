@@ -5,12 +5,19 @@ import React, { useEffect } from 'react';
 // 하단영역 CSS 불러오기
 import "../../css/footer_area.scss";
 
-// js불러오기
-import moveSollar from "../func/call_myself.js";
 
+// 폰트어썸 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// js불러오기
+import footerFn from "../func/footer_area.js";
+import moveSollar from "../func/call_myself.js";
 
 function FooterArea() {
   useEffect(() => {
+    // 하단공통함수
+    footerFn();
+    // 무한재귀호출함수
     moveSollar();
   }, []);
    //// 코드 리턴구역 //////////////
