@@ -16,8 +16,7 @@ export default[
     },
     {
        idx:"4",
-       name:"Ganymede",
-       addr:"https://science.nasa.gov/jupiter/moons/ganymede/",
-       txt:"Ganymede is Jupiter's largest moon, and the largest moon in our solar system. It's even bigger than Mercury, and Pluto.",
+       name:"Europa",
+       txt:" Europa is Jupiter's fourth largest moon. It's about 90% the size of Earth’s Moon.",
     },
 ]
