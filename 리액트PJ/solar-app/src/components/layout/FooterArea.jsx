@@ -1,13 +1,27 @@
 // 하단영역 컴포넌트 ///
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // 하단영역 CSS 불러오기
-import "../../css/top_area.scss";
-import "../../css/common/_core.scss";
-import "../../css/common/_reset.scss";
+import "../../css/footer_area.scss";
 
-function FooterArea(props) {
+
+// 폰트어썸 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaSqureFacebook } from "@fortawesome/free-brands-svg-icons";
+
+// js불러오기
+import footerFn from "../func/footer_area.js";
+import moveSollar from "../func/call_myself.js";
+
+function FooterArea() {
+  useEffect(() => {
+    // 하단공통함수
+    footerFn();
+    // 무한재귀호출함수
+    moveSollar();
+  }, []);
+   //// 코드 리턴구역 //////////////
   return (
     <>
     <div id="footer-area">
@@ -32,7 +46,8 @@ function FooterArea(props) {
           {/* <!-- sns공유하기 --> */}
           <ul className="sns">
             <li>
-              <a href=""><i className="fa-brands fa-square-facebook"></i></a>
+              {/* 폰트어썸 사용 */}
+              {/* <FontAwesomeIcon icon={FaSqureFacebook} /> */}
             </li>
             <li>
               <a href=""><i className="fa-brands fa-square-instagram"></i></a>

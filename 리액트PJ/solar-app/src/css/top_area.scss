@@ -240,3 +240,50 @@ h1.logo {
 }
 
 /*****************************상단/하단 미디어쿼리************************************/
+<<<<<<< HEAD
+=======
+
+
+/* 1200이하 */
+@media screen and (max-width:1200px) {
+  html{font-size: 9px;}
+ 
+}
+/* 1024이하 */
+@media screen and (max-width:1024px) {
+  html{font-size: 8px;}
+
+  #gnb {
+    min-width: 45rem;
+}
+  
+
+}
+/* 760이하 */
+@media screen and (max-width:800px) {
+  html{font-size: 7px;}
+  #gnb{display: none;}
+  .mobile-btn{display: block;}
+  #header-area{ background:#000;}
+  #main-area{margin-top: 90px;}
+ 
+ 
+
+  }
+  
+  
+/* 480이하 */
+@media screen and (max-width:480px) {
+  .footer-area .gbox li {
+    width: 35vw;}
+    .search{display: none;}
+  
+ 
+}
+/* 360이하 */
+@media screen and (max-width:360px) {
+
+ 
+ 
+}
+>>>>>>> bdef537a2e3474a34729265fc1746f026f7168ea
