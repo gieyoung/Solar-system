@@ -1,5 +1,6 @@
 // 상단영역 컴포넌트 ///
 import React, { useEffect } from "react";
+import Searching from "../modules/Searching.jsx";
 
 import { Link } from "react-router-dom";
 
@@ -88,15 +89,8 @@ function TopArea({ loginSts, logoutFn }) {
                 )
               }
             </ul>
-            {/* <!-- 검색버튼 --> */}
-            <div className="search">
-              <input type="text" id="input-box" className="input-box" />
-
-              <div className="icon">
-                {/* 폰트어썸 사용 */}
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </div>
-            </div>
+            {/* 검색모듈 */}
+            <Searching />
 
             {/* <!-- 모바일 햄버거 버튼 --> */}
             <div className="mobile-btn">
