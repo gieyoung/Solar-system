@@ -23,10 +23,9 @@ export default function MainComponent() {
         -> path설정대신 index키워드를 쓰면 
         첫페이지로 구성됨 -> MainArea 컴포넌트 <Outlet/>에
         출력된다!*/}
-<<<<<<< HEAD
-=======
+
           <Route index element={<Main />} />
->>>>>>> bdef537a2e3474a34729265fc1746f026f7168ea
+
           <Route path="earth" element={<Earth />} />
           <Route path="jupiter" element={<Jupiter />} />
           <Route path="member" element={<Member />} />
