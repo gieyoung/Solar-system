@@ -2,19 +2,20 @@ import React, { useEffect } from "react";
 
 //css
 import "../../css/jupiter.scss";
+import "../../css/common/_common.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
 import mFn from "../js/my_function.js";
 
-function Jupiter(props) {
-  const scDesc = mFn.qsa(".desc");
-  const scWhite = mFn.qs(".white-box");
-  // const moon4Page = mFn.qs(".jupit5-head");
-  const moon4 = mFn.qsa(".moon");
-  // console.log('대상:',scDesc);
+// 데이터
+import { jupiter_about_data,jupiter_moons_data } from "../js/jupiter_data.js";
 
-  // console.log(moon4[1]);
+import $ from "jquery";
+
+function Jupiter(props) {
+  const selData = jupiter_moons_data;
+  const selData2 = jupiter_about_data;
 
   // 스크롤 등장 기준설정 : 화면의 2/3
   const CRITERIA = (window.innerHeight / 3) * 2;
@@ -30,13 +31,18 @@ function Jupiter(props) {
   //   여기안에 스크롤 넣어야함
 
   useEffect(() => {
-    if (!scWhite) return;
+    const scDesc = mFn.qsa(".desc");
+    const scWhite = mFn.qs(".white-box");
+    // const moon4Page = mFn.qs(".jupit5-head");
+    const moon4 = mFn.qsa(".moon");
+
+    // if (!scWhite) return;
     const handleScroll = () => {
       // 스크롤 등장 기준설정 : 화면의 2/3
       const CRITERIA = (window.innerHeight / 3) * 2;
 
       // const bcrVal = cont2.getBoundingClientRect();
-      // // console.log(CRITERIA,bcrVal);
+      console.log(CRITERIA);
 
       // if (bcrVal.top < CRITERIA) {
       //   cont2.style.top = "0rem";
@@ -86,35 +92,24 @@ function Jupiter(props) {
 
   ////////////////////////////////////////////////////////////////////////
 
-  // 1. 모바일 이벤트 등록하기 ////////////
-  // 대상 : window
-  window.addEventListener("touchstart", touchStartFn);
-  window.addEventListener("touchend", touchEndFn);
-  const more = mFn.qs(".jupiter-more");
+  // // 1. 모바일 이벤트 등록하기 ////////////
+  // // 대상 : window
+  // window.addEventListener("touchstart", touchStartFn);
+  // window.addEventListener("touchend", touchEndFn);
+  // const more = mFn.qs(".jupiter-more");
 
-  function touchStartFn(e) {
-    more.style.fontFamily = "Freesentation-9Black";
-  } /////////// touchStartFn 함수 ////////////
+  // function touchStartFn(e) {
+  //   more.style.fontFamily = "Freesentation-9Black";
+  // } /////////// touchStartFn 함수 ////////////
 
-  function touchEndFn(e) {
-    more.style.fontFamily = "Pretendard-Regular";
-  } /////////// touchEndFn 함수 ////////////
-
-  // const ifrData= "https://solarsystem.nasa.gov/gltf_embed/2375";
-  // window.postMessage(ifrData, '*');
-
-  // 데이터 수신
-  // window.onmessage = function (e) {
-  //   if (e.origin === "https://solarsystem.nasa.gov/gltf_embed/2375") {
-  //     // 처리
-  //     console.log(e.data);
-  //   }
-  // };
+  // function touchEndFn(e) {
+  //   more.style.fontFamily = "Pretendard-Regular";
+  // } /////////// touchEndFn 함수 ////////////
 
   return (
     <>
       {/* <!-- 첫페이지:제목 --> */}
-      <section className="jupiter jupiter1">
+      <section className="sub-jupiter jupiter1">
         {/* <!-- 배경 --> */}
         <video
           src="/images/jupiter/jupiter video/j-main-bg.mp4"
@@ -141,10 +136,10 @@ function Jupiter(props) {
       </section>
 
       {/* <!-- 두번째페이지 : 설명 --> */}
-      <section className="jupiter jupiter2">
+      <section className="sub-jupiter jupiter2">
         {/* <!-- 2-1.설명 첫번째 --> */}
         <div className="desc desc1 cont-txt">
-          <div className="desc1-img">
+          <div className="desc1-img desc-imgbx">
             <img src="/images/jupiter/main_bg2.jpg" alt="목성사진" />
           </div>
           <div className="desc1-text">
@@ -168,8 +163,8 @@ function Jupiter(props) {
         </div>
         {/* <!-- 2-2.설명 두번째 --> */}
         <div className="desc desc2 cont-txt">
-          <div className="desc2-img">
-            <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
+          <div className="desc2-img desc-imgbx">
+            <img src="/images/jupiter/main_bg.jpg" alt="목성사진" />
           </div>
           <div className="desc2-text">
             <p>
@@ -192,7 +187,7 @@ function Jupiter(props) {
       </section>
 
       {/* <!-- 세번째페이지 : 3D --> */}
-      <section className="jupiter jupiter3">
+      <section className="sub-jupiter jupiter3">
         <div className="white-box"></div>
         <div className="jupiter3-cont">
           <div className="jupiter3-text cont-txt">
@@ -208,105 +203,39 @@ function Jupiter(props) {
           </div>
           <iframe
             className="imodel ifr"
-            // src="https://solarsystem.nasa.gov/gltf_embed/2375"
+            src="https://solarsystem.nasa.gov/gltf_embed/2375"
             frameBorder="0"
             loading="eager"
-            
           ></iframe>
         </div>
       </section>
 
       {/* <!-- 네번째페이지 : 위성 4가지 --> */}
-      <section className="jupiter jupiter4">
+      <section className="sub-jupiter jupiter4">
         <div className="jupit5-head sub-tit">
           <h2>Moons of Jupiter</h2>
         </div>
         <div className="moon-cont">
-          {/* <!-- 4-1. 첫번째 위성 : Ganymede --> */}
-          <div className="moon1 moon">
-            <a
-              href="https://science.nasa.gov/jupiter/moons/ganymede/"
-              target="_blank"
-            >
-              <div className="moon-txt cont-tit">Ganymede</div>
-              <div className="moon-img">
-                <img
-                  src="./images/jupiter/Ganymede.jpg"
-                  alt="목성위성 가니메데 사진"
-                />
-              </div>
-              <div className="moon1-text M-text">
-                <h4 className="cont-tit">Ganymede</h4>
-                <p className="cont-txt">
-                  Ganymede is Jupiter's largest moon, and the largest moon in
-                  our solar system. It's even bigger than Mercury, and Pluto.
-                </p>
-              </div>
-            </a>
-          </div>
-          {/* <!-- 4-2. 두번째 위성 : Callisto --> */}
-          <div className="moon2 moon">
-            <a
-              href="https://science.nasa.gov/jupiter/moons/callisto/"
-              target="_blank"
-            >
-              <div className="moon-txt cont-tit">Callisto</div>
-              <div className="moon-img">
-                <img
-                  src="./images/jupiter/Callisto.jpg"
-                  alt="목성위성 칼리스토 사진"
-                />
-              </div>
-              <div className="moon2-text M-text">
-                <h4 className="cont-tit">Callisto</h4>
-                <p className="cont-txt">
-                  Callisto is Jupiter’s second largest moon and the third
-                  largest moon in our solar system.
-                </p>
-              </div>
-            </a>
-          </div>
-          {/* <!-- 4-3. 세번째 위성 : Io --> */}
-          <div className="moon3 moon">
-            <a
-              href="https://science.nasa.gov/jupiter/moons/io/"
-              target="_blank"
-            >
-              <div className="moon-txt cont-tit">Io</div>
-              <div className="moon-img">
-                <img src="./images/jupiter/Io.jpg" alt="목성위성 이오 사진" />
-              </div>
-              <div className="moon3-text M-text">
-                <h4 className="cont-tit">Io</h4>
-                <p className="cont-txt">
-                  Io is Jupiter's third largest moon, and the most volcanically
-                  active world in our solar system.
-                </p>
-              </div>
-            </a>
-          </div>
-          {/* <!-- 4-2. 네번째 위성 : Europa --> */}
-          <div className="moon4 moon">
-            <a
-              href="https://science.nasa.gov/jupiter/moons/io/"
-              target="_blank"
-            >
-              <div className="moon-txt cont-tit">Europa</div>
-              <div className="moon-img">
-                <img
-                  src="./images/jupiter/Europa.jpg"
-                  alt="목성위성 유로파 사진"
-                />
-              </div>
-              <div className="moon4-text M-text">
-                <h4 className="cont-tit">Europa</h4>
-                <p className="cont-txt">
-                  Europa is Jupiter's fourth largest moon. It's about 90% the
-                  size of Earth’s Moon.
-                </p>
-              </div>
-            </a>
-          </div>
+          {selData.map((v, i) => (
+            <div className={"moon" + (i + 1) + " moon"} key={i}>
+              <a
+                href={"https://science.nasa.gov/jupiter/moons/" + v.name + "/"}
+                target="_blank"
+              >
+                <div className="moon-txt cont-tit">{v.name}</div>
+                <div className="moon-img">
+                  <img
+                    src={"./images/jupiter/" + v.name + ".jpg"}
+                    alt={v.name}
+                  />
+                </div>
+                <div className={"moon" + (i + 1) + "-text M-text"}>
+                  <h4 className="cont-tit">{v.name}</h4>
+                  <p className="cont-txt">{v.txt}</p>
+                </div>
+              </a>
+            </div>
+          ))}
         </div>
         <div className="jupiter-more cont-tit">
           <a
@@ -319,93 +248,21 @@ function Jupiter(props) {
         </div>
       </section>
       {/* <!-- 다번째페이지 :  목성에 관한 9가지--> */}
-      <section className="jupiter jupiter5">
+      <section className="sub-jupiter jupiter5">
         <div className="jupit5-cont">
           <div className="sub-tit">
             <h2>ALL ABOUT JUPITER</h2>
           </div>
           <div className="jupit5-gbox">
-            <div className="jupit5-box">
-              <div className="circle-num">1</div>
-              <div className="jupit5-text cont-txt">
-                <h3>The Biggest</h3>
-                <p>
-                  For scale, Jupiter's Great Red Spot is about the size of
-                  Earth.
-                </p>
+            {selData2.map((v, i) => (
+              <div className="jupit5-box" key={i}>
+                <div className="circle-num">{v.idx}</div>
+                <div className="jupit5-text cont-txt">
+                  <h3>{v.tit}</h3>
+                  <p>{v.txt}</p>
+                </div>
               </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">2</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Fifth From the Sun</h3>
-                <p>
-                  Jupiter's distance from the Sun is 5.2 times the Earth-Sun
-                  distance.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">3</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Short and Long</h3>
-                <p>
-                  Jupiter's day lasts only 10 Earth hours; its year is 12 Earth
-                  years.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">4</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Nowhere to Land</h3>
-                <p>
-                  As a gas giant, Jupiter has no solid surface. It may have an
-                  Earth-sized core.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">5</div>
-              <div className="jupit5-text cont-txt">
-                <h3>MASSIVE WORLD, LIGHT ELEMENTS</h3>
-                <p>
-                  Jupiter's atmosphere is made up mostly of hydrogen (H2) and
-                  helium (He).
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">6</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Big and Light</h3>
-                <p>Jupiter's atmosphere is mostly hydrogen and helium.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">7</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Many Moons</h3>
-                <p>As of July 2023, Jupiter had 95 moons.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">8</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Exploration</h3>
-                <p>Seven robots flew past; two stayed in orbit.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">9</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Super Storm</h3>
-                <p>
-                  The Great Red Spot is a storm that has raged for more than 100
-                  years.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
