@@ -30,14 +30,14 @@ export default function topFn() {
 
   // 1. 대상선정
   // 검색버튼
-  const icon = mFn.qs(".icon");
-  // 검색창
-  const search = mFn.qs(".search");
+  // const icon = mFn.qs(".icon");
+  // // 검색창
+  // const search = mFn.qs(".search");
 
-  // 2. 함수실행: 검색버튼 클릭시 검색창 열리고 닫히기
-  icon.onclick = () => {
-    search.classList.toggle("on");
-  };
+  // // 2. 함수실행: 검색버튼 클릭시 검색창 열리고 닫히기
+  // icon.onclick = () => {
+  //   search.classList.toggle("on");
+  // };
 
   /****************************************************
      [ 모바일 햄버거 버튼 클릭시 사이트맵 열고 닫기 ]

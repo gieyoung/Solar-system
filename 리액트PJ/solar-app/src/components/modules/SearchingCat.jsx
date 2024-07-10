@@ -1,4 +1,4 @@
-// DC PJ 캐릭터 검색결과 리스트 컴포넌트
+// 검색결과 리스트 컴포넌트
 import React from "react";
 
 // CSS불러오기
@@ -12,7 +12,7 @@ function SearchingCat({ dt }) {
 
   // total - 검색된 배열데이터 개수
   const total = dt.length;
-  console.log("데이터수:",total);
+  console.log("데이터수:", total);
 
   return (
     <>
@@ -23,18 +23,16 @@ function SearchingCat({ dt }) {
             {dt.map((v, i) => (
               <li key={i}>
                 <Link
-                  to="/detail"
+                  to={v.link}
                   /* state로 3가지 값을 넘겨준다! */
                   state={{
-                    cname: v.cname, // 캐릭터이름
-                    cdesc: v.cdesc, // 캐릭터설명
-                    facts: v.facts, // 캐릭터상세
+                    alignment: v.alignment, // 행성이름
+                    cdesc: v.cdesc, // 행성설명
+                    link: v.link, // 행성링크
                   }}
                 >
-                  <img 
-                  src={process.env.PUBLIC_URL+v.tmsrc} 
-                  alt={v.cname} />
-                  <h3>{v.cname}</h3>
+                  <h2>{v.alignment}</h2>
+                  <h3>{v.cdesc}</h3>
                 </Link>
               </li>
             ))}
@@ -43,12 +41,7 @@ function SearchingCat({ dt }) {
       }
       {
         // 선택데이터가 0개이면 아래 출력
-        total == 0 && (
-          <h2 style={{ textAlign: "center" }}>
-            Sorry, we don't have any matches for that. But there's plenty more
-            to see on DC!
-          </h2>
-        )
+        total == 0 && <h2 style={{ textAlign: "center" }}>검색어가 없습니다.</h2>
       }
     </>
   );
