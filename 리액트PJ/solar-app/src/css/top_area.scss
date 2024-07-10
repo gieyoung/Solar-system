@@ -239,12 +239,12 @@ h1.logo {
 
 /* 1200이하 */
 @media screen and (max-width:1200px) {
-  html{font-size: 9px;}
+  html{font-size: 9px !important;}
  
 }
 /* 1024이하 */
 @media screen and (max-width:1024px) {
-  html{font-size: 8px;}
+  html{font-size: 8px !important;}
 
   #gnb {
     min-width: 45rem;
@@ -254,7 +254,7 @@ h1.logo {
 }
 /* 760이하 */
 @media screen and (max-width:800px) {
-  html{font-size: 7px;}
+  html{font-size: 7px !important;}
   #gnb{display: none;}
   .mobile-btn{display: block;}
   #header-area{ background:#000;}

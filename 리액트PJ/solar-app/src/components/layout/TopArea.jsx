@@ -45,7 +45,7 @@ function TopArea({ loginSts, logoutFn }) {
           <nav id="gnb">
             <ul>
               {menu.map((v, i) => (
-                <li key={i} className="gnb-depth1">
+                <li key={i}>
                   <Link to={v.link}>
                     <span>{v.menu}</span>
                   </Link>
