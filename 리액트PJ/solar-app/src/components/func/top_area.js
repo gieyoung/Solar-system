@@ -50,6 +50,8 @@ export default function topFn() {
   const icon3 = mFn.qs(".icon3");
   // 사이트맵
   const siteMap = mFn.qs(".m-sitemap");
+  // 로그인/회원가입
+  const members=mFn.qsa(".m-sitemap ol li");
 
   // 2. 함수실행
   icon2.onclick = () => {
@@ -64,4 +66,11 @@ export default function topFn() {
 
     siteMap.classList.remove("on");
   };
+  members.forEach((v)=>{
+    v.onclick=()=>{
+      icon2.classList.remove("on");
+      icon3.classList.remove("on");
+      siteMap.classList.remove("on");
+    }
+  });
 }

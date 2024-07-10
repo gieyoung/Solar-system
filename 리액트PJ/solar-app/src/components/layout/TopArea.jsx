@@ -15,6 +15,9 @@ import "../../css/top_area.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
+// 제이쿼리
+import $ from "jquery";
+
 // 폰트어썸 불러오기
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -125,6 +128,39 @@ function TopArea({ loginSts, logoutFn }) {
                   <a href="./jupiter.html">jupiter</a>
                 </li>
               </ul>
+              <ol>
+                {
+                  // 로그인 상태가 null일때 나옴
+                  loginSts === null && (
+                    <>
+                      <li>
+                        <Link to="/member">JOIN US</Link>
+                      </li>
+                      <li>
+                        <Link to="/login">LOGIN</Link>
+                      </li>
+                    </>
+                  )
+                }
+                {
+                  // 로그인 상태가 null이 아니면
+                  loginSts !== null && (
+                    <>
+                      <li>
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            logoutFn();
+                          }}
+                        >
+                          LOGOUT
+                        </a>
+                      </li>
+                    </>
+                  )
+                }
+              </ol>
             </div>
           </div>
         </header>
