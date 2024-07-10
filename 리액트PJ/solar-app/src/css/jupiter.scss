@@ -15,9 +15,15 @@
 //   overflow-x: hidden;
 //   cursor: default;
 // }
+html {
+  font-size: 10px;
+}
 .sub-jupiter {
   width: 100%;
   min-height: 100vh;
+  .cont-txt{
+    min-width: auto;
+  }
 }
 .cont-txt {
   color: black;
@@ -309,10 +315,35 @@
 /************* 미디어쿼리 *************/
 @media screen and (max-width: 1380px) {
   /* 두번째 페이지 */
-  .desc1-img {
-    width: auto;
+  .jupiter2 {
+    .desc {
+      flex-direction: column-reverse;
+      font-size: 2rem;
+      strong {
+        display: block;
+        text-align: center;
+      }
+      .desc-imgbx {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .desc2 {
+      flex-direction: none;
+    }
+
+    .desc1-text,
+    .desc2-text {
+      width: 95%;
+      margin: 0 auto;
+    }
   }
-}
+  .desc1-img {
+    width: 100%;
+  }
+} ///////////////////////////////1380px
 
 @media screen and (max-width: 1310px) {
   /* 네번째페이지 */
@@ -325,6 +356,11 @@
   .jupiter3-cont .ifr {
     border-radius: 0;
   }
+}
+@media screen and (max-width: 1024px) {
+  .jupiter3 .cont-txt {
+    font-size: max(2vw, 2rem);
+}
 }
 
 @media screen and (max-width: 950px) {
@@ -342,29 +378,12 @@
 }
 @media screen and (max-width: 930px) {
   /* ---------------------두번째 페이지--------------------- */
-  .desc {
-    flex-direction: column-reverse;
-    font-size: 2rem;
-  }
 
-  .desc2 {
-    flex-direction: none;
-  }
-
-  .desc strong {
-    display: block;
-    text-align: center;
-  }
   .desc1-img {
     width: auto;
   }
   .desc img {
     width: 100%;
-  }
-  .desc1-text,
-  .desc2-text {
-    width: 95%;
-    margin: 0 auto;
   }
 }
 
@@ -384,7 +403,7 @@
   }
   .jupiter1-text p {
     /* font-size: 30px; */
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   /* ---------------------세번째 페이지--------------------- */
@@ -404,9 +423,6 @@
     font-size: 12px;
     line-height: 15px;
   }
-  .jupit5-gbox {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -418,23 +434,22 @@
     right: -118%;
   }
   .jupiter1-text h1 {
-    font-size: 6rem;
+    font-size: 9rem;
     text-align: center;
-  }
-  .jupiter1-text p {
-    font-size: 1.2rem;
   }
   .jupiter1-bg {
     background: none;
   }
   /* 두번째 페이지 */
-  .desc {
-    width: 100vw;
-  }
   .desc2 .ifr {
     height: 400px;
   }
   /* 두번째페이지 */
+  .jupiter2 {
+    .desc {
+      width: 100vw;
+    }
+  }
   .desc1-text,
   .desc2-text {
     font-size: 1.5rem;

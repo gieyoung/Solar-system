@@ -9,12 +9,13 @@ import "../../css/common/_reset.scss";
 import mFn from "../js/my_function.js";
 
 // 데이터
-import jupiter_moons_data from "../js/jupiter_moons_data.js";
+import { jupiter_about_data,jupiter_moons_data } from "../js/jupiter_data.js";
 
 import $ from "jquery";
 
 function Jupiter(props) {
   const selData = jupiter_moons_data;
+  const selData2 = jupiter_about_data;
 
   // 스크롤 등장 기준설정 : 화면의 2/3
   const CRITERIA = (window.innerHeight / 3) * 2;
@@ -30,12 +31,10 @@ function Jupiter(props) {
   //   여기안에 스크롤 넣어야함
 
   useEffect(() => {
-    
-  const scDesc = mFn.qsa(".desc");
-  const scWhite = mFn.qs(".white-box");
-  // const moon4Page = mFn.qs(".jupit5-head");
-  const moon4 = mFn.qsa(".moon");
-
+    const scDesc = mFn.qsa(".desc");
+    const scWhite = mFn.qs(".white-box");
+    // const moon4Page = mFn.qs(".jupit5-head");
+    const moon4 = mFn.qsa(".moon");
 
     // if (!scWhite) return;
     const handleScroll = () => {
@@ -69,7 +68,7 @@ function Jupiter(props) {
       }
     };
 
-      window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -93,55 +92,19 @@ function Jupiter(props) {
 
   ////////////////////////////////////////////////////////////////////////
 
-  // 1. 모바일 이벤트 등록하기 ////////////
-  // 대상 : window
-  window.addEventListener("touchstart", touchStartFn);
-  window.addEventListener("touchend", touchEndFn);
-  const more = mFn.qs(".jupiter-more");
+  // // 1. 모바일 이벤트 등록하기 ////////////
+  // // 대상 : window
+  // window.addEventListener("touchstart", touchStartFn);
+  // window.addEventListener("touchend", touchEndFn);
+  // const more = mFn.qs(".jupiter-more");
 
-  function touchStartFn(e) {
-    more.style.fontFamily = "Freesentation-9Black";
-  } /////////// touchStartFn 함수 ////////////
+  // function touchStartFn(e) {
+  //   more.style.fontFamily = "Freesentation-9Black";
+  // } /////////// touchStartFn 함수 ////////////
 
-  function touchEndFn(e) {
-    more.style.fontFamily = "Pretendard-Regular";
-  } /////////// touchEndFn 함수 ////////////
-
-  // const ifrData= "https://solarsystem.nasa.gov/gltf_embed/2375";
-  // window.postMessage(ifrData, '*');
-
-  // 데이터 수신
-  // window.onmessage = function (e) {
-  //   if (e.origin === "https://solarsystem.nasa.gov/gltf_embed/2375") {
-  //     // 처리
-  //     console.log(e.data);
-  //   }
-  // };
-
-  //   window.addEventListener('DOMContentLoaded', function(event) {
-  //     var iev = getIEVersion();
-  //     if (iev.major < 12 && iev.major > 1) {
-  //         document.body.classList.add("is_ie");
-  //     }
-  //     if (mobileAndTabletCheck()) {
-  //         document.body.classList.add("motanf");
-  //     }
-  //     var mbmv = document.getElementById("mbmv");
-  //     // check if is iOS, otherwise disable AR
-  //     if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-  //         document.body.classList.add("ios");
-  //     } else {
-  //         mbmv.removeAttribute("ar")
-  //     }
-  //     // dispatch a "fake" resize event on parent window when model is loaded
-  //     // this is for dynamically loaded iframes like instruments in clipper spacecraft
-  //     if (window.parent) {
-  //         mbmv.addEventListener('load', function(event) {
-  //             var resize_event = new CustomEvent('resize');
-  //             window.parent.dispatchEvent(resize_event);
-  //         }, true);
-  //     }
-  // });
+  // function touchEndFn(e) {
+  //   more.style.fontFamily = "Pretendard-Regular";
+  // } /////////// touchEndFn 함수 ////////////
 
   return (
     <>
@@ -176,7 +139,7 @@ function Jupiter(props) {
       <section className="sub-jupiter jupiter2">
         {/* <!-- 2-1.설명 첫번째 --> */}
         <div className="desc desc1 cont-txt">
-          <div className="desc1-img">
+          <div className="desc1-img desc-imgbx">
             <img src="/images/jupiter/main_bg2.jpg" alt="목성사진" />
           </div>
           <div className="desc1-text">
@@ -200,8 +163,8 @@ function Jupiter(props) {
         </div>
         {/* <!-- 2-2.설명 두번째 --> */}
         <div className="desc desc2 cont-txt">
-          <div className="desc2-img">
-            <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
+          <div className="desc2-img desc-imgbx">
+            <img src="/images/jupiter/main_bg.jpg" alt="목성사진" />
           </div>
           <div className="desc2-text">
             <p>
@@ -239,11 +202,11 @@ function Jupiter(props) {
             </p>
           </div>
           <iframe
-          className="imodel ifr"
-          src="https://solarsystem.nasa.gov/gltf_embed/2375"
-          frameBorder="0"
-          loading="eager"
-        ></iframe>
+            className="imodel ifr"
+            src="https://solarsystem.nasa.gov/gltf_embed/2375"
+            frameBorder="0"
+            loading="eager"
+          ></iframe>
         </div>
       </section>
 
@@ -291,87 +254,15 @@ function Jupiter(props) {
             <h2>ALL ABOUT JUPITER</h2>
           </div>
           <div className="jupit5-gbox">
-            <div className="jupit5-box">
-              <div className="circle-num">1</div>
-              <div className="jupit5-text cont-txt">
-                <h3>The Biggest</h3>
-                <p>
-                  For scale, Jupiter's Great Red Spot is about the size of
-                  Earth.
-                </p>
+            {selData2.map((v, i) => (
+              <div className="jupit5-box" key={i}>
+                <div className="circle-num">{v.idx}</div>
+                <div className="jupit5-text cont-txt">
+                  <h3>{v.tit}</h3>
+                  <p>{v.txt}</p>
+                </div>
               </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">2</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Fifth From the Sun</h3>
-                <p>
-                  Jupiter's distance from the Sun is 5.2 times the Earth-Sun
-                  distance.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">3</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Short and Long</h3>
-                <p>
-                  Jupiter's day lasts only 10 Earth hours; its year is 12 Earth
-                  years.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">4</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Nowhere to Land</h3>
-                <p>
-                  As a gas giant, Jupiter has no solid surface. It may have an
-                  Earth-sized core.
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">5</div>
-              <div className="jupit5-text cont-txt">
-                <h3>MASSIVE WORLD, LIGHT ELEMENTS</h3>
-                <p>
-                  Jupiter's atmosphere is made up mostly of hydrogen (H2) and
-                  helium (He).
-                </p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">6</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Big and Light</h3>
-                <p>Jupiter's atmosphere is mostly hydrogen and helium.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">7</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Many Moons</h3>
-                <p>As of July 2023, Jupiter had 95 moons.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">8</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Exploration</h3>
-                <p>Seven robots flew past; two stayed in orbit.</p>
-              </div>
-            </div>
-            <div className="jupit5-box">
-              <div className="circle-num">9</div>
-              <div className="jupit5-text cont-txt">
-                <h3>Super Storm</h3>
-                <p>
-                  The Great Red Spot is a storm that has raged for more than 100
-                  years.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
