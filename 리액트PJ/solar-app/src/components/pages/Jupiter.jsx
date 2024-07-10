@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 //css
 import "../../css/jupiter.scss";
-import "../../css/common/_common.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
