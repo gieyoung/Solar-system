@@ -8,9 +8,10 @@ import "../../css/common/_reset.scss";
 import mFn from "../js/my_function.js";
 
 // 데이터
-import { jupiter_about_data,jupiter_moons_data } from "../js/jupiter_data.js";
+import { jupiter_about_data, jupiter_moons_data } from "../js/jupiter_data.js";
 
 import $ from "jquery";
+import JupiTxt from "../modules/JupiTxt.jsx";
 
 function Jupiter(props) {
   const selData = jupiter_moons_data;
@@ -135,55 +136,7 @@ function Jupiter(props) {
       </section>
 
       {/* <!-- 두번째페이지 : 설명 --> */}
-      <section className="sub-jupiter jupiter2">
-        {/* <!-- 2-1.설명 첫번째 --> */}
-        <div className="desc desc1 cont-txt">
-          <div className="desc1-img desc-imgbx">
-            <img src="/images/jupiter/main_bg2.jpg" alt="목성사진" />
-          </div>
-          <div className="desc1-text">
-            <p>
-              <strong className="cont-tit">Potential for Life</strong>
-              <br />
-              <br />
-              Jupiter’s environment is probably not conducive to life as we know
-              it. The temperatures, pressures, and materials that characterize
-              this planet are most likely too extreme and volatile for organisms
-              to adapt to.
-              <br />
-              <br />
-              While planet Jupiter is an unlikely place for living things to
-              take hold, the same is not true of some of its many moons. Europa
-              is one of the likeliest places to find life elsewhere in our solar
-              system. There is evidence of a vast ocean just beneath its icy
-              crust, where life could possibly be supported.
-            </p>
-          </div>
-        </div>
-        {/* <!-- 2-2.설명 두번째 --> */}
-        <div className="desc desc2 cont-txt">
-          <div className="desc2-img desc-imgbx">
-            <img src="/images/jupiter/main_bg.jpg" alt="목성사진" />
-          </div>
-          <div className="desc2-text">
-            <p>
-              <strong className="cont-tit">Size and Distance</strong>
-              <br />
-              <br />
-              With a radius of 43,440.7 miles (69,911 kilometers), Jupiter is 11
-              times wider than Earth. If Earth were the size of a grape, Jupiter
-              would be about as big as a basketball.
-              <br />
-              <br />
-              From an average distance of 484 million miles (778 million
-              kilometers), Jupiter is 5.2 astronomical units away from the Sun.
-              One astronomical unit (abbreviated as AU), is the distance from
-              the Sun to Earth. From this distance, it takes sunlight 43 minutes
-              to travel from the Sun to Jupiter.
-            </p>
-          </div>
-        </div>
-      </section>
+      <JupiTxt />
 
       {/* <!-- 세번째페이지 : 3D --> */}
       <section className="sub-jupiter jupiter3">
