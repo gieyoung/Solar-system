@@ -125,167 +125,170 @@ function Searching({ kword }) {
   return (
     <>
       {/* 전체 검색모듈 코드 */}
-      <section className="schbx">
-        {/* 1. 옵션선택박스 */}
-        <div className="schopt">
-          {/* 1-1.검색박스 */}
-          <div className="searching">
-            {/* 검색버튼 돋보기 아이콘 */}
-            <FontAwesomeIcon
-              icon={faSearch}
-              className="schbtn"
-              title="Open search"
-            />
-            {/* 입력창 */}
-            <input
-              id="schin"
-              type="text"
-              placeholder="Filter by Keyword"
-              defaultValue={kword}
-              // 엔터키를 눌렀을때 검색실행!
-              // 검색어 상태변수만 업데이트하면 끝!!!
-              // -> setKw(검색어)
-              onKeyUp={(e) => {
-                if (e.key == "Enter") {
-                  // 1. 검색어 상태값 변경
-                  setKw(e.target.value);
-                  // 2. 처음검색시 정렬은 기본정렬 오름차순(asc)
-                  setSort("asc");
-                  // 3. 처음검색시 모두체크
-                  setChk([true, true, true, true]);
-                  // 정렬선택박스 선택값변경(DOM에서 보이기변경)
-                  document.querySelector("#sel").value = "asc";
-                } /// if ///
-              }}
-            />
-          </div>
-          {/* 1-2. 체크박스구역 */}
-          <div className="chkbx">
-            <ul>
-              <li>
-                {/* 타이틀 */}
-                <h2>
-                  ALIGNMENT
-                  <span className="spbtn">＋</span>
-                </h2>
-                {/* 체크박스리스트 */}
-                <ol>
+ 
+        <div className="search_wrap">
+          <section className="schbx inbox">
+            {/* 1. 옵션선택박스 */}
+            <div className="schopt">
+              {/* 1-1.검색박스 */}
+              <div className="searching">
+                {/* 검색버튼 돋보기 아이콘 */}
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  className="schbtn"
+                  title="Open search"
+                />
+                {/* 입력창 */}
+                <input
+                  id="schin"
+                  type="text"
+                  placeholder="Filter by Keyword"
+                  defaultValue={kword}
+                  // 엔터키를 눌렀을때 검색실행!
+                  // 검색어 상태변수만 업데이트하면 끝!!!
+                  // -> setKw(검색어)
+                  onKeyUp={(e) => {
+                    if (e.key == "Enter") {
+                      // 1. 검색어 상태값 변경
+                      setKw(e.target.value);
+                      // 2. 처음검색시 정렬은 기본정렬 오름차순(asc)
+                      setSort("asc");
+                      // 3. 처음검색시 모두체크
+                      setChk([true, true, true, true]);
+                      // 정렬선택박스 선택값변경(DOM에서 보이기변경)
+                      document.querySelector("#sel").value = "asc";
+                    } /// if ///
+                  }}
+                />
+              </div>
+              {/* 1-2. 체크박스구역 */}
+              <div className="chkbx">
+                <ul>
                   <li>
-                   earth({newList.filter(v => v.alignment === "earth").length})
-                  
-                    {/* 숨긴 체크박스 */}
-                    <input
-                      type="checkbox"
-                      id="earth"
-                      className="chkhdn"
-                      // 체크박스 체크속성값을 훅연결!
-                      checked={chk[0]}
-                      // 체크변경시 change이벤트발생
-                      onChange={(e) => {
-                        // 체크박스의 checked속성은
-                        // 체크시 true, 불체크시 false리턴
-                        console.log(e.target.checked);
-                        // 훅값 업데이트
-                        setChk([e.target.checked, chk[1], chk[2], chk[3]]);
-                      }}
-                    />
-                    {/* 디자인노출 라벨 */}
-                    <label htmlFor="earth" className="chklb"></label>
+                    {/* 타이틀 */}
+                    <h2>
+                      MENU
+                      {/* <span className="spbtn">＋</span> */}
+                    </h2>
+                    {/* 체크박스리스트 */}
+                    <ol>
+                      <li>
+                       earth({newList.filter(v => v.alignment === "earth").length})
+          
+                        {/* 숨긴 체크박스 */}
+                        <input
+                          type="checkbox"
+                          id="earth"
+                          className="chkhdn"
+                          // 체크박스 체크속성값을 훅연결!
+                          checked={chk[0]}
+                          // 체크변경시 change이벤트발생
+                          onChange={(e) => {
+                            // 체크박스의 checked속성은
+                            // 체크시 true, 불체크시 false리턴
+                            console.log(e.target.checked);
+                            // 훅값 업데이트
+                            setChk([e.target.checked, chk[1], chk[2], chk[3]]);
+                          }}
+                        />
+                        {/* 디자인노출 라벨 */}
+                        <label htmlFor="earth" className="chklb"></label>
+                      </li>
+                      <li>
+                        moon({newList.filter(v => v.alignment === "moon").length})
+                        {/* 숨긴 체크박스 */}
+                        <input
+                          type="checkbox"
+                          id="moon"
+                          className="chkhdn"
+                          // 체크박스 체크속성값을 훅연결!
+                          checked={chk[1]}
+                          // 체크변경시 change이벤트발생
+                          onChange={(e) => {
+                            // 체크박스의 checked속성은
+                            // 체크시 true, 불체크시 false리턴
+                            console.log(e.target.checked);
+                            // 훅값 업데이트
+                            setChk([chk[0], e.target.checked, chk[2], chk[3]]);
+                          }}
+                        />
+                        {/* 디자인노출 라벨 */}
+                        <label htmlFor="moon" className="chklb"></label>
+                      </li>
+                      <li>
+                        saturn({newList.filter(v => v.alignment === "saturn").length})
+                        {/* 숨긴 체크박스 */}
+                        <input
+                          type="checkbox"
+                          id="saturn"
+                          className="chkhdn"
+                          // 체크박스 체크속성값을 훅연결!
+                          checked={chk[2]}
+                          // 체크변경시 change이벤트발생
+                          onChange={(e) => {
+                            // 체크박스의 checked속성은
+                            // 체크시 true, 불체크시 false리턴
+                            console.log(e.target.checked);
+                            // 훅값 업데이트
+                            setChk([chk[0], chk[1], e.target.checked, chk[3]]);
+                          }}
+                        />
+                        {/* 디자인노출 라벨 */}
+                        <label htmlFor="saturn" className="chklb"></label>
+                      </li>
+                      <li>
+                        jupiter({newList.filter(v => v.alignment === "jupiter").length})
+                        {/* 숨긴 체크박스 */}
+                        <input
+                          type="checkbox"
+                          id="jupiter"
+                          className="chkhdn"
+                          // 체크박스 체크속성값을 훅연결!
+                          checked={chk[3]}
+                          // 체크변경시 change이벤트발생
+                          onChange={(e) => {
+                            // 체크박스의 checked속성은
+                            // 체크시 true, 불체크시 false리턴
+                            console.log(e.target.checked);
+                            // 훅값 업데이트
+                            setChk([chk[0], chk[1], chk[2], e.target.checked]);
+                          }}
+                        />
+                        {/* 디자인노출 라벨 */}
+                        <label htmlFor="jupiter" className="chklb"></label>
+                      </li>
+                    </ol>
                   </li>
-                  <li>
-                    moon({newList.filter(v => v.alignment === "moon").length})
-                    {/* 숨긴 체크박스 */}
-                    <input
-                      type="checkbox"
-                      id="moon"
-                      className="chkhdn"
-                      // 체크박스 체크속성값을 훅연결!
-                      checked={chk[1]}
-                      // 체크변경시 change이벤트발생
-                      onChange={(e) => {
-                        // 체크박스의 checked속성은
-                        // 체크시 true, 불체크시 false리턴
-                        console.log(e.target.checked);
-                        // 훅값 업데이트
-                        setChk([chk[0], e.target.checked, chk[2], chk[3]]);
-                      }}
-                    />
-                    {/* 디자인노출 라벨 */}
-                    <label htmlFor="moon" className="chklb"></label>
-                  </li>
-                  <li>
-                    saturn({newList.filter(v => v.alignment === "saturn").length})
-                    {/* 숨긴 체크박스 */}
-                    <input
-                      type="checkbox"
-                      id="saturn"
-                      className="chkhdn"
-                      // 체크박스 체크속성값을 훅연결!
-                      checked={chk[2]}
-                      // 체크변경시 change이벤트발생
-                      onChange={(e) => {
-                        // 체크박스의 checked속성은
-                        // 체크시 true, 불체크시 false리턴
-                        console.log(e.target.checked);
-                        // 훅값 업데이트
-                        setChk([chk[0], chk[1], e.target.checked, chk[3]]);
-                      }}
-                    />
-                    {/* 디자인노출 라벨 */}
-                    <label htmlFor="saturn" className="chklb"></label>
-                  </li>
-                  <li>
-                    jupiter({newList.filter(v => v.alignment === "jupiter").length})
-                    {/* 숨긴 체크박스 */}
-                    <input
-                      type="checkbox"
-                      id="jupiter"
-                      className="chkhdn"
-                      // 체크박스 체크속성값을 훅연결!
-                      checked={chk[3]}
-                      // 체크변경시 change이벤트발생
-                      onChange={(e) => {
-                        // 체크박스의 checked속성은
-                        // 체크시 true, 불체크시 false리턴
-                        console.log(e.target.checked);
-                        // 훅값 업데이트
-                        setChk([chk[0], chk[1], chk[2], e.target.checked]);
-                      }}
-                    />
-                    {/* 디자인노출 라벨 */}
-                    <label htmlFor="jupiter" className="chklb"></label>
-                  </li>
-                </ol>
-              </li>
-            </ul>
-          </div>
+                </ul>
+              </div>
+            </div>
+            {/* 2. 결과리스트박스 */}
+            <div className="listbx">
+              {/* 2-1. 결과 타이틀 */}
+              <h2 className="restit">Result ({newList.length})</h2>
+              {/* 2-2. 정렬선택박스 */}
+              <aside className="sortbx">
+                <select
+                  name="sel"
+                  id="sel"
+                  className="sel"
+                  // 값을 변경할때 이벤트발생
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    // 정렬기준 상태변수 업데이트
+                    setSort(e.target.value);
+                  }}
+                >
+                  <option value="asc">A-Z</option>
+                  <option value="desc">Z-A</option>
+                </select>
+              </aside>
+              {/* 검색결과 컴포넌트*/}
+              <SearchingCat dt={newList} highlight={kw}/>
+            </div>
+          </section>
         </div>
-        {/* 2. 결과리스트박스 */}
-        <div className="listbx">
-          {/* 2-1. 결과 타이틀 */}
-          <h2 className="restit">검색 결과 ({newList.length})</h2>
-          {/* 2-2. 정렬선택박스 */}
-          <aside className="sortbx">
-            <select
-              name="sel"
-              id="sel"
-              className="sel"
-              // 값을 변경할때 이벤트발생
-              onChange={(e) => {
-                console.log(e.target.value);
-                // 정렬기준 상태변수 업데이트
-                setSort(e.target.value);
-              }}
-            >
-              <option value="asc">A-Z</option>
-              <option value="desc">Z-A</option>
-            </select>
-          </aside>
-          {/* 2-3. 캐릭터 리스트 컴포넌트 : 
-            데이터 상태변수 중 첫번째값만 보냄 */}
-          <SearchingCat dt={newList} />
-        </div>
-      </section>
+
     </>
   );
 }

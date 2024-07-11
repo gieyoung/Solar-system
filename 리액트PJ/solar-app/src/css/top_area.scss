@@ -67,8 +67,7 @@ h1.logo {
 
 /* 메뉴 마우스 오버시 글자 네온효과 */
 #gnb ul li a:hover {
-  text-shadow: 0 0 40px #fff, 0 0 35px #fff, 0 0 30px #fff, 0 0 25px #fff,
-    0 0 20px #fff, 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
+  text-shadow: 0 0 40px #fff, 0 0 35px #fff, 0 0 30px #fff, 0 0 25px #fff, 0 0 20px #fff, 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
 }
 
 /* 우측 상단영역에 아이콘 */
@@ -98,59 +97,42 @@ h1.logo {
 
 /* 검색*/
 
-/* 검색버튼 */
-.search {
-  position: relative;
-  width: 40px;
+/* gnb 검색입력창 박스 */
+.searchingGnb {
+  line-height: 41px;
+  width: 200px;
   height: 40px;
-  transition: 0.3s linear;
-  border-radius: 50px;
-
-  margin-left: 20px;
-}
-
-/* input창 */
-.input-box {
-  border: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 50px;
+  border-radius: 20px;
   background-color: #193f93;
-  text-indent: 20px;
-  transition: 0.3s;
-  color: #fff;
   box-sizing: border-box;
+  padding: 0 5px;
 }
-.input-box:focus {
+
+.searchingGnb input {
+  font-size: 15px;
+  width: 77%;
+  margin-top: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.fa-magnifying-glass {
+  color: #fff;
+}
+
+input:focus {
   outline: none;
 }
 
-/* 검색 아이콘 */
-.icon {
-  position: absolute;
-  right: 0;
-  top: 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  font-size: 1.8rem;
+.schbtnGnb {
   cursor: pointer;
-  background-color: #193f93;
-}
-/* 클릭시 on */
-.search.on {
-  width: 20rem;
-  background-color: #193f93;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-/* 아이콘 */
-.fa-magnifying-glass:before,
-.fa-search:before {
-  content: "\f002";
-}
+
+
 
 /* 모바일 햄버거 버튼 */
 .mobile-btn {
@@ -233,18 +215,27 @@ h1.logo {
 }
 
 // 모바일페이지 - 메뉴 중 로그인/회원가입
-.m-sitemap ol{
+.m-sitemap ol {
   display: flex;
   justify-content: space-around;
-  a{
+  border-bottom: 1px solid #ccc;
+  li{
+    width:50%;
+    &:first-child{
+      border-right:1px solid #ccc;
+    }
+  }
+  a {
+    display: block;
     font-size: 3rem;
     border-bottom: none;
-    &:hover{
-      color: #193f93;
-      background-color: white;
+    &:hover {
+      color: #fff;
+      background-color: #193f93;
     }
   }
 }
+
 
 /*****************************상단/하단 미디어쿼리************************************/
 
@@ -253,22 +244,7 @@ h1.logo {
   html {
     font-size: 9px;
   }
-}
-/* 1024이하 */
-@media screen and (max-width: 1024px) {
-  html {
-    font-size: 8px;
-  }
 
-  #gnb {
-    min-width: 45rem;
-  }
-}
-/* 760이하 */
-@media screen and (max-width: 800px) {
-  html {
-    font-size: 7px;
-  }
   #gnb {
     display: none;
   }
@@ -281,9 +257,32 @@ h1.logo {
   #main-area {
     margin-top: 90px;
   }
-  .etc>ul{
+
+  .etc > ul {
     display: none;
   }
+
+ 
+}
+/* 1024이하 */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
+
+  #gnb {
+    min-width: 45rem;
+  }
+
+ 
+}
+/* 760이하 */
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 7px;
+  }
+ 
+ 
 }
 
 /* 480이하 */
@@ -291,42 +290,9 @@ h1.logo {
   .footer-area .gbox li {
     width: 35vw;
   }
-  .search {
-    display: none;
-  }
+  .searchingGnb{display: none;}
 }
 /* 360이하 */
 @media screen and (max-width: 360px) {
 }
 
-////////////임시
-/* gnb 검색입력창 박스 */
-.searchingGnb {
-  line-height: 41px;
-  width: 250px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: #efefef;
-  box-sizing: border-box;
-  padding: 0 5px;
-
-}
-
-.searchingGnb input {
-  font-size: 15px;
-  width: 77%;
-  margin-top: 5px;
-  margin-left: 10px;
-  background-color: transparent;
-  border: none;
-}
-
-input:focus {
-  outline: none;
-}
-
-.schbtnGnb {
-  cursor: pointer;
-  margin-top: 9px;
-  margin-left: 10px;
-}

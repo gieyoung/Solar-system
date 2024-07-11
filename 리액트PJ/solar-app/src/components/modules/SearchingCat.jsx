@@ -7,13 +7,34 @@ import "../../css/searching_cat.scss";
 // 라우터돔 Link
 import { Link } from "react-router-dom";
 
-function SearchingCat({ dt }) {
+function SearchingCat({ dt, highlight }) {
   // dt - 검색된 배열데이터
+  // highlight - 하이라이트 
 
   // total - 검색된 배열데이터 개수
   const total = dt.length;
-  console.log("데이터수:", total);
+  // console.log("데이터수:", total);
 
+
+ // 검색어를 하이라이트하는 함수
+ const highlightText = (text, highlight) => {
+  if (!highlight.trim()) {
+    return text;
+  }
+  const regex = new RegExp(`(${highlight})`, "gi");
+  const parts = text.split(regex);
+  return parts.map((part, index) =>
+    part.toLowerCase() === highlight.toLowerCase() ? (
+      <span key={index} style={{ backgroundColor: "yellow" }}>
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
+ 
+/////////코드리턴구역////////////////
   return (
     <>
       {
@@ -31,8 +52,9 @@ function SearchingCat({ dt }) {
                     link: v.link, // 행성링크
                   }}
                 >
-                  <h2>{v.alignment}</h2>
-                  <h3>{v.cdesc}</h3>
+                 
+                 {/* 검색결과 출력(검색어는 하이라이트 처리) */}
+                  <h3>{highlightText(v.cdesc, highlight)}</h3>
                 </Link>
               </li>
             ))}
