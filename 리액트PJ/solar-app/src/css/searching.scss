@@ -1,13 +1,17 @@
 /* Search 모듈용 CSS - searching.css  */
 
+
+.search_wrap .inbox{
+  width: 90%;
+  outline: 1px solid red;
+}
 /* 검색입력창 박스 */
 .searching {
-  width: 250px;
-  height: 40px;
+  line-height: 39px;
   border-radius: 20px;
-  background-color: #efefef;
+  background-color: #fff;
   box-sizing: border-box;
-  padding: 0 5px;
+  margin-bottom: 30px;
 }
 .searching input {
   font-size: 15px;
@@ -20,35 +24,38 @@
 input:focus {
   outline: none;
 }
-// .schbtn {
-//   cursor: pointer;
-//   margin-top: 9px;
-//   margin-left: 10px;
-// }
+.schbtn {
+  cursor: pointer;
+  margin-top: 9px;
+  margin-left: 10px;
+  color: #000;
+}
 
 .restit {
   font-size: min(35px, 4vw);
-  margin: 10px;
 }
 
 /* 검색박스 */
 .schbx {
-  font-family: "Ubuntu Condensed", sans-serif;
   display: flex;
-  max-width: 1320px;
-  min-height: 600px;
-  padding: 20px;
-  margin: 20px auto;
-  /* border: 1px solid #000; */
+  padding: 50px 0;
+  min-height: 500px;
 }
 
 /* 검색옵션박스 */
 .schopt {
-  width: 30%;
+  width: 300px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  height: 341px;
+  color: #fff;
+  background: #193f93;
 }
 /* 캐릭터리스트 박스 */
 .listbx {
-  width: 70%;
+  width: calc(100% - 300px);
+  padding-left: 100px;
 }
 
 /* 정렬박스 */
@@ -58,7 +65,6 @@ input:focus {
 }
 .sel {
   float: right;
-  font-family: "Ubuntu Condensed", sans-serif;
   font-size: 20px;
   font-weight: bold;
   border: none;
@@ -70,7 +76,8 @@ input:focus {
 
 /* 체크박스의 박스 */
 .chkbx h2 {
-  margin: 15px 0 5px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #fff;
 }
 .spbtn {
   display: block;
@@ -83,7 +90,6 @@ input:focus {
 .chkbx ol > li {
   padding: 10px;
   font-size: 18px;
-  font-weight: bold;
 }
 /* 체크박스 숨김 */
 .chkbx input[type="checkbox"] {
@@ -99,12 +105,12 @@ input:focus {
 }
 /* 체크박스 체크시 라벨디자인 변경 */
 input:checked + .chklb {
-  background-color: #0d6efd;
+  background-color: #fff;
   text-align: center;
   font-weight: bold;
 }
 input:checked + .chklb::before {
   content: "√";
-  color: #fff;
+  color: #000;
   line-height: 0;
 }

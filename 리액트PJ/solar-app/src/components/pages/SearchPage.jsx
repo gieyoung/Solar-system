@@ -16,7 +16,7 @@ function SearchPage() {
   // 코드 리턴구역 ///////////////
   return (
     <>
-      <div className="box" style={{ background: "#000", width: "100%", height: "200px" }}></div>
+      <div className="box" style={{ background: "#000", width: "100%", height: "100px" }}></div>
 
       <Searching kword={keyword} />
     </>

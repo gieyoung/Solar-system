@@ -4,9 +4,6 @@ import Searching from "../modules/Searching.jsx";
 
 import { Link } from "react-router-dom";
 
-// 데이터 불러오기
-import { menu } from "../data/gnb";
-
 //js불러오기
 import topFn from "../func/top_area.js";
 
@@ -24,6 +21,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Menu from "../modules/Menu.jsx";
 
 function TopArea({ loginSts, logoutFn, goPage }) {
   useEffect(() => {
@@ -85,19 +83,13 @@ function TopArea({ loginSts, logoutFn, goPage }) {
 
           {/* <!-- 메뉴 --> */}
           <nav id="gnb">
-            <ul>
-              {menu.map((v, i) => (
-                <li key={i}>
-                  <Link to={v.link}>
-                    <span>{v.menu}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* 메뉴 컴포넌트 */}
+            <Menu />
           </nav>
 
           {/* <!-- 기타 --> */}
           <div className="etc">
+            {/* 로그인/회원가입 기능*/}
             <ul>
               {
                 // 로그인 상태가 null일때 나옴
@@ -130,11 +122,10 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                   </>
                 )
               }
-
- 
-
-                {/* 검색입력박스 */}
-                <li className="searchingGnb">
+              {/* 검색기능 */}
+              <li className="searchingGnb">
+                {/* 입력창 */}
+                <input type="text" name="schinGnb" id="schinGnb" placeholder="Filter by Keyword" onKeyUp={enterKey} />
                 {/* 검색버튼 돋보기 아이콘 */}
                 <FontAwesomeIcon
                   icon={faSearch}
@@ -152,21 +143,8 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                     }
                   }}
                 />
-                {/* 입력창 */}
-                <input type="text" name="schinGnb" id="schinGnb" placeholder="Filter by Keyword" onKeyUp={enterKey} />
               </li>
-              {/* 검색기능링크 - 클릭시 검색창보이기 */}
-              <a href="#" onClick={showSearch}>
-                <FontAwesomeIcon icon={faSearch} />
-              </a>
-          
-
             </ul>
-            {/* 검색모듈 */}
-            {/* <Searching /> */}
-
-          
-            
 
             {/* <!-- 모바일 햄버거 버튼 --> */}
             <div className="mobile-btn">
@@ -184,23 +162,6 @@ function TopArea({ loginSts, logoutFn, goPage }) {
 
             {/* <!-- 모바일 사이트맵 --> */}
             <div className="m-sitemap">
-              <ul>
-                <li>
-                  <a href="./sun.html">sun</a>
-                </li>
-                <li>
-                  <a href="./earth.html">earth</a>
-                </li>
-                <li>
-                  <a href="./moon.html">moon</a>
-                </li>
-                <li>
-                  <a href="./saturn.html">saturn</a>
-                </li>
-                <li>
-                  <a href="./jupiter.html">jupiter</a>
-                </li>
-              </ul>
               <ol>
                 {
                   // 로그인 상태가 null일때 나옴
@@ -234,6 +195,9 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                   )
                 }
               </ol>
+
+              {/* 메뉴 컴포넌트 */}
+              <Menu />
             </div>
           </div>
         </header>

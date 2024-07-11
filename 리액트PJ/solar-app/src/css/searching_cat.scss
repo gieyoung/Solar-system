@@ -9,6 +9,7 @@
 .clist li {
   width:100%;
   border-bottom: 1px solid #000;
+  margin-bottom: 25px;
  
  
 }
@@ -20,8 +21,17 @@
 }
 /* 캐릭터 이름 */
 .clist li h3 {
-  font-size: 1.5rem;
-  padding: 15px;
-  word-wrap: break-word;
-  word-break: keep-all;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+//   overflow : hidden;
+// text-overflow: ellipsis;
+// display: -webkit-box;
+// -webkit-line-clamp: 3; // 자르고 싶은 줄 수
+// -webkit-box-orient: vertical;
+
+}
+
+.clist li a:hover{
+  color:#4e85ff;
 }
