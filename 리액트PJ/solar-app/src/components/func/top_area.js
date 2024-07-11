@@ -30,14 +30,14 @@ export default function topFn() {
 
   // 1. 대상선정
   // 검색버튼
-  const icon = mFn.qs(".icon");
-  // 검색창
-  const search = mFn.qs(".search");
+  // const icon = mFn.qs(".icon");
+  // // 검색창
+  // const search = mFn.qs(".search");
 
-  // 2. 함수실행: 검색버튼 클릭시 검색창 열리고 닫히기
-  icon.onclick = () => {
-    search.classList.toggle("on");
-  };
+  // // 2. 함수실행: 검색버튼 클릭시 검색창 열리고 닫히기
+  // icon.onclick = () => {
+  //   search.classList.toggle("on");
+  // };
 
   /****************************************************
      [ 모바일 햄버거 버튼 클릭시 사이트맵 열고 닫기 ]
@@ -50,6 +50,11 @@ export default function topFn() {
   const icon3 = mFn.qs(".icon3");
   // 사이트맵
   const siteMap = mFn.qs(".m-sitemap");
+  // 모바일 li
+  const mli=mFn.qsa(".m-sitemap li");
+
+
+
 
   // 2. 함수실행
   icon2.onclick = () => {
@@ -64,4 +69,12 @@ export default function topFn() {
 
     siteMap.classList.remove("on");
   };
+
+  mli.forEach((v)=>{
+    v.onclick=()=>{
+      icon2.classList.remove("on");
+      icon3.classList.remove("on");
+      siteMap.classList.remove("on");
+    }
+  });
 }

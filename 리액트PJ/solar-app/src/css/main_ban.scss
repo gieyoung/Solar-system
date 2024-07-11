@@ -249,3 +249,16 @@
     }
   }
 }
+
+
+/*****************************미디어쿼리************************************/
+/* 760이하 */
+@media screen and (max-width:800px) {
+  .section .banner-wrapper {flex-direction: column; flex-basis: calc(100vh - 238px)}
+  }
+
+
+  @media screen and (max-width:320px) {
+    html{font-size: 5px !important;}
+    }
+  

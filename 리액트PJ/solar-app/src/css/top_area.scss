@@ -2,7 +2,6 @@
 
 /* 팀 PJ : 공통 모듈 CSS - common.css */
 
-
 /************* 상단영역 *************/
 #header-area {
   height: 90px;
@@ -68,8 +67,7 @@ h1.logo {
 
 /* 메뉴 마우스 오버시 글자 네온효과 */
 #gnb ul li a:hover {
-  text-shadow: 0 0 40px #fff, 0 0 35px #fff, 0 0 30px #fff, 0 0 25px #fff,
-    0 0 20px #fff, 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
+  text-shadow: 0 0 40px #fff, 0 0 35px #fff, 0 0 30px #fff, 0 0 25px #fff, 0 0 20px #fff, 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
 }
 
 /* 우측 상단영역에 아이콘 */
@@ -82,63 +80,60 @@ h1.logo {
 .etc {
   display: flex;
   align-items: center;
+
+  & > ul {
+    display: flex;
+    gap: 30px;
+  }
+  & li {
+    line-height: 2;
+    font-size: 1.8rem;
+    font-family: "Kanit", sans-serif;
+    & a {
+      color: #4e85ff;
+    }
+  }
 }
 
 /* 검색*/
 
-/* 검색버튼 */
-.search {
-  position: relative;
-  width: 40px;
+/* gnb 검색입력창 박스 */
+.searchingGnb {
+  line-height: 41px;
+  width: 200px;
   height: 40px;
-  transition: 0.3s linear;
-  border-radius: 50px;
-
-  margin-left: 20px;  
-}
-
-/* input창 */
-.input-box {
-  border: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 50px;
+  border-radius: 20px;
   background-color: #193f93;
-  text-indent: 20px;
-  transition: 0.3s;
-  color: #fff;
   box-sizing: border-box;
+  padding: 0 5px;
 }
-.input-box:focus {
+
+.searchingGnb input {
+  font-size: 15px;
+  width: 77%;
+  margin-top: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  color: #c8c8c8;
+}
+
+.fa-magnifying-glass {
+  color: #c8c8c8;
+}
+
+input:focus {
   outline: none;
 }
 
-/* 검색 아이콘 */
-.icon {
-  position: absolute;
-  right: 0;
-  top: 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  font-size: 1.8rem;
+.schbtnGnb {
   cursor: pointer;
-  background-color: #193f93;
-}
-/* 클릭시 on */
-.search.on {
-  width: 20rem;
-  background-color: #193f93;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-/* 아이콘 */
-.fa-magnifying-glass:before,
-.fa-search:before {
-  content: "\f002";
-}
+
+
 
 /* 모바일 햄버거 버튼 */
 .mobile-btn {
@@ -220,63 +215,93 @@ h1.logo {
   background-color: #193f93;
 }
 
-.etc {
-  & ul {
-    display: flex;
-    gap: 30px;
+// 모바일페이지 - 메뉴 중 로그인/회원가입
+.m-sitemap ol {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+  li{
+    width:50%;
+    &:first-child{
+      border-right:1px solid #ccc;
+    }
   }
-  & li {
-    line-height: 2;
-    font-size: 1.8rem;
-    font-family: "Kanit", sans-serif;
-    & a{
-      color: #4e85ff;
+  a {
+    display: block;
+    font-size: 3rem;
+    border-bottom: none;
+    &:hover {
+      color: #fff;
+      background-color: #193f93;
     }
   }
 }
 
+// 모바일 검색
+.m-sitemap {
+  .searchingGnb{
+    margin:50px auto 0;
+  }
+
+}
+
+
 /*****************************상단/하단 미디어쿼리************************************/
 
 /* 1200이하 */
-@media screen and (max-width:1200px) {
-  html{font-size: 9px;}
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 9px;
+  }
+
+  #gnb {
+    display: none;
+  }
+  .mobile-btn {
+    display: block;
+  }
+  #header-area {
+    background: #000;
+  }
+  #main-area {
+    margin-top: 90px;
+  }
+
+  .etc > ul {
+    display: none;
+  }
+
  
 }
 /* 1024이하 */
-@media screen and (max-width:1024px) {
-  html{font-size: 8px;}
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
 
   #gnb {
     min-width: 45rem;
-}
-  
+  }
 
+ 
 }
 /* 760이하 */
-@media screen and (max-width:800px) {
-  html{font-size: 7px;}
-  #gnb{display: none;}
-  .mobile-btn{display: block;}
-  #header-area{ background:#000;}
-  #main-area{margin-top: 90px;}
- 
- 
-
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 7px;
   }
-  
-  
-/* 480이하 */
-@media screen and (max-width:480px) {
-  .footer-area .gbox li {
-    width: 35vw;}
-    .search{display: none;}
-  
+ 
  
 }
-/* 360이하 */
-@media screen and (max-width:360px) {
 
- 
- 
+/* 480이하 */
+@media screen and (max-width: 480px) {
+  .footer-area .gbox li {
+    width: 35vw;
+  }
+  .searchingGnb{display: none;}
+}
+/* 360이하 */
+@media screen and (max-width: 360px) {
 }
 
