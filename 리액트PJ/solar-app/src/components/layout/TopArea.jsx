@@ -1,8 +1,12 @@
 // 상단영역 컴포넌트 ///
 import React, { useEffect } from "react";
+import Menu from "../modules/Menu.jsx";
 import Searching from "../modules/Searching.jsx";
 
 import { Link } from "react-router-dom";
+
+// 데이터 불러오기
+import { menu } from "../data/gnb";
 
 //js불러오기
 import topFn from "../func/top_area.js";
@@ -21,7 +25,6 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import Menu from "../modules/Menu.jsx";
 
 function TopArea({ loginSts, logoutFn, goPage }) {
   useEffect(() => {
@@ -122,7 +125,8 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                   </>
                 )
               }
-              {/* 검색기능 */}
+
+              {/* 검색입력박스 */}
               <li className="searchingGnb">
                 {/* 입력창 */}
                 <input type="text" name="schinGnb" id="schinGnb" placeholder="Filter by Keyword" onKeyUp={enterKey} />
@@ -133,7 +137,9 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                   title="Open search"
                   onClick={(e) => {
                     // 검색어 읽기
-                    let stxt = e.currentTarget.nextElementSibling.value;
+                    // let stxt = e.currentTarget.nextElementSibling.value;
+                    let stxt = document.getElementById('schinGnb').value;
+                   
                     if (stxt.trim() != "") {
                       // 검색하기
                       goSearch(stxt);

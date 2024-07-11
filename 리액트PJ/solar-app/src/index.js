@@ -16,6 +16,8 @@ export default function MainComponent() {
     // basename 속성은 package.json의 "homepage"속성값을
     // 읽어옴 (읽는 방법은 process.env.PUBLIC_URL)
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+       {/* 라우터 경로 변경시 최상단이동 컴포넌트 */}
+       <ScrollTop />
       <Routes>
         {/* 중요!!! 레이아웃 컴포넌트를 루트로 설정!
         루트 Route 는 홀로닫지말고 반드시 다른
