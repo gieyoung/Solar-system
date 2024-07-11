@@ -1,0 +1,264 @@
+.section .banner-wrapper {
+  display: flex;
+  /* flex-basis: 100vh; */
+  flex-basis: calc(100vh - 167px);
+  position: relative;
+  overflow: hidden;
+}
+.section .banner-wrapper .banner_dim {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  z-index: 0;
+}
+.section .banner-wrapper .banner .mobile_banner_dim {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  z-index: 0;
+}
+.translate_upper {
+  transform: translateY(-180px) !important;
+  transition: 0.6s;
+}
+.translate_lower {
+  transform: translateY(180px) !important;
+  transition: 0.6s;
+}
+.section .banner-wrapper .banner {
+  display: flex;
+  flex: 1;
+  flex-basis: 20%;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: "Poppins"; */
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: relative;
+}
+
+
+/* 배너 내부 글자 */
+.section .banner-wrapper .banner .txt{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, 0);
+}
+.section .banner-wrapper .banner .title {
+  font-size: 3rem;
+  font-family: "Poppins";
+  font-weight: bold;
+  line-height: 0.8;
+  color: rgb(255, 255, 255);
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.section .banner-wrapper .banner .title .small {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.85;
+}
+
+.section .banner-wrapper .banner .content {
+  font-size: 2.4rem;
+  line-height: 1.375;
+  font-family: "Pretendard";
+  color: rgb(255, 255, 255);
+  display: none;
+}
+.section .banner-wrapper .more {
+  color: #ffffff;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+   
+}
+
+/* 태양배너 */
+.section .banner-wrapper .sun {
+  background: url("../../public/images/main/sun.jpg") no-repeat right/cover;
+}
+
+/* 지구배너 */
+.section .banner-wrapper .earth {
+  background: url("../../public/images/main/space_exploration_banner.png") no-repeat center;
+  background-size: cover;
+}
+
+/* 달배너 */
+.section .banner-wrapper .moon {
+  background: url("../../public/images/main/cosmo_station.png") no-repeat center;
+  background-size: cover;
+}
+
+/* 토성배너 */
+.section .banner-wrapper .saturn {
+  background: url("../../public/images/main/large.jpg") no-repeat center;
+  background-size: cover;
+}
+/* 목성 배너 */
+.section .banner-wrapper .jupiter {
+  background: url("../../public/images/main/jupiter_bg.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+
+.section .section_info_wrapper {
+  /* background: url(../images/common/space.jpg) no-repeat top/cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 44px 55px;
+}
+
+
+/* 이미지 배너 마우스 오버시 */
+
+.section .banner-wrapper .banner.active.enable {
+  flex-basis: 100%;
+}
+.section .banner-wrapper .banner.active.enable .content {
+  display: block;
+  z-index: 1;
+}
+.section .banner-wrapper .banner.active.enable .view_more {
+  display: block;
+  z-index: 1;
+}
+.section .banner-wrapper .banner.inactive.enable {
+  flex-basis: 0 !important;
+  flex: 0;
+}
+.section .banner-wrapper .banner.inactive.enable .title {
+  display: none !important;
+}
+.section .banner-wrapper .banner.inactive.enable .content {
+  display: none !important;
+}
+.section .banner-wrapper .banner.inactive.enable .view_more {
+  display: none !important;
+}
+.section .banner-wrapper .banner.active.enable .title {
+  font-size: 10rem;
+  text-align: center;
+  transition: 0.4s;
+  z-index: 1;
+}
+.section .banner-wrapper .banner.active.enable .title .small {
+  font-size: 3rem;
+  text-align: center;
+  transition: 0.4s;
+  font-weight: normal;
+}
+
+.section .section_info_wrapper .ticket_btn:hover {
+  background-color: white;
+  color: black;
+}
+.section .section_info_wrapper .ticket_btn:hover .ticket_hover {
+  display: block;
+}
+.section .section_info_wrapper .ticket_btn:hover .ticket {
+  display: none;
+}
+
+
+
+
+/* 더보기 버튼 */
+.more-btn{
+  cursor: pointer;
+  outline: 1px solid #000;
+  width: 26rem;
+  font-size: 2rem;
+  font-family: "Poppins";
+  font-weight: bold;
+  text-align: center;
+  align-self: center;
+  line-height: 6rem;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: none;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+
+}
+/* 더보기 버튼 마우스 오버시 */
+.more-btn {
+  &:before {
+    content: "";
+    height: 0;
+    aspect-ratio: 2;
+    transform: translateX(-50%);
+    position: absolute;
+    top: -200%;
+    left: 50%;
+    background: #000;
+    border-radius: 50%;
+    transition: height 0.3s;
+  }
+  &:hover:before {
+    height: 400%;
+  }
+  & .text-container {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  & .text {
+    display: block;
+    position: relative;
+    font-weight: 900;
+    mix-blend-mode: difference;
+  }
+  &:hover .text {
+    animation: move-up-alternate 0.3s forwards;
+    will-change: transform;
+  }
+
+  @keyframes move-up-alternate {
+    from {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(80%);
+    }
+    51% {
+      transform: translateY(-80%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+}
+
+
+/*****************************미디어쿼리************************************/
+/* 760이하 */
+@media screen and (max-width:800px) {
+  .section .banner-wrapper {flex-direction: column; flex-basis: calc(100vh - 238px)}
+  }
+
+
+  @media screen and (max-width:320px) {
+    html{font-size: 5px !important;}
+    }
+  
