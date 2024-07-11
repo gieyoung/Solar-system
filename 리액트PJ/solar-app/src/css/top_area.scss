@@ -298,3 +298,35 @@ h1.logo {
 /* 360이하 */
 @media screen and (max-width: 360px) {
 }
+
+////////////임시
+/* gnb 검색입력창 박스 */
+.searchingGnb {
+  line-height: 41px;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #efefef;
+  box-sizing: border-box;
+  padding: 0 5px;
+
+}
+
+.searchingGnb input {
+  font-size: 15px;
+  width: 77%;
+  margin-top: 5px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.schbtnGnb {
+  cursor: pointer;
+  margin-top: 9px;
+  margin-left: 10px;
+}
