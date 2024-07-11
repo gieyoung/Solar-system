@@ -1,3 +1,43 @@
+//////////////////////////////////////스와이퍼/////////////////////////////////  
+
+  
+//   body {
+//     background: #eee;
+//     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+//     font-size: 14px;
+//     color: #000;
+//     margin: 0;
+//     padding: 0;
+//   }
+// .e_swiper{
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      // background: #fff;
+    
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+// }
+//////////////////////////////////////스와이퍼/////////////////////////////////  
+
+
+
 .earth-section {
     width: 100%;
     height: 400vh; /* 4개의 섹션 */
@@ -343,6 +383,9 @@
 //[[[[Esection4]]]]////////////////////////////////////////////////////////////////////////////////
 
 .pg4{
+    
+    width: 100vw;
+    height: 100vh;
     position: relative;
     top: 8rem;
     color: #fff;
@@ -351,48 +394,6 @@
 .cont-box{
     /* padding-top: 8vh; */
     display: flex;
-}
-.desc-txt{
-    
-    
-    font-family: 'Pretendard-Regular';
-    color: #ffffffd3;
-    font-size: max(1vw, 10px);
-    text-align: justify;
-    font-weight: normal;
-    line-height: 25px;
-}
-
-
-.pg4-txtbox{
-    padding-top: 10vh;
-    min-width: 5vw;
-}
-
-.pg4-txtbox a{
-    font-family: 'Pretendard-Regular';
-    color: #ffffff7d;
-    font-size: max(1vw, 14px);
-    text-align: justify;
-    font-weight: normal;
-    line-height: 25px;
-}
-.pg4-txtbox a:hover{
-    color: red;
-    font-weight: bold;
-
-}
-
-.pg4-imgbox{
-    width: 150vw;
-    /* min-width: 40vw; */
-    margin-right: -20px;
-    margin-top: -20px;
-    
-}
-.pg4-imgbox img{
-    width: 100%;
-    vertical-align: middle;
 }
 
 
