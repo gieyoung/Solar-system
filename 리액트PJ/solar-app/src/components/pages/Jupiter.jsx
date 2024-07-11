@@ -12,6 +12,7 @@ import { jupiter_about_data, jupiter_moons_data } from "../js/jupiter_data.js";
 
 import $ from "jquery";
 import JupiTxt from "../modules/JupiTxt.jsx";
+import JupiMain from "../modules/JupiMain.jsx";
 
 function Jupiter(props) {
   const selData = jupiter_moons_data;
@@ -92,51 +93,13 @@ function Jupiter(props) {
 
   ////////////////////////////////////////////////////////////////////////
 
-  // // 1. 모바일 이벤트 등록하기 ////////////
-  // // 대상 : window
-  // window.addEventListener("touchstart", touchStartFn);
-  // window.addEventListener("touchend", touchEndFn);
-  // const more = mFn.qs(".jupiter-more");
-
-  // function touchStartFn(e) {
-  //   more.style.fontFamily = "Freesentation-9Black";
-  // } /////////// touchStartFn 함수 ////////////
-
-  // function touchEndFn(e) {
-  //   more.style.fontFamily = "Pretendard-Regular";
-  // } /////////// touchEndFn 함수 ////////////
-
   return (
     <>
       {/* <!-- 첫페이지:제목 --> */}
-      <section className="sub-jupiter jupiter1">
-        {/* <!-- 배경 --> */}
-        <video
-          src="/images/jupiter/jupiter video/j-main-bg.mp4"
-          autoPlay
-          loop
-        ></video>
-        <div className="jupiter1-bg"></div>
-
-        <div className="jupiter1-text">
-          <h1 className="main-tit">JUPITER</h1>
-          <p className="main-txt">
-            Jupiter's signature stripes and swirls are actually cold, windy
-            clouds of ammonia and water, floating in an atmosphere of hydrogen
-            and helium.
-            <br />
-            <br />
-            The dark orange stripes are called belts, while the lighter bands
-            are called zones, and they flow east and west in opposite
-            directions. Jupiter’s iconic Great Red Spot is a giant storm bigger
-            than Earth that has raged for hundreds of years.
-            {/* <!-- Jupiter is the fifth planet from the Sun, and the largest in the solar system – more than twice as massive as the other planets combined. --> */}
-          </p>
-        </div>
-      </section>
+      <JupiMain catName="jupiter"/>
 
       {/* <!-- 두번째페이지 : 설명 --> */}
-      <JupiTxt />
+      <JupiTxt catName="jupiter" />
 
       {/* <!-- 세번째페이지 : 3D --> */}
       <section className="sub-jupiter jupiter3">
