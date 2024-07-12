@@ -73,9 +73,9 @@ function FooterArea() {
             </div>
           </div>
           {/* <!-- 탑버튼 --> */}
-          <a href="#" className="top-btn">
+          <button className="top-btn">
             <span className="ir">상단으로 이동</span>
-          </a>
+          </button>
         </footer>
       </div>
     </>

@@ -136,7 +136,7 @@ function Searching({ kword }) {
                 <FontAwesomeIcon
                   icon={faSearch}
                   className="schbtn"
-                  title="Open search"
+                  title="search"
                 />
                 {/* 입력창 */}
                 <input
