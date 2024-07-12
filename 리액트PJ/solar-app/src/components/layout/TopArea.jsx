@@ -202,6 +202,8 @@ function TopArea({ loginSts, logoutFn, goPage }) {
                 }
               </ol>
 
+            
+
               {/* 메뉴 컴포넌트 */}
               <Menu />
             </div>
