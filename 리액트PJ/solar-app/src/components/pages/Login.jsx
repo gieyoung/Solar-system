@@ -201,7 +201,7 @@ function Login(props) {
   return (
     <div className="outbx loginOutbx">
       <section className="membx" style={{ minHeight: "300px" }}>
-        <h2>LOG IN</h2>
+        <h2>SIGN IN</h2>
         <form method="post" action="process.php">
           <ul>
             <li>

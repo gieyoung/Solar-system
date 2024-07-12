@@ -33,8 +33,6 @@ function Moon(props) {
 
   return (
     <>
-      {/* 1. 상단영역 */}
-      <div id="header-area"></div>
 
       {/* 2. 메인영역 */}
       <main className="main-area">
@@ -81,8 +79,6 @@ function Moon(props) {
         </section>
       </main>
 
-      {/* 3. 하단영역 */}
-      <div id="footer-area"></div>
     </>
   );
 }
