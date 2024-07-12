@@ -9,6 +9,7 @@ import Jupiter from "./components/pages/Jupiter";
 import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
 import SearchPage from "./components/pages/SearchPage";
+import Saturn from "./components/pages/Saturn";
 
 export default function MainComponent() {
   return (
@@ -32,6 +33,7 @@ export default function MainComponent() {
 
           {/* <Route path="sun" element={<Sun />} /> */}
           <Route path="earth" element={<Earth />} />
+          <Route path="saturn" element={<Saturn />} />
           <Route path="jupiter" element={<Jupiter />} />
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />
