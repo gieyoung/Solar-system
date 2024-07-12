@@ -8,7 +8,7 @@ function JupiMain({ catName }) {
           {/* <!-- 배경 --> */}
           <video
             src={"/images/"+catName+"/"+catName+" video/"+
-            (catName=="jupiter"?"j":"s")+"-main-bg.mp4"}
+            (catName=="jupiter"?"j":catName=="saturn"?"s":"")+"-main-bg.mp4"}
             autoPlay
             loop
             muted
