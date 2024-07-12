@@ -3,45 +3,13 @@
 import mFn from "../func/my_function.js";
 
 const whiteBox = function () {
-  const scDesc = mFn.qsa(".desc");
-  const scWhite = mFn.qs(".white-box");
-  const moon4 = mFn.qsa(".moon");
-
-  // 스크롤 등장 기준설정 : 화면의 2/3
   const CRITERIA = (window.innerHeight / 3) * 2;
-
-  // if (!scWhite) return;
-  const handleScroll = () => {
-    // 스크롤 등장 기준설정 : 화면의 2/3
-    const CRITERIA = (window.innerHeight / 3) * 2;
-
-    // const bcrVal = cont2.getBoundingClientRect();
-    console.log(CRITERIA);
-
-    // forEach메서드 처리방법
-    scDesc.forEach((ele) => {
-      if (!ele) return;
-      addOn(ele);
-    });
-
-    let bcrValWhite = scWhite.getBoundingClientRect();
-
-    if (bcrValWhite.top < CRITERIA) {
-      scWhite.style.left = "100%";
-      scWhite.style.width = "0%";
-      scWhite.style.transition = "1s ease-out";
-    } else {
-      scWhite.style.left = "0%";
-      scWhite.style.width = "100%";
-      scWhite.style.transition = "1s ease-out";
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
+  const scDesc = mFn.qsa(".desc");
+  // forEach메서드 처리방법
+  scDesc.forEach((ele) => {
+    if (!ele) return;
+    addOn(ele);
+  });
 
   //// [ 클래스 on 넣기 함수 ] ///////////
   function addOn(ele) {

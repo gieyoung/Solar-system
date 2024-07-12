@@ -5,6 +5,7 @@ import "../../css/jupiter.scss";
 import "../../css/common/_core.scss";
 import "../../css/common/_reset.scss";
 
+import mFn from "../func/my_function.js";
 
 // 데이터
 import { jupiter_about_data, jupiter_moons_data } from "../js/jupiter_data.js";
@@ -19,24 +20,53 @@ function Jupiter(props) {
   const selData = jupiter_moons_data;
   const selData2 = jupiter_about_data;
 
-  // console.log("기준값:", CRITERIA);
-
   // 맨위로 올리기
   window.scroll({
     top: 0,
     behavior: "smooth",
   });
-
+  const CRITERIA = (window.innerHeight / 3) * 2;
 
   useEffect(() => {
-    whiteBox();
-  }, []);
+    const scDesc = mFn.qsa(".desc");
+    const scWhite = mFn.qs(".white-box");
 
+    // 스크롤 등장 기준설정 : 화면의 2/3
+    const CRITERIA = (window.innerHeight / 3) * 2;
+
+    // if (!scWhite) return;
+    const handleScroll = () => {
+      // const bcrVal = cont2.getBoundingClientRect();
+
+      whiteBox();
+
+
+      let bcrValWhite = scWhite.getBoundingClientRect();
+
+      if (bcrValWhite.top < CRITERIA) {
+        scWhite.style.left = "100%";
+        scWhite.style.width = "0%";
+        scWhite.style.transition = "1s ease-out";
+      } else {
+        scWhite.style.left = "0%";
+        scWhite.style.width = "100%";
+        scWhite.style.transition = "1s ease-out";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+  
+  }, []);
 
   return (
     <>
       {/* <!-- 첫페이지:제목 --> */}
-      <JupiMain catName="jupiter"/>
+      <JupiMain catName="jupiter" />
 
       {/* <!-- 두번째페이지 : 설명 --> */}
       <JupiTxt catName="jupiter" />

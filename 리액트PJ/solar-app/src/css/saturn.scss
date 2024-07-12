@@ -22,10 +22,10 @@ body > * {
 .sub-saturn {
   width: 100%;
   min-height: 100vh;
-}
-.cont-txt {
-  color: black;
-  line-height: normal;
+  .cont-txt {
+    color: black;
+    line-height: normal;
+  }
 }
 /************* 상단영역 *************/
 /* common.css */
@@ -36,6 +36,7 @@ body > * {
   position: relative;
   width: 100%;
   height: 100vh;
+  background-position: right;
   background-color: #000;
 }
 .saturn1-bg {
@@ -89,48 +90,47 @@ body > * {
   min-width: 600px;
   margin: 0 auto;
   margin-top: 8rem;
-}
-.desc {
-  display: flex;
-  gap: 2rem;
-  margin-top: 20px;
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-}
-.desc.on {
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-}
+  .desc {
+    display: flex;
+    gap: 2rem;
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    &.on {
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+    }
+  }
+  .desc1 {
+    flex-direction: row-reverse;
+  }
+  /* 2-1 첫번째 사진 */
+  .desc1-img {
+    width: 45vw;
+    height: auto;
+    img{
+      border-radius: 35px;
+    }
+  }
+  .desc2 {
+    position: relative;
+    height: 50vh;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+  }
+  }
+  .desc2-text {
+    margin-top: 5rem;
+  }
+  .desc2-3D {
+    position: relative;
+    top: -70px;
+    aspect-ratio: 1;
+    /* width: 65vw; */
+  }
 
-.desc1 {
-  flex-direction: row-reverse;
-}
-
-/* 2-1 첫번째 사진 */
-.desc1-img {
-  width: 45vw;
-  height: auto;
-}
-.desc1-img img {
-  border-radius: 35px;
-}
-.desc2 {
-  position: relative;
-  height: 50vh;
-}
-.desc2-text {
-  margin-top: 5rem;
-}
-.desc2-3D {
-  position: relative;
-  top: -70px;
-  aspect-ratio: 1;
-  /* width: 65vw; */
-}
-.desc2 iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
 }
 
 /* ---------------------세번째 페이지--------------------- */
@@ -306,47 +306,52 @@ body > * {
 /************* 미디어쿼리 *************/
 
 @media screen and (max-width: 1200px) {
-  /* 두번째페이지 */
-  .desc {
-    flex-direction: column-reverse;
-    font-size: 2rem;
-  }
+  .saturn2{
+    /* 두번째페이지 */
+    .desc {
+      flex-direction: column-reverse;
+      font-size: 2rem;
+      strong {
+        display: block;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  
+    .desc2 {
+      height: 100%;
+      iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 0;
+      }
+    }
+    .desc1-text,
+    .desc2-text {
+      width: 95%;
+      margin: 0 auto;
+    }
 
-  .desc2 {
-    height: 100%;
+    .desc1-img {
+      width: auto;
+    } 
+    .desc2-3D {
+      top: 0;
+      width: 100%;
+    }
   }
-
-  .desc strong {
-    display: block;
-    text-align: center;
-  }
-  .desc1-text,
-  .desc2-text,
+  /* 서번째 페이지 */
   .saturn3-desc {
     width: 95%;
     margin: 0 auto;
-  }
-  .desc1-img {
-    width: auto;
-  }
-  .desc img {
-    width: 100%;
-  }
-  .desc2-3D {
-    top: 0;
-    width: 100%;
-  }
-  .desc2 iframe {
-    width: 100%;
-    height: 600px;
-    border-radius: 0;
-  }
-  /* 서번째 페이지 */
-  .saturn3-desc h2 {
-    margin-top: 5rem;
-  }
-  .saturn3-desc strong {
-    font-size: 3rem;
+    h2 {
+      margin-top: 5rem;
+    }
+    strong {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -417,20 +422,21 @@ body > * {
     font-size: 1.2rem;
   }
   /* 두번째 페이지 */
-  .desc {
-    width: 100vw;
-  }
-  /* 두번째페이지 */
-  .desc1-text,
-  .desc2-text {
-    font-size: 1.5rem;
-  }
-  .desc1-text strong,
-  .desc2-text strong {
-    font-size: 3rem;
-  }
-  .desc2 iframe {
-    height: 400px;
+  .saturn2{
+    .desc {
+      width: 100vw;
+    }
+    .desc1-text,
+    .desc2-text {
+      font-size: 1.5rem;
+      strong {
+        font-size: 3rem;
+      }
+    }
+    .desc2 iframe {
+      height: 400px;
+    }
+
   }
 
   /* 서번째 페이지 */
