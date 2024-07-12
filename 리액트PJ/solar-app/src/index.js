@@ -5,10 +5,10 @@ import Layout from "./components/layout/Layout";
 import Main from "./components/pages/Main";
 // import Sun from "./components/pages/Sun";
 import Earth from "./components/pages/Earth";
+import Moon from "./components/pages/Moon";
 import Jupiter from "./components/pages/Jupiter";
 import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
-import Moon from "./components/pages/Moon";
 
 export default function MainComponent() {
   return (
@@ -36,7 +36,7 @@ export default function MainComponent() {
           <Route path="jupiter" element={<Jupiter />} />
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />
-          <Route path="search" element={<SearchPage />} />
+          {/* <Route path="search" element={<SearchPage />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>
