@@ -78,6 +78,7 @@ function Member() {
   // -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
 
+
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
   const changeUserId = (e) => {
@@ -121,6 +122,7 @@ function Member() {
       if (isT) {
         // 에러 메시지 업데이트
         setIdMsg(msgId[1]);
+        
         // 에러상태값 업데이트
         setUserIdError(true);
       } ///// if /////
@@ -150,6 +152,7 @@ function Member() {
       console.log("에러~!");
       // 에러 메시지 업데이트
       setIdMsg(msgId[0]);
+      
       // 아이디 에러상태 업데이트(true)
       setUserIdError(true);
     } /// else ///
@@ -259,6 +262,26 @@ function Member() {
 
     console.log("최종검사:", totalValid());
 
+
+/******************** 각 항목마다 alert 창 띄우기 ********************/
+    if (!(/^[A-Za-z0-9+]{5,}$/).test(userId)) {
+      alert("아이디는 5글자 이상이어야 합니다.");
+      return;
+    }
+    if (!(/^.*(?=^.{5,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/).test(pwd)) {
+      alert("5 to 15 digits in the form of special characters, characters, and numbers");
+      return;
+    }
+    if (!(pwd==chkPwd)) {
+      alert("비밀번호 일치 하지 않습니다.");
+      return;
+    }
+    if (!(/^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i).test(email)) {
+      alert("이메일 형식에 맞지 않습니다.");
+      return;
+    }
+   
+
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
       console.log("모두통과! 저장!");
@@ -308,7 +331,7 @@ function Member() {
     } ///////// if /////////
     // 3. 불통과시 /////
     else {
-      alert("Change your input!");
+     
     } //// else ///////////
   }; /////////// onSubmit 함수 //////////
 

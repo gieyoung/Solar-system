@@ -180,6 +180,9 @@
   z-index: 999;
   transition: .3s ease-in-out;
   opacity: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 .top-btn.on {
   opacity: 1;
