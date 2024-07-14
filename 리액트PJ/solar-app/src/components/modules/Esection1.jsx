@@ -15,7 +15,7 @@ function Esection1(props) {
             </div>
             <section className="pg1">
                 <div className="top-tbox">
-                    <p className="main-tit">Earth</p>
+                    <p className="main-tit" style={{color:"#fff"}}>Earth</p>
                     <p className="main-txt">
                         Earth – our home planet – <br />
                         is the third planet from the Sun, and the fifth largest

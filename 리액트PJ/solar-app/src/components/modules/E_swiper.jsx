@@ -13,10 +13,10 @@ import Esection1 from "./Esection1";
 import Esection2 from "./Esection2";
 import Esection3 from "./Esection3";
 import Esection4 from "./Esection4";
+import FooterArea from "../layout/FooterArea";
 
 export default function E_swiper() {
 
- 
 
 
 
@@ -47,6 +47,9 @@ export default function E_swiper() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Esection4 />
+                </SwiperSlide>
+                <SwiperSlide>
+                <FooterArea />
                 </SwiperSlide>
             </Swiper>
         </>

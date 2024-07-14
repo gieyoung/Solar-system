@@ -1,39 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 
 function Esection4(props) {
-//////////////////////////////////////////////.e-moveup에 on주기/////////////////////////////////////////////////
-useEffect(() => {
-    // 대상선정(.e-moveup)
-    const eMoveup = document.querySelectorAll('.e-moveup');
 
-    // 화면 높이 기준
-    const CRITERIA = window.innerHeight / 1000 * 999;
+     //////////////////////////////////////////////.e-moveup에 on주기/////////////////////////////////////////////////
+     const eMoveupRefs = useRef([]);
 
-    // 클래스on주는 함수 생성
-    const showIt = () => {
-        // 모든 e-moveup 요소들에 대해 반복문
-        eMoveup.forEach(ele => {
-            // 각 요소의 현재 위치 정보 top값  변수 설정
-            let tgPos = ele.getBoundingClientRect().top;
-            
-            // 각요소의 현제위치 < 화면높이 기준 이면 add클래스 on, 그렇지 않으면 remove클래스 on
-            if (tgPos < CRITERIA) {
-                ele.classList.add('on');
-            } else {
-                ele.classList.remove('on');
-            }
-        });
-    };
-
-    // 스크롤 이벤트를 window에 등록합니다.
-    window.addEventListener('scroll', showIt);
-
-    // 소멸자: 컴포넌트 언마운트시 소멸~~~~~~
-    return () => {
-        window.removeEventListener('scroll', showIt);
-    };
-}, []);// 한번만 실행
+     useEffect(() => {
+         const eMoveupElements = document.querySelectorAll('.e-moveup');
+         eMoveupRefs.current = Array.from(eMoveupElements);
+ 
+         const options = {
+             root: null, // viewport를 root로 사용
+             rootMargin: '0px',
+             threshold: 0.5 // 요소의 반 이상이 보일 때 콜백 호출
+         };
+ 
+         const handleIntersect = (entries) => {
+             entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                     entry.target.classList.add('on');
+                 } else {
+                     entry.target.classList.remove('on');
+                 }
+             });
+         };
+ 
+         const observer = new IntersectionObserver(handleIntersect, options);
+ 
+         eMoveupRefs.current.forEach(ref => {
+             observer.observe(ref);
+         });
+ 
+         return () => {
+             observer.disconnect();
+         };
+     }, []); // 한 번만 실행
 
 
     return (
@@ -45,7 +47,7 @@ useEffect(() => {
                             NASA SPACE PLACE
                         </p>
                         <h2 className="sub-tit e-moveup">Kid-Friendly Earth</h2>
-                        <p className="cont-txt e-moveup">
+                        <p className="cont-txtee e-moveup">
                             Our home planet Earth is a rocky, terrestrial
                             planet. It has a solid and active surface with
                             mountains, valleys, canyons, plains and so much
@@ -62,7 +64,7 @@ useEffect(() => {
                     </div>
                     <div className="pg4-imgbox e-moveup">
                         <img
-                            src="./assets/images/earth/pg4_kindly.webp"
+                            src="/images/earth/pg4_kindly.webp"
                             alt="Kid-Friendly Earth"
                         />
                     </div>

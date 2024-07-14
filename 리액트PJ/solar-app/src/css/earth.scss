@@ -17,6 +17,7 @@
     }
     
     .swiper-slide {
+        flex-direction: column;
       text-align: center;
       font-size: 18px;
       // background: #fff;
@@ -33,14 +34,19 @@
       height: 100%;
       object-fit: cover;
     }
-// }
-//////////////////////////////////////스와이퍼/////////////////////////////////  
+////////////////////////////////////////페이지 넘어가는 스와이퍼///////////////////////
+
+  
+
+
+
+  
 
 
 
 .earth-section {
     width: 100%;
-    height: 400vh; /* 4개의 섹션 */
+   
     position: relative;
 }
 
@@ -71,6 +77,7 @@
     그래야 #pg2 에서 화면이 걸림!!!!!!!!!!!!!!!! */
     min-height: 100vh;
     /* height: 100vh; */
+    width: 100vw;
     
     position: relative;
 }
@@ -166,143 +173,43 @@
 }
 //[[[[Esection2]]]]////////////////////////////////////////////////////////////////////////////////
 
-.pg2{
-    color: #fff;
-    /* background-color: #fff27d; */
-    position: relative;
-    /* width: 100%;
-    height: 100%; */
-        
-}
-
-#pg2 >.vidbox{
-  position: fixed;
-  z-index: -999;
-  object-fit: cover;
-  /* width: 100%; */
+.esec2wrap{
+    display: flex;
     
-    
-}
 
-
-#pg2 video{
-   
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-      
-      
-  }
-
-.pg2{
-    padding: 10px;
-}
-.pg2 li{
-    padding-left: 2vw;
-    padding-right: 2vw;
-    max-width: 80vw;
-}
-.pg2 li>div>p{
-    padding: 10vw;
-    white-space: nowrap;
-    text-align: center;
-
-    color: #fff;
-    font-size: 5vw;
-    font-weight: bold;
-    animation: pg2txt ease-in 1s infinite;
-}
-
-    @keyframes pg2txt {
-        from{
-            opacity: 1;
-            text-shadow: 0 0 15px #f8ffd0;
-        }
-        to{
-            opacity: 0;
-            text-shadow: 0 0 25px #f8ffd0;
-         }
+    .cont-tit{
+        color: #fff;
     }
-.pg2 li>div>p{
-    display: block;
-}
-.pg2 .fliker{
-    display: none;
-}
+    .cont-txt{
+        
+        color: #fff;
+    }
 
-
-
-/************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
-
-.epg {
-    height: 100vh;
-    /* outline: 1px solid blue; */
+    .swiper {
+        width: 100%;
+        height: 100%;
+      }
+      
+      >.swiper-slide {
+        
+        text-align: center;
+        font-size: 18px;
+     
+        /* Center slide text vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .swiper-slide >img {
+        display: block;
+        width: 100%;
+        height: 40dvh;
+        object-fit: cover;
+      }
 }
-/* 타겟박스 */
-.etpg {
-    /* height: calc(100vh + 3500px); */
-    /* 타겟 박스는 보이는 화면 맨윗줄부터
-     시작해서 아래로 마지막 박스 끝라인까지
-    총 이동거리는 3000px이다!!! */
-    /* background-color: lightblue; */
-    /* outline: 2px dashed blue; */
-}
-/* 가로이동박스 */
-.eslidePg {
-    
-    position: relative;
-     /* nav에 안겹치게 만들기 */
-    top: 8vh;
-    left: 0;
-    /* height: 100vh; */
+  
 
-    /* background-color: orange; */
-    transition: left .4s ease-out;
-}
-/* 실제로 가로이동할 ul박스 */
-.eslidePg ul {
-    position: relative;
-    left: 0;
-    display: flex;
-    width: calc(100vw + 5000px);
-    /* 가로크기는 타겟박스가 이동하는크기인
-    3000px에 맞도록 100vw에 더하여 잡아준다!
-    이유는 JS의 getBoundingClientRect().top
-    값의 수치와 정확히 일치 시키기 위함! */
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    transition: 0.4s ease-out;
-}
-.eslidePg ul li {
-    flex: 1;
-    /* margin-bottom: 200px;
-    margin-top: 0; */
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding-top: min(10vw, 50px);
-    
-    /* justify-content: center; */
-    align-items: center;
-}
-
-.eslidePg ul li img {
-    /* 상하만 흐려지게 만들기 (가장자리 전체는 몰?루)*/
-    mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
-    padding: 0 20px 0 20px;
-    border-radius:30px; 
-    width: 100%;
-    justify-content: center;
-    max-height: 40vh;
-}
-
-
-.eslidePg ul li div {
-    width: 1000px;
-}
 //[[[[Esection3]]]]////////////////////////////////////////////////////////////////////////////////
 
 .pg3{
@@ -389,12 +296,15 @@
     position: relative;
     top: 8rem;
     color: #fff;
+    .cont-box{
+        /* padding-top: 8vh; */
+        display: flex;
+        .pg4-imgbox{
+            width:  50vw;
+        }
+    }
 }
 
-.cont-box{
-    /* padding-top: 8vh; */
-    display: flex;
-}
 
 
 
@@ -492,11 +402,20 @@
     .move_text_box .text p{
         width: 310vw;     
     }
-    .pg4-imgbox{
+    .pg4{
+    
+      
+        .cont-box{
+       .pg4-imgbox{
 
         width: 50vh;
         margin: 0 auto;
     }
+        }
+    }
+    
+    
+  
     .pg4-txtbox {
         min-width: 5vw;
         padding: 3vh 5vw 0 5vw;
@@ -609,20 +528,22 @@
 
     /* pg4 텍스트 */
    .cont-txt {
-        font-size: max(3vw,2rem);
+        // font-size: max(3vw,2rem);
+        font-size: 11px;
         line-height: 22px;
+        color: #fff;
     }
     .pg4-txtbox a {
         font-size: max(3vw, 14px);
     }
     /* pg4 텍스트 박스 */
-    .pg4-txtbox {
+    .pg4-txtboxee {
         min-width: 5vw;
         padding: 1.5vw 5vw 0 5vw;
     }
     /* pg4 이미지 */
     .pg4-imgbox {
-        width: max(40vh, 38vw);
+        width: max(50vw, 38vw);
     }
     .eslidePg ul li {
         padding: min(10vw, 50px);
