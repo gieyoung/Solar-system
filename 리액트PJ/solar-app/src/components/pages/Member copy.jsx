@@ -1,20 +1,19 @@
 // 회원가입 페이지 컴포넌트 - Member.jsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AddressInput from "../modules/AddressInput";
 
 // 로컬스토리지 생성 JS
 import { initData } from "../js/mem_fn";
-
-import $ from "jquery";
 
 // 회원가입 CSS 불러오기
 import "../../css/member.scss";
 
 function Member() {
   // 라우터 이동네비게이트
-  const goNav = useNavigate();
+  const goNav=useNavigate();
   // goNav(라우터주소,state변수);
+
+
 
   // [ 회원가입 페이지 요구사항 ]
   // 1. 각 입력항목별로 유효성검사를 실행함
@@ -37,10 +36,6 @@ function Member() {
   const [userName, setUserName] = useState("");
   // 5. 이메일변수
   const [email, setEmail] = useState("");
-  // 6. 주소변수
-  const [addr, setAddr] = useState("");
-  // 7. 우편번호변수
-  const [zipcode, setZipcode] = useState("");
 
   // [2] 에러상태관리 변수
   // -> 에러상태값 초기값은 에러아님(false)
@@ -54,10 +49,8 @@ function Member() {
   const [userNameError, setUserNameError] = useState(false);
   // 5. 이메일변수
   const [emailError, setEmailError] = useState(false);
-  // 6. 주소변수
-  const [addrError, setAddrError] = useState("");
 
-  // console.log(">>>>", userIdError);
+  console.log(">>>>", userIdError);
 
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
@@ -84,6 +77,7 @@ function Member() {
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]
   // -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
+
 
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
@@ -128,7 +122,7 @@ function Member() {
       if (isT) {
         // 에러 메시지 업데이트
         setIdMsg(msgId[1]);
-
+        
         // 에러상태값 업데이트
         setUserIdError(true);
       } ///// if /////
@@ -158,7 +152,7 @@ function Member() {
       console.log("에러~!");
       // 에러 메시지 업데이트
       setIdMsg(msgId[0]);
-
+      
       // 아이디 에러상태 업데이트(true)
       setUserIdError(true);
     } /// else ///
@@ -219,7 +213,8 @@ function Member() {
     let val = e.target.value;
 
     // 1. 이메일 유효성 검사식(따옴표로 싸지 말것!)
-    const valid = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+    const valid =
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
     // 2. 입력값 확인 : e.target -> 이벤트가 발생한 요소
     // console.log(val);
@@ -232,31 +227,6 @@ function Member() {
     setEmail(val);
   }; ///////// changeEmail 함수 //////////
 
-    // 6. 주소 유효성 검사 ///////////
-    const changeAddr = () => {
-      // 입력된 값읽기
-      // 앞주소(자동입력값)
-      let address1 = $(".addr1").val();
-      // 뒷주소(직접입력값)
-      let address2 = $(".addr2").val();
-      // 우편번호(자동입력값)
-      let zc = $(".zipcode").val();
-  
-      // 2. 빈값체크 : 세 값 모두 빈값이 아니면 에러아님!
-      if (address1 !== "" && address2 !== "" && zc !== "") 
-      setAddrError(false);
-      else setAddrError(true);
-  
-      // 3. 기존입력값 반영하기 : 상태변수에 반영함
-      // (1) 전체주소값 저장 (앞주소+뒷주소)
-      setAddr(address1+" "+address2);
-      console.log(addr);
-      // (2) 우편번호 저장
-      setZipcode(zc);
-      console.log(zipcode);
-      
-    }; ///////// changeUserName 함수 //////////
-
   // [ 전체 유효성검사 체크함수 ] ///////////
   const totalValid = () => {
     // 1. 모든 상태변수에 빈값일때 에러상태값 업데이트!
@@ -265,16 +235,22 @@ function Member() {
     if (!chkPwd) setChkPwdError(true);
     if (!userName) setUserNameError(true);
     if (!email) setEmailError(true);
-    // 주소체크 추가
-    if (!addr) setAddrError(true);
-    // 우편번호체크 추가 
-    // -> 주소에러로 등록(우편번호에러값이 따로없음)
-    if (!zipcode) setAddrError(true);
 
     // 2. 통과시 true, 불통과시 false 리턴처리
     // 통과조건 : 빈값아님 + 에러후크변수가 모두 false
-    if (userId && pwd && chkPwd && userName && email && !userIdError && !pwdError && !chkPwdError && !userNameError && !emailError && 
-    !addrError) return true;
+    if (
+      userId &&
+      pwd &&
+      chkPwd &&
+      userName &&
+      email &&
+      !userIdError &&
+      !pwdError &&
+      !chkPwdError &&
+      !userNameError &&
+      !emailError
+    )
+      return true;
     // 하나라도 false이면 false를 리턴함!
     else return false;
   }; /////////// totalValid 함수 ///////////
@@ -284,31 +260,27 @@ function Member() {
     // 1. 기본서브밋 막기
     e.preventDefault();
 
-    // console.log("최종검사:", totalValid());
+    console.log("최종검사:", totalValid());
 
-    /******************** 각 항목마다 alert 창 띄우기 ********************/
-    if (!/^[A-Za-z0-9+]{5,}$/.test(userId)) {
+
+/******************** 각 항목마다 alert 창 띄우기 ********************/
+    if (!(/^[A-Za-z0-9+]{5,}$/).test(userId)) {
       alert("아이디는 5글자 이상이어야 합니다.");
       return;
     }
-    if (!/^.*(?=^.{5,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/.test(pwd)) {
+    if (!(/^.*(?=^.{5,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/).test(pwd)) {
       alert("5 to 15 digits in the form of special characters, characters, and numbers");
       return;
     }
-    if (!(pwd == chkPwd)) {
+    if (!(pwd==chkPwd)) {
       alert("비밀번호 일치 하지 않습니다.");
       return;
     }
-  
-    if ((zipcode == "")) {
-      alert("주소를 입력해주세요");
-      return;
-    }
-   
-    if (!/^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i.test(email)) {
+    if (!(/^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i).test(email)) {
       alert("이메일 형식에 맞지 않습니다.");
       return;
     }
+   
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
@@ -337,28 +309,29 @@ function Member() {
         pwd: pwd,
         unm: userName,
         eml: email,
-        // 추가항목1 : 우편번호
-        zcode: zipcode,
-        // 추가항목2 : 주소
-        addr: addr,
       };
 
       // 5. 데이터 추가하기 : 배열에 데이터 추가 push()
       memData.push(newData);
 
       // 6. 로컬스에 반영하기 : 문자화해서 넣어야함!
-      localStorage.setItem("mem-data", JSON.stringify(memData));
+      localStorage.setItem("mem-data", 
+      JSON.stringify(memData));
 
       // 7. 회원가입 환영메시지 + 로그인페이지 이동
-      document.querySelector(".sbtn").innerText = "thank you for joining us!";
+      document.querySelector(".sbtn").innerText=
+      "thank you for joining us!";
       // 1초후 페이지 이동 : 라우터 네비게이트로 이동함
-      setTimeout(() => {
+      setTimeout(()=>{
         goNav("/login");
-      }, 1000);
-      //
+      },1000);
+      // 
+
+      
     } ///////// if /////////
     // 3. 불통과시 /////
     else {
+     
     } //// else ///////////
   }; /////////// onSubmit 함수 //////////
 
@@ -428,7 +401,13 @@ function Member() {
             </li>
             <li>
               <label>Password : </label>
-              <input type="password" maxLength="20" placeholder="Please enter your Password" value={pwd} onChange={changePwd} />
+              <input
+                type="password"
+                maxLength="20"
+                placeholder="Please enter your Password"
+                value={pwd}
+                onChange={changePwd}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
@@ -448,7 +427,13 @@ function Member() {
             </li>
             <li>
               <label>Confirm Password : </label>
-              <input type="password" maxLength="20" placeholder="Please enter your Confirm Password" value={chkPwd} onChange={changeChkPwd} />
+              <input
+                type="password"
+                maxLength="20"
+                placeholder="Please enter your Confirm Password"
+                value={chkPwd}
+                onChange={changeChkPwd}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
@@ -468,7 +453,13 @@ function Member() {
             </li>
             <li>
               <label>User Name : </label>
-              <input type="text" maxLength="20" placeholder="Please enter your Name" value={userName} onChange={changeUserName} />
+              <input
+                type="text"
+                maxLength="20"
+                placeholder="Please enter your Name"
+                value={userName}
+                onChange={changeUserName}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
@@ -487,31 +478,14 @@ function Member() {
               }
             </li>
             <li>
-              <label>Address</label>
-              {/* 다음우편번호 모듈
-              - 보내줄값은 내가 정해야함!
-              - 변경체크함수를 프롭스다운시킴! */}
-              <AddressInput changeAddr={changeAddr} />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                addrError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {msgEtc.req}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li>
               <label>Email : </label>
-              <input type="text" maxLength="50" placeholder="Please enter your Email" value={email} onChange={changeEmail} />
+              <input
+                type="text"
+                maxLength="50"
+                placeholder="Please enter your Email"
+                value={email}
+                onChange={changeEmail}
+              />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
@@ -531,7 +505,7 @@ function Member() {
             </li>
             <li style={{ overflow: "hidden" }}>
               <button className="sbtn more-btn" onClick={onSubmit}>
-                <span>Submit</span>
+               <span>Submit</span>
               </button>
             </li>
             <li>
