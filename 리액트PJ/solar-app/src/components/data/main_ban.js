@@ -1,12 +1,12 @@
 // 메인배너 데이터
 
 export const mainBanData = [
-  // {
-  //   clsName: "sun",
-  //   tit: "SUN",
-  //   desc: "태양계의 중심에\n 존재하는 항성",
-  //   link: "/sun",
-  // },
+  {
+    clsName: "sun",
+    tit: "SUN",
+    desc: "태양계의 중심에\n 존재하는 항성",
+    link: "/sun",
+  },
   {
     clsName: "earth",
     tit: "EARTH",

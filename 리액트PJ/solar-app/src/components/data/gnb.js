@@ -1,10 +1,10 @@
 // nenia GNB메뉴 데이터
 
 export const menu = [
-  // {
-  //   menu: "sun",
-  //   link: "/sun",
-  // },
+  {
+    menu: "sun",
+    link: "/sun",
+  },
   {
     menu: "earth",
     link: "/earth",
