@@ -29,20 +29,31 @@ function Login(props) {
 
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
-    "This is a required entry", //필수입력
-    "ID does not exist", //아이디가 존재하지 않습니다
+    "아이디를 입력해주세요", //필수입력
+    "아이디가 존재하지 않습니다.", //아이디가 존재하지 않습니다
   ];
   // [ 비밀번호관련 메시지 프리셋 ] ////
   const msgPwd = [
     // 비밀번호
-    "This is a required entry", //필수입력
-    "Password doesn't match", //비밀번호가 일치하지 않습니다
+    "비밀번호를 입력해주세요", //필수입력
+    "비밀번호가 일치하지 않습니다.", //비밀번호가 일치하지 않습니다
   ];
 
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]
   // -> 기본 메시지가 출력됨
   const [idMsg, setIdMsg] = useState(msgId[0]);
   const [pwdMsg, setPwdMsg] = useState(msgPwd[0]);
+
+  // 팝업창
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    // console.log("아이디 빈값");
+    setModalVisible(true); // 모달을 보이도록 상태를 변경합니다.
+  };
+
+  const closeModal = () => {
+    setModalVisible(false); // 모달을 숨기도록 상태를 변경합니다.
+  };
 
   // [ 유효성 검사 함수 ] ///////
   // 1. 아이디 유효성 검사 ////////////
@@ -57,6 +68,7 @@ function Login(props) {
     else {
       // (1) 메시지 띄우기(필수입력메시지)
       setIdMsg(msgId[0]);
+
       // (2) 에러상태값 변경하기
       setUserIdError(true);
     } /////// else ///////////
@@ -95,6 +107,7 @@ function Login(props) {
     // 2. 통과시 true, 불통과시 false 리턴처리
     // 통과조건 : 빈값아님 + 에러후크변수가 모두 false
     if (userId && pwd && !userIdError && !pwdError) return true;
+    ///////////////////////////////여기 수정필요!!
     // 하나라도 false이면 false를 리턴함!
     else return false;
   }; /////////// totalValid 함수 ///////////
@@ -114,7 +127,6 @@ function Login(props) {
 
       // 1. 로컬스 체크함수호출(없으면 생성!)
       initData();
-
       // 2. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
 
@@ -126,8 +138,8 @@ function Login(props) {
       let result = memData.find((v) => {
         if (v.uid === userId) return true;
       }); /////// find ///////
-      console.log("결과:", result);
 
+      console.log("결과:", result);
       // 4-1. 결과값이 없으면 메시지 보이기
       if (!result) {
         // (1) 에러메시지 선택하기
@@ -135,6 +147,7 @@ function Login(props) {
 
         // (2) 에러메시지 보이기
         setUserIdError(true);
+        openModal();
       } ////////// if ////////
       // 4-2. 결과값이 있으면 비밀번호검사
       else {
@@ -143,7 +156,7 @@ function Login(props) {
         // (2) 비밀번호 검사 : 입력비번 == 결과비번
         if (pwd === result.pwd) {
           // 같을 경우 로그인 성공처리
-        //   alert("Login Success!");
+          //   alert("Login Success!");
 
           // ****** [ 로그인 후 셋팅작업 ] ****** //
           // 1. 로그인한 회원정보를 세션스에 셋팅!
@@ -174,6 +187,7 @@ function Login(props) {
           setPwdMsg(msgPwd[1]);
           // (2) 비밀번호 에러메시지 보이기
           setPwdError(true);
+          openModal();
         } ////// else //////
 
         // -> 원래 비밀번호는 암호화 되어 있으므로
@@ -185,10 +199,9 @@ function Login(props) {
       // 값만 저장함. 그래서 결과값이 없으면
       // undefined 를 리턴함!
     } ///////// if /////////
-    // 3. 불통과시 /////
-    else {
-      alert("Change your input!");
-    } //// else ///////////
+    else{
+      openModal();
+    }
   }; /////////// onSubmit 함수 //////////
 
   // 화면랜더링 구역 /////////
@@ -199,73 +212,115 @@ function Login(props) {
 
   // 코드 리턴구역 ////////////////////////
   return (
-    <div className="outbx loginOutbx">
-      <section className="membx" style={{ minHeight: "300px" }}>
-        <h2>SIGN IN</h2>
-        <form method="post" action="process.php">
-          <ul>
-            <li>
-              <label>ID : </label>
-              <input
-                id="user-id"
-                type="text"
-                maxLength="20"
-                placeholder="Please enter your ID"
-                value={userId}
-                onChange={changeUserId}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                userIdError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {idMsg}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li>
-              <label>Password : </label>
-              <input
-                type="password"
-                maxLength="20"
-                placeholder="Please enter your Password"
-                value={pwd}
-                onChange={changePwd}
-              />
-              {
-                // 에러일 경우 메시지 출력
-                // 조건문 && 출력요소
-                pwdError && (
-                  <div className="msg">
-                    <small
-                      style={{
-                        color: "red",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {pwdMsg}
-                    </small>
-                  </div>
-                )
-              }
-            </li>
-            <li style={{ overflow: "hidden" }}>
-              <button className="sbtn more-btn login-sbtn" onClick={onSubmit}>
-               <span>Submit</span> 
-              </button>
-            </li>
-          </ul>
-        </form>
-      </section>
-    </div>
+    <>
+      <div className="outbx loginOutbx">
+        <section className="membx" style={{ minHeight: "300px" }}>
+          <h2>SIGN IN</h2>
+          <form method="post" action="process.php">
+            <ul>
+              <li>
+                <label>ID : </label>
+                <input
+                  id="user-id"
+                  type="text"
+                  maxLength="20"
+                  placeholder="Please enter your ID"
+                  value={userId}
+                  onChange={changeUserId}
+                />
+                {
+                  // 에러일 경우 메시지 출력
+                  // 조건문 && 출력요소
+                  userIdError && (
+                    <div className="msg">
+                      <small
+                        style={{
+                          color: "red",
+                          fontSize: "10px",
+                        }}
+                      >
+                        {idMsg}
+                      </small>
+                    </div>
+                  )
+                }
+              </li>
+              <li>
+                <label>Password : </label>
+                <input
+                  type="password"
+                  maxLength="20"
+                  placeholder="Please enter your Password"
+                  value={pwd}
+                  onChange={changePwd}
+                />
+                {
+                  // 에러일 경우 메시지 출력
+                  // 조건문 && 출력요소
+                  pwdError && (
+                    <div className="msg">
+                      <small
+                        style={{
+                          color: "red",
+                          fontSize: "10px",
+                        }}
+                      >
+                        {pwdMsg}
+                      </small>
+                    </div>
+                  )
+                }
+              </li>
+              <li style={{ overflow: "hidden" }}>
+                <button className="sbtn more-btn login-sbtn" onClick={onSubmit}>
+                  <span>Submit</span>
+                </button>
+              </li>
+            </ul>
+          </form>
+        </section>
+      </div>
+
+      {/* 모달 팝업 */}
+      <div className={`modal ${modalVisible ? "open" : ""}`}>
+        <div className="modal_popup">
+          {
+            // 에러일 경우 메시지 출력 // 조건문 && 출력요소
+            userIdError && (
+              <h3 value={userId} onChange={changeUserId}>
+                <div className="msg">
+                  <small
+                    style={{
+                      color: "red",
+                      fontSize: "10px",
+                    }}
+                  >
+                    {idMsg}
+                  </small>
+                </div>
+              </h3>
+            )
+          }
+          {pwdError && (
+            <h3 value={pwd} onChange={changePwd}>
+              <div className="msg">
+                <small
+                  style={{
+                    color: "red",
+                    fontSize: "10px",
+                  }}
+                >
+                  {pwdMsg}
+                </small>
+              </div>
+            </h3>
+          )}
+          <button type="button" className="close_btn" onClick={closeModal}>
+            닫기
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
 
