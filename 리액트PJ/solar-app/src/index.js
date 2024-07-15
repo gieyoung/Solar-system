@@ -11,6 +11,7 @@ import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
 import Saturn from "./components/pages/Saturn";
 import Sun from "./components/pages/Sun";
+import SearchPage from "./components/pages/SearchPage";
 
 export default function MainComponent() {
   return (
@@ -40,7 +41,7 @@ export default function MainComponent() {
           <Route path="login" element={<Login />} />
           <Route path="saturn" element={<Saturn />} />
           <Route path="sun" element={<Sun />} />
-          {/* <Route path="search" element={<SearchPage />} /> */}
+          <Route path="search" element={<SearchPage />} />
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
       </Routes>
