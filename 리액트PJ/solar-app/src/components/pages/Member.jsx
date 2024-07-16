@@ -310,6 +310,18 @@ function Member() {
       return;
     }
 
+    if((addr=="")){
+      alert("주소창을 채워주세요");
+      return;
+    }
+
+    var addr2Element = document.querySelector(".addr2");
+
+    if (addr2Element && addr2Element.value.trim() === ""){
+      alert("상세주소를 채워주세요");
+      return;
+    }
+
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
       console.log("모두통과! 저장!");
@@ -491,7 +503,7 @@ function Member() {
               {/* 다음우편번호 모듈
               - 보내줄값은 내가 정해야함!
               - 변경체크함수를 프롭스다운시킴! */}
-              <AddressInput changeAddr={changeAddr} />
+              <AddressInput className="addr-msg" changeAddr={changeAddr} />
               {
                 // 에러일 경우 메시지 출력
                 // 조건문 && 출력요소
