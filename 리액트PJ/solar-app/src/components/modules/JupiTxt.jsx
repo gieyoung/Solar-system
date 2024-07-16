@@ -20,11 +20,11 @@ function JupiTxt({ catName }) {
             </div>
           )}
           {i == 1 && catName == "saturn" && (
-            <div class="desc2-3D">
+            <div className="desc2-3D">
               <iframe
-                class="imodel"
+                className="imodel"
                 src="https://solarsystem.nasa.gov/gltf_embed/2355"
-                frameborder="0"
+                frameBorder="0"
                 loading="eager"
               ></iframe>
             </div>
