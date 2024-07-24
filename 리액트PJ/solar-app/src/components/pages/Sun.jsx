@@ -138,7 +138,7 @@ useEffect(() => {
             </section>
 
             {/* 섹션5(갤러리) */}
-            {{}/* <section className="sun05">
+            {/* <section className="sun05">
                 <div className="inbox">
                     <h2 className="sub-tit">Gallery</h2>
                     <ul className="box scroll-el hide-el">
