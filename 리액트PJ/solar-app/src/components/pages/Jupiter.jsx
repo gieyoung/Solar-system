@@ -102,7 +102,7 @@ function Jupiter(props) {
         </div>
         <div className="moon-cont">
           {selData.map((v, i) => (
-            <div className={"moon" + (i + 1) + " moon"} key={i}>
+            <div className={"jupi-moon" + (i + 1) + " moon"} key={i}>
               <a
                 href={process.env.PUBLIC_URL+"https://science.nasa.gov/jupiter/moons/" + v.name + "/"}
                 target="_blank"
