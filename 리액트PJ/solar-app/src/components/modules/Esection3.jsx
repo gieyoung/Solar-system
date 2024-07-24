@@ -13,7 +13,7 @@ function Esection3(props) {
                 <div className="earth3d">
                     <iframe
                         className="imodel"
-                        src={process.env.PUBLIC_URL +"https://solarsystem.nasa.gov/gltf_embed/2393"}
+                        src="https://solarsystem.nasa.gov/gltf_embed/2393"
                         title="3DEarth Model"
                     ></iframe>
                     <p>3DEarth Model</p>
