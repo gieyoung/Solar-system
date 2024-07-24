@@ -82,7 +82,7 @@ function Saturn(props) {
           <div className="saturn3-line"></div>
           <div className="saturn3-link">
             <div className="saturn3-img">
-              <img src="./images/saturn/saturn01.jpg" alt="토성 사진" />
+              <img src={process.env.PUBLIC_URL+"./images/saturn/saturn01.jpg"} alt="토성 사진" />
             </div>
             <div className="saturn3-text sub-tit">
               <h3>NASA's Hubble Waches</h3>
@@ -128,7 +128,7 @@ function Saturn(props) {
           <ul>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_1.png" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_1.png"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>Second Largest</h3>
@@ -137,7 +137,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_2.png" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_2.png"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>Sixth from the Sun</h3>
@@ -146,7 +146,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_3.jpg" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_3.jpg"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>No Surface</h3>
@@ -155,7 +155,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_4.jpg" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_4.jpg"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>The Nicest Rings</h3>
@@ -164,7 +164,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_5.jpg" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_5.jpg"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>King of the Moons</h3>
@@ -173,7 +173,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_6.png" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_6.png"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>Distant Destination</h3>
@@ -182,7 +182,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_7.jpg" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_7.jpg"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>Not Suitable For Life</h3>
@@ -191,7 +191,7 @@ function Saturn(props) {
             </li>
             <li>
               <div className="saturn4-img">
-                <img src="./images/saturn/saturn4_8.gif" alt="토성 사진" />
+                <img src={process.env.PUBLIC_URL+"./images/saturn/saturn4_8.gif"} alt="토성 사진" />
               </div>
               <div className="saturn4-text">
                 <h3>Cloud Hexagon</h3>
@@ -201,7 +201,7 @@ function Saturn(props) {
           </ul>
           <div className="saturn-more cont-tit">
             <a
-              href="https://science.nasa.gov/saturn/facts/"
+              href={process.env.PUBLIC_URL+"https://science.nasa.gov/saturn/facts/"}
               target="_blank"
               rel="noopener noreferrer"
             >
