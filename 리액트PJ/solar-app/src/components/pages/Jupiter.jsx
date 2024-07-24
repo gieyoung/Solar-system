@@ -110,7 +110,7 @@ function Jupiter(props) {
                 <div className="moon-txt cont-tit">{v.name}</div>
                 <div className="moon-img">
                   <img
-                    src={"./images/jupiter/" + v.name + ".jpg"}
+                    src={process.env.PUBLIC_URL+"/images/jupiter/" + v.name + ".jpg"}
                     alt={v.name}
                   />
                 </div>
