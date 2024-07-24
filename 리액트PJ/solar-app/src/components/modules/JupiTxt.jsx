@@ -14,7 +14,7 @@ function JupiTxt({ catName }) {
           {(i != 1|| catName != "saturn") && (
             <div className={"desc" + (i + 1) + "-img desc-imgbx"}>
               <img
-                src={`/images/${catName}/main_bg${i + 1}.jpg`}
+                src={process.env.PUBLIC_URL+`/images/${catName}/main_bg${i + 1}.jpg`}
                 alt="목성사진"
               />
             </div>
@@ -23,7 +23,7 @@ function JupiTxt({ catName }) {
             <div className="desc2-3D">
               <iframe
                 className="imodel"
-                src="https://solarsystem.nasa.gov/gltf_embed/2355"
+                src={process.env.PUBLIC_URL+"https://solarsystem.nasa.gov/gltf_embed/2355"}
                 frameBorder="0"
                 loading="eager"
               ></iframe>

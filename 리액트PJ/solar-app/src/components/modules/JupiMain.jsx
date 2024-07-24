@@ -7,7 +7,7 @@ function JupiMain({ catName }) {
     <section className={"sub-"+catName+" "+catName+"1"}>
           {/* <!-- 배경 --> */}
           <video
-            src={"/images/"+catName+"/"+catName+" video/"+
+            src={process.env.PUBLIC_URL+"/images/"+catName+"/"+catName+" video/"+
             (catName=="jupiter"?"j":catName=="saturn"?"s":"")+"-main-bg.mp4"}
             autoPlay
             loop

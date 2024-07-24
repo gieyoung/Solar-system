@@ -104,7 +104,7 @@ function Jupiter(props) {
           {selData.map((v, i) => (
             <div className={"moon" + (i + 1) + " moon"} key={i}>
               <a
-                href={"https://science.nasa.gov/jupiter/moons/" + v.name + "/"}
+                href={process.env.PUBLIC_URL+"https://science.nasa.gov/jupiter/moons/" + v.name + "/"}
                 target="_blank"
               >
                 <div className="moon-txt cont-tit">{v.name}</div>
